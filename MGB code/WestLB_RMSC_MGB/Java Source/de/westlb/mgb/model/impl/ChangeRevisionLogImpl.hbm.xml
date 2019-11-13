@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="de.westlb.mgb.model.impl.ChangeRevisionLogImpl" table="T43_CHANGE_REVISION_LOG" lazy="false">
+    	<cache usage="read-write"/>
+		<id name="longId" type="long" column="T43_ID">
+			<generator class="sequence">
+				<param name="sequence">HIB_SEQ</param>
+			</generator>
+		</id>
+		<many-to-one name="dualControlJob" class="de.westlb.mgb.model.impl.DualControlJobImpl">
+			<column name="FK_T43_T16_DUAL_CONTROL_JOB" />
+		</many-to-one>
+        <property name="fieldName" column="T43_FIELD_NAME" />
+        <property name="fieldValueOld" column="T43_FIELD_VALUE_OLD" />
+        <property name="fieldValueNew" column="T43_FIELD_VALUE_NEW"  />
+    </class>
+
+</hibernate-mapping>

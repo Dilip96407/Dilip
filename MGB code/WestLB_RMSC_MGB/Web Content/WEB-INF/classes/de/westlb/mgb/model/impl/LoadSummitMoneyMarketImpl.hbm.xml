@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="de.westlb.mgb.model.impl.LoadSummitMoneyMarketImpl" table="LOAD_SUMMIT_MM">
+	<composite-id class="de.westlb.mgb.model.impl.LoadKey" mapped ="true">
+		<key-property name="rowNum" column="record_number" length="10"/>
+        <key-property name="sourceSystem" column="source_system" length="3"/>
+	</composite-id>
+        <property name="loadStatus" column="LOAD_STATUS" length="10"/>
+        <property name="loadTime" column="LOAD_TIME"/>
+        <property name="loadMessage" column="LOAD_MESSAGE"/>
+
+        <property name="tradeId" column="trade_id" length="50"/>
+        <property name="tradeVersion" column="trade_version"/>
+        <property name="status" column="status" length="50"/>
+        <property name="ccy" column="ccy" length="3"/>
+        <property name="type" column="mm_type" length="50"/>
+        <property name="subType" column="sub_type" length="50"/>
+        <property name="index" column="mm_index" length="50"/>
+        <property name="startDate" column="start_date"/>
+        <property name="maturityDate" column="maturity_date"/>
+        <property name="tradeDate" column="trade_date"/>
+        <property name="tradeEntryDate" column="trade_entry_date"/>
+        <property name="amendDate" column="amend_date"/>
+        <property name="internalRate" column="internal_rate"/>
+        <property name="spread" column="spread"/>
+        <property name="marginPoints" column="margin_points"/>
+        <property name="dealtRate" column="dealt_rate"/>
+        <property name="marketRate1" column="market_rate_1"/>
+        <property name="marketRate2" column="market_rate_2"/>
+        <property name="notional" column="notional"/>
+        <property name="traderLoginID" column="trader_login_id" length="50"/>
+        <property name="traderName" column="trader_name" length="50"/>
+        <property name="counterparty" column="counterparty" length="50"/>
+        <property name="book" column="book" length="50"/>
+        <property name="comment" column="comment1" length="255"/>
+        <property name="structureID" column="structure_id" length="50"/>
+        <property name="eodRate" column="eod_rate"/>
+        <property name="eodRateDate" column="eod_rate_date"/>
+        <property name="autoRateReset" column="auto_rate_reset" length="10"/>
+        <property name="eodRateMM" column="eod_rate_mm"/>
+    </class>
+
+</hibernate-mapping>
+
+        

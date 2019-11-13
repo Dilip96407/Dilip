@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="de.westlb.mgb.model.impl.TradeTypeCategoryImpl" table="T53_TRADE_TYPE_CATEGORY" lazy="false">
+    	<cache usage="read-write"/>
+     	<composite-id>
+	        <key-property name="code" column="T53_ID" length="25"/>
+			<key-many-to-one name="mandant" lazy="false" class="de.westlb.mgb.model.impl.MandantImpl" column="FK_T53_T09_MANDANT" />
+     	</composite-id>
+        <property name="name" column="T53_NAME" length="50"/>
+        <property name="changedDate" column="T53_CHANGED_DATE"/>
+ 		<property name="changedBy" column="T53_CHANGED_BY" length="10"/>
+		<property name="createdBy" column="T53_CREATED_BY" length="10"/>
+        <property name="creationDate" column="T53_CREATION_DATE" />
+    </class>
+
+</hibernate-mapping>

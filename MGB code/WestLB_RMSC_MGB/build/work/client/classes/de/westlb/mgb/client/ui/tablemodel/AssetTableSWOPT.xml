@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+<!DOCTYPE table SYSTEM "TableModel.dtd">
+
+<table>
+	<key-column property-name="id"/>
+	<column property-name="assetId" header-label="Asset ID">
+	</column>
+	<column property-name="tradeSubType" header-label="Sub Type">
+	</column>
+	<column property-name="callPut" header-label="Call/Put">
+	</column>
+	<column property-name="payNotional" header-label="Pay Notional" column-type="number">
+		<number-format fraction-min-length="0" fraction-max-length="0" grouping-length="3"/>
+	</column>
+	<column property-name="payCurrency" header-label="Pay Currency">
+	</column>
+	<column property-name="payIndexBasis" header-label="Pay Index Basis">
+	</column>
+	<column property-name="payRateSpread" header-label="Pay Rate Spread" column-type="number">
+		<number-format fraction-min-length="0" fraction-max-length="5" grouping-length="3"/>
+	</column>
+	<column property-name="payDiscountCurve" header-label="Pay Discount Curve">
+	</column>
+	<column property-name="receiveNotional" header-label="Receive Notional" column-type="number">
+		<number-format fraction-min-length="0" fraction-max-length="0" grouping-length="3"/>
+	</column>
+	<column property-name="receiveCurrency" header-label="Receive Currency">
+	</column>
+	<column property-name="receiveIndexBasis" header-label="Receive Index Basis">
+	</column>
+	<column property-name="receiveRateSpread" header-label="Receive Rate Spread" column-type="number">
+		<number-format fraction-min-length="0" fraction-max-length="5" grouping-length="3"/>
+	</column>
+	<column property-name="receiveDiscountCurve" header-label="Receive Discount Curve">
+	</column>
+	<column property-name="capFloor" header-label="Cap/Floor">
+	</column>
+	<column property-name="buySell" header-label="Buy/Sell">
+	</column>
+	<column property-name="quantity" header-label="Quantity" column-type="number">
+		<number-format fraction-min-length="0" fraction-max-length="0" grouping-length="3"/>
+	</column>
+	<column property-name="underlying" header-label="Underlying">
+	</column>
+	<column property-name="strike" header-label="Strike" column-type="number">
+		<number-format fraction-min-length="0" fraction-max-length="2" grouping-length="3"/>
+	</column>
+	<column property-name="style" header-label="Style">
+	</column>
+	<column property-name="premiumAmount" header-label="Premium Amount" column-type="number">
+		<number-format fraction-min-length="0" fraction-max-length="0" grouping-length="3"/>
+	</column>
+	<column property-name="premiumCurrency" header-label="Premium Currency">
+	</column>
+	<column property-name="startDate" header-label="Start date">
+		<date-format type="datelong"/>
+	</column>
+	<column property-name="maturityDate" header-label="Maturity Date">
+		<date-format type="datelong"/>
+	</column>
+	<column property-name="expiryDate" header-label="Expiry Date">
+		<date-format type="datelong"/>
+	</column>
+	<column property-name="fixingDate" header-label="Fixing Date">
+		<date-format type="datelong"/>
+	</column>
+	<column property-name="paymentDate" header-label="Payment Date">
+		<date-format type="datelong"/>
+	</column>
+	<column property-name="firstCouponDate" header-label="First Coupon Date">
+		<date-format type="datelong"/>
+	</column>
+	<column property-name="model" header-label="Model">
+	</column>
+	<column property-name="instrumentStyle" header-label="Instrument Style">
+	</column>
+	<column property-name="formula" header-label="Formula">
+	</column>
+	<column property-name="productName" header-label="Product Name">
+	</column>
+	<column property-name="prodData" header-label="Prod Data">
+	</column>
+	<column property-name="npv" header-label="NPV" column-type="number">
+		<number-format fraction-min-length="0" fraction-max-length="0" grouping-length="3"/>
+	</column>
+	<column property-name="marketRateIR" header-label="Market Rate IR" column-type="number">
+		<number-format fraction-min-length="0" fraction-max-length="4" grouping-length="3"/>
+	</column>
+	<column property-name="marketRateVola" header-label="Market Rate Vola" column-type="number">
+		<number-format fraction-min-length="0" fraction-max-length="2" grouping-length="3"/>
+	</column>
+	<column property-name="fxRate" header-label="FX Rate" column-type="number">
+		<number-format fraction-min-length="0" fraction-max-length="4" grouping-length="3"/>
+	</column>
+	<column property-name="delta" header-label="Delta" column-type="number">
+		<number-format fraction-min-length="0" fraction-max-length="0" grouping-length="3"/>
+	</column>
+	<column property-name="deltaCurrency" header-label="Delta Currency">
+	</column>
+	<column property-name="vega" header-label="Vega" column-type="number">
+		<number-format fraction-min-length="0" fraction-max-length="0" grouping-length="3"/>
+	</column>
+	<column property-name="vegaCurrency" header-label="Vega Currency">
+	</column>
+</table>

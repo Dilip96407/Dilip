@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="de.westlb.mgb.model.impl.PrimeEquityLoadImpl" table="T35_PRIME_EQUITY_LOAD">
+ 		<id name="tradeId" column="T35_TRADE_ID" length="20">
+	    	<!-- The front office PRIME is going to generate a unique id -->
+    		<generator class="assigned"></generator>
+		</id>
+        <property name="loadStatus" column="T35_LOAD_STATUS" length="10"/>
+        <property name="loadTime" column="T35_LOAD_TIME"/>
+        <property name="loadMessage" column="T35_LOAD_MESSAGE"/>
+        <property name="amendedDateTime" column="T35_AMENDED_DATETIME" />
+        <property name="automaticTradeFlag" column="T35_AUTOMATIC_TRADE_FLAG" length="1" />
+        <property name="bloombergId" column="T35_BLOOMBERG_ID" length="50" />
+        <property name="bookId" column="T35_BOOK_ID" length="50" />
+        <property name="buySellFlag" column="T35_BUY_SELL_FLAG" length="1" />
+        <property name="counterpartyId" column="T35_COUNTERPARTY_ID" length="50" />
+        <property name="creationDateTime" column="T35_CREATION_DATETIME" />
+        <property name="exchange" column="T35_EXCHANGE" length="10" />
+        <property name="instrumentId" column="T35_INSTRUMENT_ID" length="50" />
+        <property name="instrumentIsinCode" column="T35_INSTRUMENT_ISIN_CODE" length="50" />
+        <property name="instrumentName" column="T35_INSTRUMENT_NAME" length="50" />
+        <property name="internalDealFlag" column="T35_INTERNAL_DEAL_FLAG" length="1" />
+        <property name="internalInstrumentFlag" column="T35_INTERNAL_INSTRUMENT_FLAG" length="1" />
+        <property name="netGrossFlag" column="T35_NET_GROSS_FLAG" length="1" />
+        <property name="orderId" column="T35_ORDER_ID" length="50" />
+        <property name="otcFlag" column="T35_OTC_FLAG" length="1" />
+        <property name="reutersId" column="T35_REUTERS_ID" length="20" />
+        <property name="settlementDate" column="T35_SETTLEMENT_DATE" />
+        <property name="stornoFlag" column="T35_STORNO_FLAG" length="1" />
+        <property name="systemDateTime" column="T35_SYSTEM_DATETIME" />
+        <property name="tradeCurrency" column="T35_TRADE_CURRENCY" length="3" />
+        <property name="tradeDateTime" column="T35_TRADE_DATETIME" />
+        <property name="tradePrice">
+        	<column name="T35_TRADE_PRICE"/>
+		</property>
+        <property name="traderId" column="T35_TRADER_ID" length="50" />
+        <property name="tradeType" column="T35_TRADE_TYPE" length="50"/>
+        <property name="tradeVolume">
+        	<column name="T35_TRADE_VOLUME"/>
+		</property>
+        <property name="underlyingInstrumentId" column="T35_UND_INSTR_ID" length="50" />
+        <property name="underlyingInstrumentIsinCode" column="T35_UND_INSTR_ISIN_CODE" length="50" />
+        <property name="underlyingInstrumentName" column="T35_UND_INSTR_NAME" length="50" />
+        <property name="warrantFlag" column="T35_WARRANT_FLAG" length="1" />
+        <property name="freeText" column="T35_FREE_TEXT" length="255" />
+        <property name="referenceTrade" column="T35_REFERENCE_TRADE" length="50" />
+        <property name="expiryCombinationDate" column="t35_expiry_combination_date" />
+        <property name="expiryOptionDate" column="t35_expiry_option_date" />
+        <property name="settlementPrice" column="t35_settlement_price" />
+        <property name="traderName" column="t35_trader_name" length="255" />        
+        <property name="issueDate" column="t35_issue_date" />
+        <property name="subType" column="t35_sub_type" />
+        <property name="putCallFlag" column="t35_put_call_flag" length="1" />        
+        <property name="strikePrice" column="t35_strike_price" />
+        <property name="contractSize" column="t35_contract_size" />
+        <property name="fxRate" column="t35_fx_rate" />
+        <property name="quoteType" column="t35_quote_type" length="20" />
+        <property name="volumeMultiplicator" column="t35_volume_multiplicator" />
+    </class>
+</hibernate-mapping>

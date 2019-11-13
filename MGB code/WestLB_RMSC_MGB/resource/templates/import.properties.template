@@ -1,0 +1,13 @@
+mgb.hibernate.properties=hibernate.properties
+
+' Note: the *.filename properties accept java.text.MessageFormat patterns to match
+' a number of possible import file names. However, the first filename in
+' the property should NOT be such a pattern because it is defined as the one that
+' is used for generating files for the source system (i. e. when new jobs are
+' created in the MGB GUI from uploaded files).
+
+sqlldr.pathname=#SQLLDR_PATH_NAME#
+dir.work=#MGB_DATA_DIR#work
+dir.import=#MGB_DATA_DIR#import
+dir.archive=#MGB_DATA_DIR#archiv
+dir.ctl=#MGB_DATA_DIR#scripts

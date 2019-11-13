@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE table SYSTEM "TableModel.dtd">
+
+<table property-provider-class="de.westlb.mgb.client.ui.tablemodel.StateCodePropertyProvider">
+	<column property-name="type" header-label="" column-type="icon" use-property-provider="true">
+	</column>
+	<column property-name="stateCode" header-label="State code">
+	</column>
+	<column property-name="shortDescription" header-label="Description">
+	</column>
+	<column property-name="manualCheckRequired" header-label="Manual check required" column-type="boolean">
+	</column>
+	<column property-name="reclamationRequired" header-label="Reclamation required" column-type="boolean">
+	</column>
+	<column property-name="manualSampleCode" header-label="Sample state code" >
+	</column>
+	<column property-name="manualSamplePercentage" header-label="Sample percentage" >
+	</column>
+	<column property-name="marketDataRequestType" header-label="Market data request" >
+	</column>
+</table>

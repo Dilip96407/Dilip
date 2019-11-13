@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="de.westlb.mgb.model.impl.MailRecipientImpl" table="T62_MAIL_RECIPIENT" discriminator-value="R" lazy="true">
+ 		<id name="longId" type="long" column="T62_ID">
+			<generator class="sequence">
+                <param name="sequence">HIB_SEQ</param>			
+			</generator>
+		</id>	
+		<discriminator column="type" type="character"/>
+		<many-to-one name="employee" lazy="proxy" class="de.westlb.mgb.model.impl.EmployeeImpl">
+			<column name="FK_T62_T01_EMPLOYEE" />
+		</many-to-one>
+        <many-to-one name="mail" lazy="proxy" class="de.westlb.mgb.model.impl.MailImpl">
+			<column name="FK_T62_T48_MAIL"/>
+		</many-to-one>
+		<subclass name="de.westlb.mgb.model.impl.MailCopyRecipientImpl" discriminator-value="C"></subclass>
+    </class>
+</hibernate-mapping>

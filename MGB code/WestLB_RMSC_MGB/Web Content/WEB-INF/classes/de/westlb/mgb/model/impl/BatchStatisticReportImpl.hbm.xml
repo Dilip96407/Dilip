@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping>
+    <class name="de.westlb.mgb.model.impl.BatchStatisticReportImpl" table="T121_STATISTIC_REPORT" lazy="true" batch-size="20">
+		<id name="longId" type="long" column="T121_ID">
+			<generator class="sequence">
+				<param name="sequence">HIB_SEQ</param>
+			</generator>
+		</id>
+ 		<property name="name" column="T121_NAME" length="50"/>
+        <property name="mailList" column="T121_MAIL_LIST" length="4000"/>
+		<property name="cron" column="T121_CRON" length="500"/>
+		<property name="sqlFileName" column="T121_SQL_FILE_NAME" length="200" />
+		<property name="sqlText" column="T121_SQL_TEXT" length="4000" />
+		<property name="sqlStartDate" column="T121_SQL_START_DATE" length="200" />
+		<property name="sqlStopDate" column="T121_SQL_STOP_DATE" length="200" />
+		<property name="sqlParam" column="T121_SQL_PARAM" length="200" />
+		<property name="outputFile" column="T121_OUTPUT_FILE" length="200" />
+    </class>
+</hibernate-mapping>

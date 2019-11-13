@@ -1,0 +1,762 @@
+/*----------------------*/
+/* Layout of HTML tags  */
+/*----------------------*/
+
+body
+{
+	margin-left:0px;
+	margin-right:0px;
+	margin-top:0px;
+	margin-bottom:0px;
+}
+
+h1,h2,h3,h4,h5,h6,p,ol,td,th,a,address,blockquote,nobr,pre,body,div,fieldset,legend
+{
+	color:#000000;
+	font-family:Verdana,Univers,Helvetica,Arial;
+}
+  
+h1,h2,h3,h4,h5,h6
+{
+	margin-bottom:0;
+	margin-top:0;
+}
+h1
+{
+	font-size:16px;
+}
+h2
+{
+	font-size:14px;
+}
+h3
+{
+	font-size:13px;
+}
+h4
+{
+	font-size:12px;
+}
+h5
+{
+	font-size:11px;
+
+}
+h6
+{
+	font-size:10px;
+}
+
+link
+{
+	text-decoration:underline;
+	cursor:hand;
+}
+
+td.link
+{
+	text-decoration:underline;
+	cursor:hand;
+}
+
+div, span
+{
+	margin-top:0;
+	margin-bottom:0;
+}
+
+th
+{
+	font-weight:bold;
+	font-size:11px;
+	height:20px;
+	vertical-align:middle;
+	margin-top:0;
+	margin-bottom:0;
+	background-color:White;
+	border-top-color:White;
+	border-top-style:solid;
+	border-top-width:1px;
+	border-bottom-color:White;
+	border-bottom-style:solid;
+	border-bottom-width:1px;
+}
+
+td
+{
+	font-size:11px;
+	margin-top:0;
+	margin-bottom:0;
+}
+
+a  
+{
+	text-decoration:none;
+	cursor:hand;
+}
+
+p
+{
+	font-size:11px;
+}
+
+fieldset {
+	border-color:#6666b3;
+	border-width:2px;
+}
+
+legend {
+	font-size:11px;
+	font-weight:bold;
+	margin-top:0;
+	margin-bottom:0;
+}
+
+img {
+	border:0;
+}
+
+/*------------------------*/
+/* Farbabstufungen WestLB */
+/*------------------------*/
+/* Grundfarben:           */
+/* ffffff - weiss        */
+/* 000000 - schwarz      */
+/* 000066 - dunkelblau   */
+/* 333399 - WestLB blau  */
+/*------------------------*/
+/* Abstufungen:           */
+/* 4e4ea7 - sekundaer    */
+/* 6666b3 - primaer      */
+/* 7f7fc0 - sekundaer    */
+/* 9999cc - primaer      */
+/* a5a5d2 - sekundaer    */
+/* b1b1d8 - sekundaer    */
+/* bebede - sekundaer    */
+/* cbcbe5 - primaer      */
+/* d7d7eb - sekundaer    */
+/* e4e4f2 - sekundaer    */
+/* f1f1f8 - sekundaer    */
+/*------------------------*/
+/* Sonderfarben:          */
+/* 66cc33 - gruen        */
+/* cc3333 - rot          */
+/*------------------------*/
+
+/*--------------------------------------*/
+/* Layout of Forms (WestLB StyleGuide)  */
+/*--------------------------------------*/
+.link
+{
+	text-decoration:underline;
+	cursor: hand;
+}
+.navMain
+{
+	font-size:10px;
+	font-weight:bold;
+}
+.navSub
+{
+	font-size:10px;
+}
+
+.chapter
+{
+	font-size:10px;
+	font-weight:bold;
+}
+
+.title
+{
+	font-size:13px;
+	font-weight:bold;
+}
+
+.text
+{
+	font-size:11px;
+}
+
+.annotation
+{
+	font-size:10px;
+	font-weight:bold;	
+}
+
+.footnote
+{
+	font-size:10px;
+	font-weight:bold;
+}
+
+
+/*---------------------------------------*/
+/* Layout of Tables (WestLB StyleGuide)  */
+/*---------------------------------------*/
+
+.tablehead
+{
+	font-weight:bold;
+	font-size:11px;
+	height:20px;
+	vertical-align:middle;
+	margin-top:0;
+	margin-bottom:0;
+	background-color:#9999cc;
+	border-top-color:White;
+	border-top-style:solid;
+	border-top-width:1px;
+	border-bottom-color:White;
+	border-bottom-style:solid;
+	border-bottom-width:1px;
+}
+
+.rowlight
+{
+	height:20px;
+	background-color:#ffffff;
+}
+
+.rowdark
+{
+	height:20px;
+	background-color:#cbcbe5;
+}
+
+.ccm{
+	border-collapse:collapse;
+	background-color:#b1b1d8;
+}
+
+.cd{
+	border-collapse:collapse;
+	background-color:#cbcbe5;
+}
+
+/*-------------------------------------------*/
+/* Layout of Components (WestLB StyleGuide)  */
+/*-------------------------------------------*/
+
+.topmenu
+{
+	font-family:Verdana,Univers,Helvetica,Arial;
+	font-size:10px;
+	color:#ffffff;
+	background-color:#000066;
+	height:18px;
+	margin-top:0;
+	margin-bottom:0;
+	padding-top:1px;
+}
+
+.blackBorder
+{
+	background-color:#000000;
+}
+
+.whiteBorder
+{
+	background-color:#ffffff;
+}
+
+.iconBar
+{
+	background-color:#cbcbe5;
+	height:20px;
+	text-align:center;
+	vertical-align:middle;
+	border-top-color:White;
+	border-top-style:solid;
+	border-top-width:1px;
+	border-bottom-color:White;
+	border-bottom-style:solid;
+	border-bottom-width:1px;
+}
+
+.buttonText
+{
+	font-family:Verdana,Univers,Helvetica,Arial;
+	font-weight:bold;
+	font-size:10px;
+	color:#6666b3;
+	text-align:center;
+	height:12px;
+	border-width:0px;
+	padding-left:2px;
+	padding-right:2px;
+	padding-top:0px;
+	padding-bottom:0px;
+	cursor:hand;
+}
+
+.tabActive
+{
+	font-family:Verdana,Univers,Helvetica,Arial;
+	font-size:10px;
+	font-weight:bold;
+	color:#000000;
+	margin-top:0;
+	margin-bottom:1px;
+	border-top-color:White;
+	border-top-style:solid;
+	border-top-width:1px;
+	border-left-color:White;
+	border-left-style:solid;
+	border-left-width:1px;
+	border-right-color:White;
+	border-right-style:solid;
+	border-right-width:1px;
+	padding-top:2px;
+}
+
+.tabActiveTop
+{
+	font-family:Verdana,Univers,Helvetica,Arial;
+	font-size:10px;
+	font-weight:bold;
+	color:#000000;
+	margin-top:0;
+	margin-bottom:0;
+	background-color:#d7d7eb;
+	border-top-color:White;
+	border-top-style:solid;
+	border-top-width:1px;
+}
+
+.tabActiveBottom
+{
+	font-family:Verdana,Univers,Helvetica,Arial;
+	font-size:10px;
+	font-weight:bold;
+	color:#000000;
+	margin-top:0;
+	margin-bottom:0;
+	border-left-color:White;
+	border-left-style:solid;
+	border-left-width:1px;
+	border-right-color:White;
+	border-right-style:solid;
+	border-right-width:1px;
+	background-color:#ffffff;
+}
+
+.tabInactive
+{
+	font-family:Verdana,Univers,Helvetica,Arial;
+	font-size:10px;
+	font-weight:bold;
+	color:#6666b3;
+	margin-top:0;
+	margin-bottom:0;
+	margin-left:2px;
+	margin-right:2px;
+	background-color:#d7d7eb;
+	cursor:hand;
+	padding-top:2px;	
+}
+
+.tabInactiveTop
+{
+	font-family:Verdana,Univers,Helvetica,Arial;
+	font-size:10px;
+	font-weight:bold;
+	color:#000000;
+	margin-top:0;
+	margin-bottom:0;
+	background-color:#d7d7eb;
+	border-top-color:White;
+	border-top-style:solid;
+	border-top-width:1px;
+}
+
+.tabInactiveBottom
+{
+	font-family:Verdana,Univers,Helvetica,Arial;
+	font-size:10px;
+	font-weight:bold;
+	color:#000000;
+	margin-top:0;
+	margin-bottom:0;
+	background-color:#d7d7eb;
+	border-bottom-color:White;
+	border-bottom-style:solid;
+	border-bottom-width:1px;
+}
+
+
+
+
+/*------------------------------------------------*/
+/* Layout of application (navigation and header)  */
+/*------------------------------------------------*/
+
+.nav1
+{
+	font-size:12px;
+}
+
+.nav2
+{
+	font-size:11px;
+}
+
+.nav2Disabled
+{
+	font-size:11px;
+	color:#898989;	
+}
+.nav3
+{
+	font-size:10px;
+}
+
+.nav3Disabled
+{ 
+	font-size:10px;
+	color:#898989;
+}
+
+
+/*--------------------------------*/
+/* Layout of application (forms)  */
+/*--------------------------------*/
+
+.formlabel
+{
+	font-weight:bold;
+	margin-top:0;
+	margin-bottom:0;
+}
+
+.formvalue
+{
+	font-size:12px;
+	margin-top:0px;
+	margin-bottom:0px;
+	margin-left:0px;
+	margin-right:0px;
+	padding:1px;
+	width:98%;	
+}
+
+.formvaluerequired
+{
+	font-size:12px;
+	margin-top:0px;
+	margin-bottom:0px;
+	margin-left:0px;
+	margin-right:0px;
+	padding:1px;
+	background-color:#FFFFB4;	
+	width:98%;	
+}
+
+.inputField	{
+	border-width:1px;
+	width:98%;	
+}
+
+.explain
+{
+	font-size:9px;
+}
+
+.normal
+{
+	color:#000000;
+}
+
+.error
+{
+	color:#ff0000;
+}
+
+.blue{
+	color:#3333ff;
+}
+
+.invisible
+{
+	color:#ffffff;
+}
+
+.buttonTextDisabled
+{
+	font-family:Verdana,Univers,Helvetica,Arial;
+	font-weight:bold;
+	font-size:10px;
+	color:#818181;
+	text-align:center;
+	height:12px;
+	border-width:0px;
+	padding-left:2px;
+	padding-right:2px;
+	padding-top:0px;
+	padding-bottom:0px;
+}
+
+
+/*---------------------------------*/
+/* Layout of application (tables)  */
+/*---------------------------------*/
+
+.tablelabel
+{
+	font-weight:bold;
+	height:20px;
+	margin-top:0;
+	margin-bottom:0;
+	background-color:#b1b1d8;
+	empty-cells:show;
+}
+
+.tablevalue
+{
+	height:20px;
+	margin-top:0;
+	margin-bottom:0;
+	background-color:#cbcbe5;
+	empty-cells:show;
+}
+
+.tablefield
+{
+	font-size:12px;
+	margin-top:0px;
+	margin-bottom:0px;
+	margin-left:0px;
+	margin-right:0px;
+	background-color:#cbcbe5;
+	empty-cells:show;
+	padding:1px;
+	width:98%;	
+}
+
+.tableempty
+{
+	height:20px;
+	margin-top:0;
+	margin-bottom:0;
+	background-color:#dfdfdf;
+	empty-cells:show;
+}
+
+.tablebutton
+{
+	height:20px;
+	margin-top:0;
+	margin-bottom:0;
+	background-color:#EEEEEE;
+}
+
+
+tableValueHighlight{
+	height:20px;
+	margin-top:0;
+	margin-bottom:0;
+	background-color:#cbcbe5;
+	color:#ff0000;
+	empty-cells:show;
+}
+
+.rowselected
+{
+	height:20px;
+	background-color:#bbbbbb;
+	empty-cells:show;
+}
+
+.inputTD
+{
+	font-size:10px;
+	text-align:right;
+	height:15px;
+	border-width:1px;
+	background:#ffffff;
+	padding-left:2px;
+	padding-right:2px;
+	padding-top:0px;
+	padding-bottom:0px;
+	empty-cells:show;
+}
+
+.outputTD
+{
+	font-size:10px;
+	text-align:right;
+	height:15px;
+	border-width:0px;
+	padding-left:2px;
+	padding-right:2px;
+	padding-top:0px;
+	padding-bottom:0px;
+	background:transparent;
+	empty-cells:show;
+}
+
+.inputField	{
+	font-family:arial,sans-serif;
+	font-size:12px;
+	text-align:right;
+	height:18px;
+	border-width:1px;
+	background:#ffffff;
+	padding-left:2px;
+	padding-right:2px;
+	padding-top:0px;
+	padding-bottom:0px;
+}
+
+.inputFieldInvalid {
+	font-family:arial,sans-serif;
+	font-size:12px;
+	text-align:right;
+	height:18px;
+	border-width:1px;
+	background:red;
+	padding-left:2px;
+	padding-right:2px;
+	padding-top:0px;
+	padding-bottom:0px;
+}
+
+.inputFieldPopup {
+	font-family:arial,sans-serif;
+	font-size:12px;
+	text-align:left;
+	border-width:1px;
+	background:#ffffff;
+	padding-left:2px;
+	padding-right:2px;
+	padding-top:0px;
+	padding-bottom:0px;
+}
+
+.outputField {
+	font-family:arial,sans-serif;
+	font-size:12px;
+	text-align:right;
+	height:18px;
+	border-width:0px;
+	padding-left:2px;
+	padding-right:2px;
+	padding-top:0px;
+	padding-bottom:0px;
+	background:transparent;
+}
+
+.totalField {
+	font-family:arial,sans-serif;
+	font-weight:bold;
+	font-size:12px;
+	text-align:right;
+	height:18px;
+	border-width:0px;
+	padding-left:2px;
+	padding-right:2px;
+	padding-top:0px;
+	padding-bottom:0px;
+	background:transparent;
+}
+
+.debug
+{
+	color:#ffffff;
+	font-family:arial,sans-serif;
+	font-size:10px;
+	text-align:left;
+	margin-top:75px;
+}
+
+.nichtProportional
+{
+	font-family:Courier;
+}
+
+.border_w_around
+{
+	border-left-color:White;
+	border-left-style:solid;
+	border-left-width:1px;
+	border-top-color:White;
+	border-top-style:solid;
+	border-top-width:1px;
+	border-right-color:White;
+	border-right-style:solid;
+	border-right-width:1px;
+	border-bottom-color:White;
+	border-bottom-style:solid;
+	border-bottom-width:1px;
+}
+
+.border_w_left
+{
+	border-left-color:White;
+	border-left-style:solid;
+	border-left-width:1px;
+}
+
+.border_w_right
+{
+	border-right-color:White;
+	border-right-style:solid;
+	border-right-width:1px;
+}
+
+.border_w_bottom
+{
+	border-bottom-color:White;
+	border-bottom-style:solid;
+	border-bottom-width:1px;
+}
+
+.border_w_top
+{
+	border-top-color:White;
+	border-top-style:solid;
+	border-top-width:1px;
+}
+
+.border_w_tub
+{
+	border-left-color:White;
+	border-left-style:solid;
+	border-left-width:1px;
+	border-right-color:White;
+	border-right-style:solid;
+	border-right-width:1px;
+	border-bottom-color:White;
+	border-bottom-style:solid;
+	border-bottom-width:1px;
+}
+
+
+/*--------------------------------------*/
+/* Layout of Page                       */
+/*--------------------------------------*/
+.footer
+{
+	color:#023264;
+	size:-1;
+	font-style:italic;
+}
+
+.menutable
+{
+	width=150px
+	padding:0;
+	border:0;
+	border-spacing:0;
+}
+
+.menu
+{
+	valign:left;
+	white-space:nowrap;
+}
+
+.required
+{
+	color:#FF0000;
+}

@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//EXOLAB/Castor Mapping DTD Version 1.0//EN"
+	"http://castor.org/mapping.dtd">
+
+<mapping>
+	<description>Description of the mapping</description>
+	<class name="de.westlb.mgb.model.impl.JobImpl" auto-complete="true">
+		<!-- Name of the element in XML -->
+	   <map-to xml="job"/>
+		<!-- Don't print the following attributes -->
+	   <field name="cobMonthString" transient="true"/>
+	   <field name="longId2" transient="true"/>
+	   <field name="cobDayString" transient="true"/>
+		<!-- Time fields -->
+		<field name="startBusinessTime" type="string" handler="de.westlb.mgb.server.service.archive.TimeFieldHandler"/>
+		<field name="stopBusinessTime" type="string" handler="de.westlb.mgb.server.service.archive.TimeFieldHandler"/>
+		<field name="systemTime" type="string" handler="de.westlb.mgb.server.service.archive.TimeFieldHandler"/>
+		<field name="startLoadTime" type="string" handler="de.westlb.mgb.server.service.archive.TimeFieldHandler"/>
+		<field name="stopLoadTime" type="string" handler="de.westlb.mgb.server.service.archive.TimeFieldHandler"/>
+		<field name="startConvertTime" type="string" handler="de.westlb.mgb.server.service.archive.TimeFieldHandler"/>
+		<field name="stopConvertTime" type="string" handler="de.westlb.mgb.server.service.archive.TimeFieldHandler"/>
+		<field name="trades">
+		  <bind-xml name="trade"/>
+	   </field>
+		
+		<!-- Wouldn't be printed out otherwise -->
+		<field name="sourceSystem">
+		  <bind-xml name="sourceSystem"/>
+	    </field>
+	</class>
+
+	<class name="de.westlb.mgb.model.impl.TradeImpl" auto-complete="true">
+		<!-- Name of the element in XML -->
+	   <field name="requestSourceArray" transient="true"/>
+		<field name="requests">
+		  <bind-xml name="request"/>
+	   </field>
+		<field name="amendedDate" type="string" handler="de.westlb.mgb.server.service.archive.TimeFieldHandler"/>
+		<field name="settlementDate" type="string" handler="de.westlb.mgb.server.service.archive.TimeFieldHandler"/>
+		<field name="systemDate" type="string" handler="de.westlb.mgb.server.service.archive.TimeFieldHandler"/>
+		<field name="tradeDate" type="string" handler="de.westlb.mgb.server.service.archive.TimeFieldHandler"/>
+	   <field name="book" transient="true"/>
+	</class>
+
+	<class name="de.westlb.mgb.model.impl.SummitBondImpl"  extends="de.westlb.mgb.model.impl.TradeImpl" auto-complete="true">
+		<field name="startDay" type="string" handler="de.westlb.mgb.server.service.archive.TimeFieldHandler"/>
+		<field name="expireDay" type="string" handler="de.westlb.mgb.server.service.archive.TimeFieldHandler"/>
+		<field name="instrumentStartDay" type="string" handler="de.westlb.mgb.server.service.archive.TimeFieldHandler"/>
+		<field name="instrumentExpireDay" type="string" handler="de.westlb.mgb.server.service.archive.TimeFieldHandler"/>
+	</class>
+
+	<class name="de.westlb.mgb.model.impl.TradeHistEntryImpl" auto-complete="true">
+	   <field name="trade" transient="true"/>
+	</class>
+
+	<class name="de.westlb.mgb.model.impl.RequestImpl" auto-complete="true">
+	   <field name="trade" transient="true"/>
+	</class>
+
+	<class name="de.westlb.mgb.model.impl.BloombergRequestImpl" extends="de.westlb.mgb.model.impl.RequestImpl" auto-complete="true">
+	   <field name="requestSourceArray" transient="true"/>
+	</class>
+
+	<class name="de.westlb.mgb.model.impl.InstrumentImpl" auto-complete="true">
+	   <field name="bloombergRequestSourceArray" transient="true"/>
+	   <field name="dualControlJobs" transient="true"/>
+	</class>
+
+	<class name="de.westlb.mgb.model.impl.EmployeeImpl" auto-complete="false">
+	   <field name="firstName"/>
+	   <field name="lastName"/>
+	</class>
+
+	<class name="de.westlb.mgb.model.impl.DualControlJobImpl" auto-complete="false">
+	   <field name="operation"/>
+	</class>
+
+</mapping>

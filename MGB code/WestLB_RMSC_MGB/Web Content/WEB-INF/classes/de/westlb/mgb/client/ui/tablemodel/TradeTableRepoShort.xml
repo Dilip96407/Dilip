@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE table SYSTEM "TableModel.dtd">
+
+<table>
+	<key-column property-name="id"/>
+	<column property-name="tradeId" header-label="Trade">
+	</column>
+	<column property-name="instrument" header-label="Instrument">
+	</column>
+	<column property-name="tradeType" header-label="Category">
+	</column>
+	<column property-name="tradeDate" header-label="Trade time">
+		<date-format type="timelong"/>
+	</column>
+	<column property-name="bookId" header-label="Portfolio">
+	</column>
+	<column property-name="traderLocation" header-label="Location">
+	</column>
+	<column property-name="price" header-label="Repo rate / Fee / Rate" column-type="number">
+		<number-format fraction-min-length="4" fraction-max-length="10" grouping-length="3"/>
+	</column>
+	<column property-name="currency" header-label="Currency">
+	</column>
+	<column property-name="volume" header-label="Notional" column-type="number">
+		<number-format fraction-min-length="4" fraction-max-length="10" grouping-length="3"/>
+	</column>
+</table>

@@ -1,0 +1,128 @@
+/* Parser for processing mail templates */
+options {
+	STATIC = false;
+}
+
+PARSER_BEGIN(Parser)
+	package de.westlb.mgb.client.mail.parser;
+
+	import java.util.Map;
+	import java.io.StringReader;
+	
+	public class Parser {
+		public static String parseTemplate(String template, Map parameterMap) throws ParseException, TokenMgrError {
+			Parser parser = new Parser(new StringReader(template));
+			String val = parser.Start(parameterMap);
+			System.out.println(val);
+			return val;
+		}
+	}
+PARSER_END(Parser)
+
+/* RESERVED WORDS AND LITERALS */
+TOKEN :
+{
+  < ENDIF: "[endif]" >
+| < LBRACKET: "[" >
+| < RBRACKET: "]" >
+}
+
+TOKEN : {<LETTER: ["a"-"z","A"-"Z"]> }
+TOKEN : {<NUMBER: ["0"-"9"]> }
+/* A Variable is e.g. "[var:abc12] */
+TOKEN : {<VAR:("[var:" (<LETTER>)+ (<NUMBER>)*"]")> }
+/* A if statement is e.g. "[if:abc12] */
+TOKEN : {<IF:("[if:" (<LETTER>)+ (<NUMBER>)*"]")> }
+/* Text is a sequence of any char except eol and brackets */
+TOKEN : {<TEXT:(~["[", "]"])+ > }
+
+
+
+String Start(Map parameters) :
+{
+	String s;
+}
+{
+	s = TText(parameters)
+	<EOF>
+	{ return s; }
+}
+
+String TText(Map parameters) :
+{
+ 	Token t;
+ 	String s;
+ 	String value = "";
+}
+{
+	(
+		s = Variable(parameters)
+		{value += s;}
+	|   
+		s = ConditionalText(parameters)
+		{value += s;}
+	|  
+		s = ConstantText()
+		{value += s;}
+	)*
+	
+	{return value;}
+}
+
+
+String Variable(Map parameters):
+{
+	Token t;
+}
+{
+	t = <VAR>
+	{ 
+	  String varName= t.image;
+	  varName = varName.substring(5, varName.length()-1);
+      Object value = parameters.get(varName);
+	  return value == null ? "" : value.toString();
+	} 
+}
+
+
+String ConditionalText(Map parameters):
+{
+	Token t;
+	String s;
+}
+{
+	t = <IF>
+	s = TText(parameters)
+	<ENDIF>
+	{ 
+		String varName= t.image;
+		varName = varName.substring(4, varName.length()-1);
+	
+		Object value = parameters.get(varName);
+		if (value instanceof Boolean && Boolean.TRUE.equals(value)) {
+			return s;
+		} else {
+			return "";
+		}
+	}
+}
+
+String ConstantText():
+{
+	Token t;
+}
+{	
+	t=<TEXT>
+	{ return t.image;  }
+}
+
+String ParamName():
+{
+	Token t;
+}
+{	
+	t=<TEXT>
+	{ 
+	  return t.image;
+	}
+}

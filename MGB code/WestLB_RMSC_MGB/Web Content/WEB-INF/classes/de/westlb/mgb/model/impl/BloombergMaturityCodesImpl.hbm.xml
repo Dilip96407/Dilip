@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="de.westlb.mgb.model.impl.BloombergMaturityCodesImpl" table="T41_BLOOMBERG_MATURITY_CODES" lazy="false">
+		<id name="maturityCode" column="T41_MATURITY_CODE" length="3">
+	   		<generator class="assigned"></generator>
+ 		</id>
+        <property name="bloombergMaturityCode" column="T41_BLOOMBERG_MATURITY_CODE" length="2" />
+        <property name="bloombergMaturityField" column="T41_BLOOMBERG_MATURITY_FIELD" length="50" />
+        <property name="minMaturityDays" column="T41_MIN_MATURITY_DAYS" />
+        <property name="maxMaturityDays" column="T41_MAX_MATURITY_DAYS"/>
+        <property name="maturityName" column="T41_MATURITY_NAME" length="50" />
+
+        <property name="changedDate" column="T41_CHANGED_DATE"/>
+ 		<property name="changedBy" column="T41_CHANGED_BY" length="10" />  
+		<property name="createdBy" column="T41_CREATED_BY" length="10" /> 
+        <property name="creationDate" column="T41_CREATION_DATE" />
+    </class>
+
+</hibernate-mapping>

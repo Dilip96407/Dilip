@@ -1,0 +1,109 @@
+<!-- This is an xml entity included in the MGB build files -->
+
+<property environment="env"/>
+
+
+<!-- set MGB home up -->
+<property name="mgb.home" location="." />
+
+<property name="version.major" value="2" />
+<property name="version.minor" value="1" ></property>
+<property name="version.update" value="2" />
+<!-- This should be the version # above with dots replaced by underscores -->
+
+<property name="mgb.version" value="${version.major}.${version.minor}.${version.update}" />
+
+<property name="name" value="MGB" />
+<property name="year" value="2018" />
+
+<!-- General compiler settings: -->
+<property name="compile.exec" value="C:\Program Files\Java\jdk1.8.0_201\bin"/>
+
+<!-- debug flag for ant javac, values are "on" and "off" -->
+<property name="compile.debug" value="true" />
+<!-- what gets pulled in to the binaries: everything -->
+<property name="compile.debuglevel" value="lines,vars,source" />
+<!--  Should Java compilations set the deprecation compiler option? --> 
+<property name="compile.deprecation" value="false" /> 
+<!--  Should Java compilations set the optimize compiler option? --> 
+<property name="compile.optimize" value="false" /> 
+<property name="compile.fork" value="true"/>
+<property name="compile.memoryinitialsize" value="256m"/>
+<property name="compile.memorymaximumsize" value="256m"/>
+
+<!-- Client specific compiler settings  -->
+<property name="compile.client.target" value="1.8" />
+<property name="compile.client.compiler" value="javac1.8" />
+
+<!-- Server specific compiler settings  -->
+<property name="compile.server.target" value="1.8" /> 
+<property name="compile.server.compiler" value="javac1.8" />
+
+<!-- directories -->
+<property name="src.dir" location="${mgb.home}/Java Source"/>
+<property name="docs.dir" location="${mgb.home}/docs"/>
+<property name="lib.dir" location="${mgb.home}/libs"/>
+<property name="docbook_xsl.dir" location="${mgb.home}/misc/docbook-xsl-1.65.1"/>
+<property name="docbook_src.dir" location="${mgb.home}/JavaDocSrc"/>
+
+<property name="http.url" value="http://localhost:8080/mgb"/>
+
+<property name="build.file" value="build.xml" />
+<!-- directories for output -->
+<property name="build.dir" location="${mgb.home}/build"/>
+<property name="build.client" location="${build.dir}/client"/>
+<property name="build.server" location="${build.dir}/server"/>
+<property name="build.interface" location="${build.dir}/interface"/>
+<property name="build.work" location="${build.dir}/work"/>
+<property name="build.work.client" location="${build.work}/client"/>
+<property name="build.work.server" location="${build.work}/server"/>
+<property name="build.work.war" location="${build.work.server}/war"/>
+<property name="build.lib" location="${build.dir}/lib"/>
+<property name="build.javadocs" location="${build.dir}/javadocs"/>
+<property name="build.javahelp" location="${mgb.home}/resource/javahelp"/>
+
+<property name="foreach.fork" value="no"/>
+<property name="ant.inheritAll" value="false"/>
+<property name="ant.inheritRefs" value="false"/>
+
+<!--  Applet signing-settings Thawte Zertifikat -->
+<property name="keystore.alias" value="portigon"/>
+<property name="keystore.password" value="mgbmgb"/>
+<property name="keystore.storetype" value="jks"/>
+<property name="keystore.location" value="keystore"/>
+<property name="keystore.keypassword" value="kallitimer"/>
+	
+ 
+<path id="server.classpath">
+    <pathelement location="${build.work.client}/classes" />
+    <pathelement location="${build.interface}/classes" />
+	<fileset dir="${lib.dir}">
+		<include name="**/*.jar" />
+	</fileset>
+	<pathelement path="${java.class.path}" />
+</path>
+
+<path id="hbm2ddl.classpath">
+    <pathelement location="${build.work.server}/classes" />
+	<fileset dir="${lib.dir}">
+		<include name="**/*.jar" />
+	</fileset>
+</path>
+
+<path id="docbook.classpath"> 
+	<pathelement location="$docbook_src.dir}/saxon.jar"/>
+</path>
+
+<path id="client.classpath">
+    <pathelement location="${build.work.client}/classes" />
+    <pathelement location="${build.interface}/classes" />
+	<fileset dir="${lib.dir}">
+		<include name="**/*.jar" />
+	</fileset>
+	<pathelement path="${java.home}/lib/tools.jar" />
+</path>
+
+<!-- Used by the deploy task; this setting is suitable for a Tomcat running
+     inside the project directory. In other cases, set the location in
+     build_user_properties.xml. -->
+<property name="local.catalina.mgb" value="./Web Content"/>

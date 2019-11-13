@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+ <!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN"
+       "http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+
+<!-- Layout definitions  -->
+<tiles-definitions>
+	<definition name="/loginDialog.tile" path="/WEB-INF/struts/tiles/loginDialog.jsp"/>
+
+	<definition name="/page.tile" path="/WEB-INF/struts/tiles/page.jsp">
+  		<put name="title" value="${title}"/>
+		<put name="header" value="/WEB-INF/struts/tiles/header.jsp"/>
+		<put name="menu" value="/WEB-INF/struts/tiles/menu.jsp"/>
+		<put name="content" value="${content}"/>
+		<put name="footer" value="/WEB-INF/struts/tiles/footer.jsp"/>
+	</definition>
+	
+	<definition name="/messagePage.tile" path="/WEB-INF/struts/tiles/messagePage.jsp">
+  		<put name="title" value="${title}"/>
+		<put name="header" value="/WEB-INF/struts/tiles/header.jsp"/>
+		<put name="menu" value="/WEB-INF/struts/tiles/menu.jsp"/>
+		<put name="content" value="${content}"/>
+		<put name="footer" value="/WEB-INF/struts/tiles/footer.jsp"/>
+		<put name="messageTxt" value="messageTxt"/>
+	</definition>	
+
+	<definition name="/application.tile" extends="/page.tile">
+		<put name="title" value="page.application.title"/>
+		<put name="content" value="/WEB-INF/struts/tiles/application.jsp"/>
+	</definition>
+
+	<definition name="/application-ref.tile" extends="/page.tile">
+		<put name="title" value="page.application.title"/>
+		<put name="content" value="/WEB-INF/struts/tiles/application-ref.jsp"/>
+	</definition>
+
+	<definition name="/docu.tile" extends="/page.tile">
+		<put name="title" value="page.docu.title"/>
+		<put name="content" value="/WEB-INF/struts/tiles/docu.jsp"/>
+	</definition>
+	
+	<definition name="/traderResponseForm.tile" extends="/page.tile">
+		<put name="title" value="page.traderResponse.title"/>
+		<put name="content" value="/WEB-INF/struts/tiles/traderResponseForm.jsp"/>
+	</definition>
+
+    <definition name="/welcome.tile" extends="/page.tile">
+        <put name="title" value="page.welcome.title"/>
+        <put name="content" value="/WEB-INF/struts/tiles/welcome.jsp"/>
+    </definition>
+
+    <definition name="/userMaintenance.tile" extends="/page.tile">
+        <put name="title" value="page.userMaintenance.title"/>
+        <put name="content" value="/WEB-INF/struts/tiles/userMaintenance.jsp"/>
+    </definition>
+	
+	<definition name="/exception.tile" extends="/page.tile">
+		<put name="title" value="page.exception.title"/>
+		<put name="content" value="/WEB-INF/struts/tiles/exception.jsp"/>
+	</definition>
+	
+	<definition name="/doesNotExist.tile" extends="/messagePage.tile">
+		<put name="title" value="page.doesNotExist.title"/>
+		<put name="messageTxt" value="page.doesNotExist.text"/>
+	</definition>
+
+	<definition name="/saved.tile" extends="/messagePage.tile">
+		<put name="title" value="page.saved.title"/>
+		<put name="messageTxt" value="page.saved.text"/>
+	</definition>
+	
+	<definition name="/traderResponseDone.tile" extends="/messagePage.tile">
+		<put name="title" value="page.traderResponseDone.title"/>
+		<put name="messageTxt" value="page.traderResponseDone.text"/>
+	</definition>
+	
+	<definition name="/reclamationMailList.tile" extends="/page.tile">
+		<put name="title" value="page.reclamationMailList.title"/>
+		<put name="content" value="/WEB-INF/struts/tiles/mailList.jsp"/>
+	</definition>
+	
+	<definition name="/reclamationMailListEmpty.tile" extends="/messagePage.tile">
+		<put name="title" value="page.reclamationMailListEmpty.title"/>
+		<put name="messageTxt" value="page.reclamationMailListEmpty.text"/>
+	</definition>
+	
+	<definition name="/errorReclamationClosed.tile" extends="/messagePage.tile">
+		<put name="title" value="page.errorReclamationClosed.title"/>
+		<put name="messageTxt" value="page.errorReclamationClosed.text"/>
+	</definition>
+
+	<definition name="/errorReclamationClosed.tile" extends="/messagePage.tile">
+		<put name="title" value="page.errorReclamationClosed.title"/>
+		<put name="messageTxt" value="page.errorReclamationClosed.text"/>
+	</definition>
+	
+	<definition name="/tradeAccessDenied.tile" extends="/messagePage.tile">
+		<put name="title" value="page.tradeAccessDenied.title"/>
+		<put name="messageTxt" value="page.tradeAccessDenied.text"/>
+	</definition>
+
+	<definition name="/userList.tile" extends="/page.tile">
+		<put name="title" value="page.userList.title"/>
+		<put name="content" value="/WEB-INF/struts/tiles/userList.jsp"/>
+	</definition>
+	
+    <definition name="/openJobsList.tile" extends="/page.tile">
+        <put name="title" value="page.openJobsList.title"/>
+        <put name="content" value="/WEB-INF/struts/tiles/openJobsList.jsp"/>
+    </definition>
+
+    <definition name="/openJobsClose.tile" extends="/page.tile">
+        <put name="title" value="page.openJobsList.title"/>
+        <put name="content" value="/WEB-INF/struts/tiles/openJobsClose.jsp"/>
+    </definition>
+	
+    <definition name="/userEmpty.tile" extends="/messagePage.tile">
+		<put name="title" value="page.userEmpty.title"/>
+		<put name="messageTxt" value="page.userEmpty.text"/>
+	</definition>
+
+	<definition name="/userDetail.tile" extends="/page.tile">
+		<put name="title" value="page.userDetail.title"/>
+		<put name="content" value="/WEB-INF/struts/tiles/userDetail.jsp"/>
+	</definition>
+
+	<definition name="/userDetailSaved.tile" extends="/messagePage.tile">
+		<put name="title" value="page.userDetailSaved.title"/>
+		<put name="messageTxt" value="page.userDetailSaved.text"/>
+	</definition>
+
+	<definition name="/errorUserDetailSubmit.tile" extends="/messagePage.tile">
+		<put name="title" value="page.errorUserDetailSubmit.title"/>
+		<put name="messageTxt" value="page.errorUserDetailSubmit.text"/>
+	</definition>
+	
+	<definition name="/emptyPage.tile" extends="/page.tile">
+		<put name="title" value="page.extract.title"/>
+		<put name="content" value="/WEB-INF/struts/tiles/empty.jsp"/>
+	</definition>
+	
+	<definition name="/localReport.tile" extends="/page.tile">
+		<put name="title" value="page.localReport.title"/>
+		<put name="content" value="/WEB-INF/struts/tiles/localReport.jsp"/>
+	</definition>
+
+	<definition name="/localReportSubmit.tile" extends="/page.tile">
+		<put name="title" value="page.localReport.title"/>
+		<put name="content" value="/WEB-INF/struts/tiles/localReport.jsp"/>
+	</definition>
+
+	<definition name="/localReport.error.tile" extends="/messagePage.tile">
+		<put name="title" value="page.localReport.title"/>
+		<put name="messageTxt" value="page.localReport.error.text"/>
+	</definition>
+
+</tiles-definitions>

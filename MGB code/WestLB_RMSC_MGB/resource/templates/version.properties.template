@@ -1,0 +1,6 @@
+product=#PRODUCT_NAME#
+version.major=#VERSION_MAJOR#
+version.minor=#VERSION_MINOR#
+version.update=#VERSION_UPDATE#
+build=#BUILD_NUMBER#
+version.date=#BUILD_TIME#

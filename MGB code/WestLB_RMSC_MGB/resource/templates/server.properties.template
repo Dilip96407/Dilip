@@ -1,0 +1,7 @@
+mgb.hibernate.properties=hibernate.properties
+mgb.hibernate.mappingfiles=hibernate_mappings.properties
+
+mgb.query.sql.driver=oracle.jdbc.driver.OracleDriver
+mgb.query.sql.url=#DB_URL#
+mgb.query.sql.user=#DB_USER#
+mgb.query.sql.passwd=#DB_PASSWORD#

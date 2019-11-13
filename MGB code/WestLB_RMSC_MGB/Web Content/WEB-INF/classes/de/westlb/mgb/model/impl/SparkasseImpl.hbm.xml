@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="de.westlb.mgb.model.impl.SparkasseImpl" table="T66_SPARKASSE" lazy="false">
+    	<cache usage="read-write"/>
+		<id name="longId" type="long" column="T66_ID">
+			<generator class="sequence">
+				<param name="sequence">HIB_SEQ</param>
+			</generator>
+		</id>
+
+		<property name="name" column="T66_NAME"  length="50"/>
+		<property name="longName" column="T66_LONGNAME"  length="150"/>
+        <property name="active" type="yes_no" column="T66_ACTIVE" />		
+
+		<property name="clientNr" column="T66_CLIENT_NR" length="20"/>
+
+		<set name="counterparties" inverse="true" lazy="true" cascade="save-update" fetch="select">
+        	<key column="FK_T67_T66_SPARKASSE" />
+			<one-to-many class="de.westlb.mgb.model.impl.CounterpartyImpl" />
+		</set>
+
+		<property name="changedDate" column="T66_CHANGED_DATE" />
+		<property name="changedBy" column="T66_CHANGED_BY" length="10"/>
+		<property name="createdBy" column="T66_CREATED_BY" length="10"/>
+		<property name="creationDate" column="T66_CREATION_DATE" />
+	</class>
+</hibernate-mapping>

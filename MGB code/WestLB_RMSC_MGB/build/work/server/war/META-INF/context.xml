@@ -1,0 +1,8 @@
+<!-- 
+Number of ms that the container will wait for servlets to unload. 
+If not specified, the default value is 2000 ms.
+
+Should be set to a value larger than the polling interval of
+the MGB import threads (currently 30 sec).
+ -->
+<Context unloadDelay="35000"/>

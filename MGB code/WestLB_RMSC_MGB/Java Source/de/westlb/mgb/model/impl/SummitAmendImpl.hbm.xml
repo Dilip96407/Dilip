@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping>
+    <class name="de.westlb.mgb.model.impl.SummitAmendImpl" table="T104_SUMMIT_AMEND" lazy="false">
+		<id name="longId" type="long" column="T104_ID">
+			<generator class="sequence">
+				<param name="sequence">HIB_SEQ</param>
+			</generator>
+		</id>
+
+        <property name="tradeId" column="T104_TRADE_ID"/>
+        <property name="tradeVersionOld" column="T104_TRADE_VERSION_OLD"/>
+        <property name="tradeIdOld" column="T104_TRADE_ID_OLD"/>
+        <property name="tradeVersionNew" column="T104_TRADE_VERSION_NEW"/>
+        <property name="tradeIdNew">
+         	<column name="T104_TRADE_ID_NEW" index="I104_TRADE_ID_NEW"/>
+		</property>         	
+        <property name="fieldModified" column="T104_FIELD_MODIFIED" length="50"/>
+        <property name="fieldValueOld" column="T104_FIELD_VALUE_OLD"/>
+        <property name="fieldValueNew" column="T104_FIELD_VALUE_NEW"/>
+        <property name="fieldValueChange" column="T104_FIELD_VALUE_CHANGE"/>
+        <property name="creationDate" column="T104_CREATION_DATE" />
+    </class>
+</hibernate-mapping>

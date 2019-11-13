@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<websettings version="600">
+    <project-type>J2EE</project-type>
+    
+    <context-root>WestLB_RMSC_MGB</context-root>
+    <jsp-level>1.2</jsp-level>
+    <features>
+        <feature>
+            <feature-id>com.ibm.etools.struts.wizards.project.feature</feature-id>
+        </feature>
+        <feature>
+            <feature-id>WebProjectCSSFileFeature</feature-id>
+        </feature>
+    </features>
+<webcontent>Web Content</webcontent>
+</websettings>

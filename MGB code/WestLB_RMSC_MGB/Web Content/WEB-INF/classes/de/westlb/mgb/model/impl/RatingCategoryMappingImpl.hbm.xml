@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="de.westlb.mgb.model.impl.RatingCategoryMappingImpl" table="T50_RATING_CATEGORY_MAPPING" lazy="false">
+    	<cache usage="read-write"/>
+ 		<id name="longId" type="long" column="T50_ID">
+			<generator class="sequence">
+				<param name="sequence">HIB_SEQ</param>
+			</generator>
+		</id>
+        <property name="rating" column="T50_RATING" length="50"/>
+		<many-to-one name="category" lazy="false" class="de.westlb.mgb.model.impl.RatingCategoryImpl">
+			<column name="FK_T50_T49_CATEGORY" sql-type="VARCHAR2(25)"/>
+			<column name="FK_T50_T09_MANDANT" sql-type="VARCHAR2(3)"/>
+		</many-to-one>
+        <property name="changedDate" column="T50_CHANGED_DATE"/>
+ 		<property name="changedBy" column="T50_CHANGED_BY" length="10"/>
+		<property name="createdBy" column="T50_CREATED_BY" length="10"/>
+        <property name="creationDate" column="T50_CREATION_DATE" />
+    </class>
+
+</hibernate-mapping>

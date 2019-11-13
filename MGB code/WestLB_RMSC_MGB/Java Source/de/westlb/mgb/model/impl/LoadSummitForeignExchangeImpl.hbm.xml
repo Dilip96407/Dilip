@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="de.westlb.mgb.model.impl.LoadSummitForeignExchangeImpl" table="LOAD_SUMMIT_FX">
+	<composite-id class="de.westlb.mgb.model.impl.LoadKey" mapped ="true">
+		<key-property name="rowNum" column="record_number" length="10"/>
+        <key-property name="sourceSystem" column="source_system" length="3"/>
+	</composite-id>
+        <property name="loadStatus" column="LOAD_STATUS" length="10"/>
+        <property name="loadTime" column="LOAD_TIME"/>
+        <property name="loadMessage" column="LOAD_MESSAGE"/>
+        <property name="tradeId" column="trade_id" length="50"/>
+        <property name="tradeVersion" column="trade_version"/>
+        <property name="status" column="status" length="50"/>
+        <property name="ccyPair" column="ccy_pair" length="7"/>
+        <property name="type" column="type" length="50"/>
+        <property name="subType" column="sub_type" length="50"/>
+        <property name="nearDate" column="near_date"/>
+        <property name="farDate" column="far_date"/>
+        <property name="tradeDate" column="trade_date"/>
+        <property name="tradeEntryDate" column="trade_entry_date"/>
+        <property name="amendDate" column="amend_date"/>
+        <property name="spotRate" column="spot_rate"/>
+        <property name="fwdPointsNearLeg" column="fwd_points_near_leg"/>
+        <property name="fwdPointsFarLeg" column="fwd_points_far_leg"/>
+        <property name="marginPoints" column="margin_points"/>
+        <property name="marginRate" column="margin_rate"/>
+        <property name="nearAmount" column="near_amount_ccy1"/>
+        <property name="farAmount" column="far_amount_ccy1"/>
+        <property name="marketRateSpot" column="market_rate_spot"/>
+        <property name="marketPointsNearLeg" column="market_points_near_leg"/>
+        <property name="marketPointsFarLeg" column="market_points_far_leg"/>
+        <property name="marketRateFwd" column="market_rate_fwd"/>
+        <property name="traderLoginID" column="trader_login_id" length="50"/>
+        <property name="traderName" column="trader_name" length="50"/>
+        <property name="counterparty" column="counterparty" length="50"/>
+        <property name="book" column="book" length="50"/>
+        <property name="comment" column="comment1" length="255"/>
+        <property name="eodRate" column="eod_rate"/>
+        <property name="eodRateDate" column="eod_rate_date"/>
+        <property name="eodRateFX" column="eod_rate_fx"/>
+    </class>
+
+</hibernate-mapping>

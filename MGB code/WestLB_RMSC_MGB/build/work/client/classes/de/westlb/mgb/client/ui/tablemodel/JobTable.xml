@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!DOCTYPE table SYSTEM "TableModel.dtd">
+
+<table property-provider-class="de.westlb.mgb.client.ui.tablemodel.EmployeePropertyProvider">
+	<column property-name="jobId" header-label="Job ID">
+	</column>
+	<column property-name="systemTime" header-label="Creation time">
+		<date-format type="timelong"/>
+	</column>
+	<column property-name="cob" header-label="Cob">
+		<date-format type="date"/>
+	</column>
+	<column property-name="startBusinessTime" header-label="Start business day">
+		<date-format type="timelong"/>
+	</column>
+	<column property-name="stopBusinessTime" header-label="Stop business day">
+		<date-format type="timelong"/>
+	</column>
+	<column property-name="status" header-label="State">
+	</column>
+	<column property-name="sourceSystemCode" header-label="Source system">
+		<choice-list list-class="de.westlb.mgb.client.ui.selection_list.SourceSystemList"/>
+	</column>
+	<column property-name="startLoadTime" header-label="Start load">
+		<date-format type="timelong"/>
+	</column>
+	<column property-name="stopLoadTime" header-label="Stop load">
+		<date-format type="timelong"/>
+	</column>
+	<column property-name="startConvertTime" header-label="Start convert">
+		<date-format type="timelong"/>
+	</column>
+	<column property-name="stopConvertTime" header-label="Stop convert">
+		<date-format type="timelong"/>
+	</column>
+	<column property-name="numberOfTotalRecords" header-label="Total records"  column-type="number">
+	</column>
+	<column property-name="numberOfLoadErrors" header-label="Load errors"  column-type="number">
+	</column>
+	<column property-name="numberOfConvertErrors" header-label="Convert errors"  column-type="number">
+	</column>
+	<column property-name="archived" header-label="Archived" column-type="boolean"/>
+</table>

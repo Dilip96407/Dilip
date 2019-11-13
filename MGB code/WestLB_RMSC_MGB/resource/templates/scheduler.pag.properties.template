@@ -1,0 +1,48 @@
+# Contains the specification of the jobs to start.
+# A job specification has the following format:
+#
+# job.key.<key> = <name>
+# job.<key>.start = [true,false]
+# job.<key>.cron = <quartz cron expression>
+# job.<key>.param.<param_name> = <param value> 
+#
+#
+job.key.pagdailyextract = pagdailyextract
+job.pagdailyextract.start = #SCHEDULER_PAG_DAEMON_START_DAILYEXTRACT_PAG#
+job.pagdailyextract.cron = 0 0 09 ? * MON-FRI 
+job.pagdailyextract.class = de.westlb.mgb.exchange.TradeExtractJob
+job.pagdailyextract.param.userId = #PAG_EXCHANGE_USERID#
+job.pagdailyextract.param.daysToIclude = 30
+job.pagdailyextract.param.reportLocation  = PORTIGON
+job.pagdailyextract.param.client  = PAG
+job.pagdailyextract.param.defaultMandantCode = DVG
+job.pagdailyextract.param.outputdir  = #PAG_EXCHAGE_DIR#/outbox
+job.pagdailyextract.param.outputfilename = PAG_daily_<YYYYMMDD>.xls
+job.pagdailyextract.param.manCheckOnly = true
+job.pagdailyextract.param.useCreationDate = true
+
+job.key.pagweeklyextract = pagweeklyextract
+job.pagweeklyextract.start = #SCHEDULER_PAG_DAEMON_START_WEEKLYEXTRACT_PAG#
+job.pagweeklyextract.cron = 0 30 17 ? * MON
+job.pagweeklyextract.class = de.westlb.mgb.exchange.TradeExtractJob
+job.pagweeklyextract.param.userId = #PAG_EXCHANGE_USERID#
+job.pagweeklyextract.param.daysToIclude = 6
+job.pagweeklyextract.param.reportLocation  = PORTIGON
+job.pagweeklyextract.param.client  = PAG
+job.pagweeklyextract.param.defaultMandantCode = DVG
+job.pagweeklyextract.param.outputdir  = #PAG_EXCHAGE_DIR#/outbox
+job.pagweeklyextract.param.outputfilename = PAG_weekly_<YYYYMMDD>.xls
+job.pagweeklyextract.param.manCheckOnly = false
+job.pagweeklyextract.param.useCreationDate = true
+
+job.key.pagimportcomments = pagimportcomments
+job.pagimportcomments.start = #SCHEDULER_PAG_DAEMON_START_IMPORT_COMMENTS_PAG#
+job.pagimportcomments.cron = 0,30 * * ? * MON-FRI 
+job.pagimportcomments.class = de.westlb.mgb.exchange.ImportCommentsJob
+job.pagimportcomments.param.userId = #PAG_EXCHANGE_USERID#
+job.pagimportcomments.param.reportLocation  = PORTIGON
+job.pagimportcomments.param.client  = PAG
+job.pagimportcomments.param.inputdir  = #PAG_EXCHAGE_DIR#/inbox
+job.pagimportcomments.param.inputfilename = PAG_daily_<YYYYMMDD>.xls
+
+

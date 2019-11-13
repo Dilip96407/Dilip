@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<!-- The document root. -->
+
+<!ELEMENT table (key-column?,column+)>
+  <!-- Defines the full name of a subclass from de.westlb.mgb.client.ui.tablemodel.AbstractPropertyProvider, which implements an appropriate default contructor. --> 
+  <!ATTLIST table property-provider-class CDATA #IMPLIED>
+
+<!ELEMENT key-column EMPTY>
+  <!ATTLIST key-column property-name CDATA #REQUIRED>
+
+
+<!ELEMENT column (date-format|number-format|choice-list|file-name-icon|generic-format)?>
+  <!ATTLIST column property-name CDATA #REQUIRED>
+  <!ATTLIST column header-label CDATA #REQUIRED>
+  <!ATTLIST column column-type (default|boolean|number|sicon|icon|currency|date|date_time|float|choice) "default">
+  <!ATTLIST column use-property-provider (true|false) "false">
+
+<!ELEMENT date-format EMPTY>
+  <!ATTLIST date-format type (time|timelong|date|datelong|datetime|datetimelong) "datetime">
+
+<!ELEMENT number-format EMPTY>
+  <!ATTLIST number-format fraction-min-length CDATA "0">
+  <!ATTLIST number-format fraction-max-length CDATA "0">
+  <!ATTLIST number-format grouping-length CDATA "3">
+ 
+<!-- Defines the full name of a subclass from de.westlb.mgb.client.ui.selection_list.AbstractSelectionList, which implements an appropriate default contructor. --> 
+<!ELEMENT choice-list EMPTY>
+  <!ATTLIST choice-list list-class CDATA #REQUIRED>
+
+<!-- Defines the full name of a subclass from java.text.Format, which implements an appropriate default contructor. --> 
+<!ELEMENT generic-format EMPTY>
+  <!ATTLIST generic-format format-class CDATA #REQUIRED>
+ 

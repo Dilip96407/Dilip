@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!DOCTYPE table SYSTEM "TableModel.dtd">
+
+<table>
+	<column property-name="bookId" header-label="Book ID">
+	</column>
+	<column property-name="type" header-label="Type">
+	</column>
+	<column property-name="description" header-label="Description">
+	</column>
+	<column property-name="businessUnit" header-label="Business unit">
+	</column>
+	<column property-name="trader" header-label="Trader">
+	</column>
+	<column property-name="account" header-label="Account" column-type="number">
+	</column>
+	<column property-name="accountingSystem" header-label="Accounting system">
+	</column>
+	<column property-name="accountingBranch" header-label="Accounting branch" column-type="number">
+	</column>
+	<column property-name="costCenter" header-label="Cost center" column-type="number">
+	</column>
+	<column property-name="limitPosition" header-label="Limit position">
+	</column>
+	<column property-name="mpireLuName" header-label="mpire LU name">
+	</column>
+	<column property-name="pcrPlDesk" header-label="PCR PL desk">
+	</column>
+	<column property-name="pcrPlGroup" header-label="PCR PL group">
+	</column>
+	<column property-name="foSystem" header-label="FO system">
+	</column>
+	<column property-name="locationConsolidation" header-label="Location consolidation">
+	</column>
+	<column property-name="locationGl" header-label="Location GL">
+	</column>
+	<column property-name="locationPl" header-label="Location PL">
+	</column>
+	<column property-name="locationTrader" header-label="Location trader">
+	</column>
+	<column property-name="tradingHead" header-label="Trading head">
+	</column>
+	<column property-name="tradingBanking" header-label="Trading banking">
+	</column>
+	<column property-name="tradingType" header-label="Trading type">
+	</column>
+	<column property-name="wersUnit" header-label="Wers unit" column-type="number">
+	</column>
+	<column property-name="costCenterName" header-label="Costcenter name">
+	</column>
+	<column property-name="desk" header-label="Desk">
+	</column>
+</table>

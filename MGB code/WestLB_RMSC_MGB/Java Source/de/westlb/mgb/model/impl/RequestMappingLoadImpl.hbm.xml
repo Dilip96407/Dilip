@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping>
+    <class name="de.westlb.mgb.model.impl.RequestMappingLoadImpl" table="t118_request_mapping_load" lazy="false">
+ 		<id name="longId" column="T118_ID">
+    		<generator class="assigned"></generator>
+		</id>
+ 		<property name="instrument" column="T118_INSTRUMENT" length="50"/>
+        <property name="requestString" column="T118_REQUEST_STRING" length="255"/>
+		<property name="conversionFactor" column="T118_CONVERSION_FACTOR"/>
+		<property name="loadStatus" column="T118_LOAD_STATUS" length="10"/>
+        <property name="loadTime" column="T118_LOAD_TIME"/>
+        <property name="loadMessage" column="T118_LOAD_MESSAGE"/>
+    </class>
+</hibernate-mapping>

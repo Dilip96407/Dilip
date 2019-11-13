@@ -1,0 +1,67 @@
+# 
+# Property file used for customizing the mgb client component
+#
+
+#
+# The environment name displayed in
+# the status bar.
+mgb.environment.name=#DB_ENV_NAME#
+
+# Selects the service provider used by the mgb client. Possible
+# values are 
+#
+# 	SoapClient, 
+#   ServletClient 
+#	ServerImpl and
+#	Faked 
+#
+mgb.svc_provider=#SERVICE_PROVIDER#
+
+# URL of the MGB problem db
+mgb.help.problem_db_url=http://crms.static.westlb.net:83/mantis
+
+#
+# Bloomberg config
+#
+mgb.bloombergRequester.highLowRequestFields=PX_LOW,PX_HIGH
+mgb.bloombergRequester.bidAskRequestFields=BID,ASK
+mgb.bloombergRequester.historicRequestFields=TRADE
+mgb.bloombergRequester.genericRequestFields=PX_LAST
+mgb.bloombergRequester.requestIntervals=1,15,60
+
+#
+# File name of the log4j properties
+#
+mgb.logging_on.log4j.properties=mgb_log4j_logging_on.properties
+mgb.logging_off.log4j.properties=mgb_log4j_logging_off.properties
+
+#
+# Set the timeout for soap requests in milliseconds 
+#
+mgb.soap.timeout=6000000
+
+# The path to the report templates
+mgb.report.templateDir=<user.home>/mgb/templates
+
+#
+# If the proxy is set to "true", the bloomberg market data is saved into local files
+# If the databse data proxy is additionally set to "true", the bloomberg market data is additionaly saved into the database and only read from the database
+#
+mgb.marketData.useProxy=#MARKET_DATA_PROXY#
+mgb.marketData.useDatabaseDataProxy=#MARKET_DATA_PROXY#
+
+#
+# If set to "true", the market data is generated with an random difference in time and price
+#
+mgb.marketData.generateDummyValues=false
+
+#
+# defines the maximum number of retry, to request bloomberg with unresolved requests
+#
+mgb.marketData.bloomberg.maxRetry=2
+
+#
+# Set the range of difference in time and price of the generated market data values 
+#
+mgb.marketData.dummyValuesPricePercentageDeviation=5
+mgb.marketData.dummyValuesTimeMinutesDeviation=30

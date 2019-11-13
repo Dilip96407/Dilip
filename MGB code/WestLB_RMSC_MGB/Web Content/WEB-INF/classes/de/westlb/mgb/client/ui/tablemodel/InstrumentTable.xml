@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE table SYSTEM "TableModel.dtd">
+
+<table>
+	<column property-name="isin" header-label="Instrument">
+	</column>
+	<column property-name="instrumentName" header-label="Instrument name">
+	</column>
+	<column property-name="priceCheckCategoryId" header-label="Price check category">
+		<choice-list list-class="de.westlb.mgb.client.ui.selection_list.PriceCheckCategoryList"/>
+	</column>
+	<column property-name="changePending" header-label="Pending change" column-type="boolean">
+	</column>
+	<column property-name="changeRequestedByName" header-label="Changed by">
+	</column>
+</table>

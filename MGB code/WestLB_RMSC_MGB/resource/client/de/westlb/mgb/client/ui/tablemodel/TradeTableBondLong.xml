@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<!DOCTYPE table SYSTEM "TableModel.dtd">
+
+<table>
+	<key-column property-name="id"/>
+	<column property-name="tradeId" header-label="Trade">
+	</column>
+	<column property-name="instrumentName" header-label="Instrument">
+	</column>
+	<column property-name="isin" header-label="ISIN">
+	</column>
+	<column property-name="tradeCategory" header-label="Category">
+	</column>
+	<column property-name="currency" header-label="Currency">
+	</column>
+	<column property-name="bookId" header-label="Portfolio">
+	</column>
+	<column property-name="counterparty" header-label="Counterparty">
+	</column>
+	<column property-name="traderLocation" header-label="Location">
+	</column>
+	<column property-name="reportLocation" header-label="Local Report">
+	</column>
+	<column property-name="maturityDate" header-label="Maturity date">
+		<date-format type="datelong"/>
+	</column>
+	<column property-name="volume" header-label="Volume" column-type="number">
+		<number-format fraction-min-length="0" fraction-max-length="10" grouping-length="3"/>
+	</column>
+	<column property-name="tradePrice" header-label="Price" column-type="number">
+		<number-format fraction-min-length="2" fraction-max-length="10" grouping-length="3"/>
+	</column>
+	<column property-name="turnover" header-label="Turnover" column-type="number">
+		<number-format fraction-min-length="2" fraction-max-length="2" grouping-length="3"/>
+	</column>
+	<column property-name="traderId" header-label="Trader">
+	</column>
+	<column property-name="updatedBy" header-label="Updated by">
+	</column>
+	<column property-name="tradeDate" header-label="Trade time">
+		<date-format type="timelong"/>
+	</column>
+	<column property-name="systemDate" header-label="Amend time">
+		<date-format type="timelong"/>
+	</column>
+	<column property-name="currentPriceDifference" header-label="Price difference" column-type="number">
+		<number-format fraction-min-length="4" fraction-max-length="10" grouping-length="3"/>
+	</column>
+	<column property-name="priceTolerance" header-label="Price tolerance" column-type="number">
+		<number-format fraction-min-length="4" fraction-max-length="10" grouping-length="3"/>
+	</column>
+	<column property-name="stornoGroup" header-label="Is Update" column-type="boolean">
+	</column>
+	<column property-name="automaticStateCode" header-label="Automatic state">
+		<choice-list list-class="de.westlb.mgb.client.ui.selection_list.AutoStateCodeList"/>
+	</column>
+	<column property-name="manualStateCode" header-label="Manual state">
+		<choice-list list-class="de.westlb.mgb.client.ui.selection_list.ManualStateCodeList"/>
+	</column>
+	<column property-name="manualStateComment" header-label="Manual comment">
+	</column>
+	<column property-name="reclamationStateCode" header-label="Reclamation state">
+		<choice-list list-class="de.westlb.mgb.client.ui.selection_list.ReclamationStateCodeList"/>
+	</column>	
+</table>

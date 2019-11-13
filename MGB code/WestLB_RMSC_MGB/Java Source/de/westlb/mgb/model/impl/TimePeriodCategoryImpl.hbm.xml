@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="de.westlb.mgb.model.impl.TimePeriodCategoryImpl" table="T61_TIME_PERIOD_CATEGORY" lazy="false">
+		<id name="code" column="T61_CODE" length="25">
+	   		<generator class="assigned"></generator>
+ 		</id>
+        <property name="name" column="T61_NAME" length="50" />
+        <property name="minPeriodDays" column="T41_MIN_PERIOD_DAYS" />
+        <property name="maxPeriodDays" column="T41_MAX_PERIOD_DAYS"/>
+
+ 		<many-to-one name="mandant" lazy="false" class="de.westlb.mgb.model.impl.MandantImpl">
+			<column name="FK_T61_T09_MANDANT" sql-type="VARCHAR2(3)"/>
+		</many-to-one>
+        <property name="changedDate" column="T61_CHANGED_DATE"/>
+ 		<property name="changedBy" column="T61_CHANGED_BY" length="10" />  
+		<property name="createdBy" column="T61_CREATED_BY" length="10" /> 
+        <property name="creationDate" column="T61_CREATION_DATE" />
+    </class>
+
+</hibernate-mapping>

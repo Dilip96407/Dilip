@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="de.westlb.mgb.model.impl.ReportImageImpl" table="T15_REPORT_IMAGE">
+		<id name="longId" type="long" column="T15_ID">
+			<generator class="sequence">
+				<param name="sequence">HIB_SEQ</param>
+			</generator>
+		</id>
+		<property name="name" type="string" column="T15_NAME" length="255" />
+		<property name="image" type="java.sql.Blob">
+			<column name="T15_IMAGE" />	
+		</property>
+	</class>
+
+</hibernate-mapping>

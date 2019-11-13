@@ -1,0 +1,353 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="de.westlb.mgb.model.impl.TradeImpl" table="T02_TRADE" batch-size="50" >
+		<!--
+    	<cache usage="read-write"/>
+    	-->
+		<id name="longId" type="long" column="T02_ID">
+			<generator class="sequence">
+				<param name="sequence">HIB_SEQ</param>
+			</generator>
+		</id>
+		<property name="amendedDate" column="T02_AMENDED_DATE" />
+		<set name="requests" inverse="false" lazy="true" cascade="save-update,delete" sort="natural" fetch="select" batch-size="50">
+			<key column="FK_T06_T02_TRADE" />
+			<one-to-many class="de.westlb.mgb.model.impl.RequestImpl" />
+		</set>
+		<set name="externalRequests" inverse="false" lazy="true" cascade="save-update,delete" where="T06_TYPE in ('EUW','BLB')" sort="natural" batch-size="50">
+			<key column="FK_T06_T02_TRADE" />
+			<one-to-many class="de.westlb.mgb.model.impl.RequestImpl" />
+		</set>
+		<set name="euwaxRequests" inverse="false" lazy="true" cascade="save-update,delete" where="T06_TYPE = 'EUW'" sort="natural" batch-size="50">
+			<key column="FK_T06_T02_TRADE" />
+			<one-to-many class="de.westlb.mgb.model.impl.EuwaxRequestImpl" />
+		</set>
+		<set name="bloombergRequests" inverse="false" lazy="true" cascade="save-update,delete" where="T06_TYPE = 'BLB'" sort="natural" batch-size="50">
+			<key column="FK_T06_T02_TRADE" />
+			<one-to-many class="de.westlb.mgb.model.impl.BloombergRequestImpl" />
+		</set>
+		<set name="reutersRequests" inverse="false" lazy="true" cascade="save-update,delete" where="T06_TYPE = 'RIC'" sort="natural" batch-size="50">
+			<key column="FK_T06_T02_TRADE" />
+			<one-to-many class="de.westlb.mgb.model.impl.ReutersRequestImpl" />
+		</set>
+		<set name="historyEntries" inverse="false" lazy="true" cascade="save-update,delete" batch-size="50">
+			<key column="FK_T04_T02_TRADE" />
+			<one-to-many class="de.westlb.mgb.model.impl.TradeHistEntryImpl" />
+		</set>
+		<property name="bookId" column="T02_BOOK_ID" length="100" />
+		<many-to-one name="book" column="FK_T02_T44_BOOK" class="de.westlb.mgb.model.impl.BookImpl" lazy="proxy" index="I02_book"/>
+		<property name="counterpartyId" column="T02_COUNTERPARTY_ID" length="50" />
+		<property name="currency" column="T02_CURRENCY" length="3" />
+		<many-to-one name="currentAutoStateHistEntry" lazy="proxy" cascade="save-update,delete" class="de.westlb.mgb.model.impl.AutoStateHistEntryImpl">
+			<column name="FK_T02_T04_AUTO_STATE" index="I02_AUTO_STATE"/>
+		</many-to-one>
+		<many-to-one name="currentManualStateHistEntry" lazy="proxy" cascade="save-update,delete" class="de.westlb.mgb.model.impl.ManualStateHistEntryImpl">
+			<column name="FK_T02_T04_MANUAL_STATE" index="I02_MAN_STATE"/>
+		</many-to-one>
+		<many-to-one name="currentReclStateHistEntry" lazy="proxy" cascade="save-update,delete" class="de.westlb.mgb.model.impl.ReclStateHistEntryImpl">
+			<column name="FK_T02_T04_RECL_STATE" index="I02_RECL_STATE"/>
+		</many-to-one>
+		<many-to-one name="instrument" lazy="proxy" column="FK_T02_T05_INSTRUMENT" class="de.westlb.mgb.model.impl.PriceCheckInstrumentImpl" />
+		<many-to-one name="job" class="de.westlb.mgb.model.impl.JobImpl">
+			<column name="FK_T02_T08_JOB" index="I02_JOB" />
+		</many-to-one>
+		<property name="orderId" column="T02_ORDER_ID" length="50" />
+		<property name="price" column="T02_PRICE" />
+		<property name="settlementDate" column="T02_SETTLEMENT_DATE" />
+		<many-to-one name="sourceSystem" lazy="proxy" class="de.westlb.mgb.model.impl.SourceSystemImpl">
+			<column name="FK_T02_T07_SOURCE_SYSTEM" sql-type="VARCHAR2(3)" />
+		</many-to-one>
+		<property name="sourceSystemBloombergId" column="T02_SRC_BLOOMBERG_ID" />
+		<property name="sourceSystemInstrument" column="T02_SRC_INSTRUMENT" length="50" />
+		<property name="sourceSystemReutersId" column="T02_SRC_REUTERS_ID" />
+		<property name="systemDate" column="T02_SRC_SYSTEM_DATE" />
+		<property name="systemTimeString"
+				update="false"
+				insert="false"
+				formula="to_char(T02_SRC_SYSTEM_DATE, 'HH24MI')"
+		/>
+		<property name="tradeId">
+			<column name="T02_SRC_TRADE_ID" index="I02_SRC_TRADE_ID"/>
+        </property>			
+		<many-to-one name="trader" column="FK_T02_T18_TRADER" class="de.westlb.mgb.model.impl.TraderImpl" />
+		<property name="traderId" column="T02_SRC_TRADER_ID" />
+		<property name="traderName" column="T02_SRC_TRADER_NAME" />
+        <property name="tradeDate">
+         	<column name="T02_TRADE_DATE" index="I02_TRADE_DATE"/>
+        </property>
+		<property name="volume" column="T02_VOLUME"/>
+        <property name="tradeGroupId">
+        	<column name="T02_TRADE_GROUP_ID" index="I02_TRADE_GROUP_ID"/>
+        </property>
+        <property name="isTradeGroup" type="yes_no" column="T02_IS_TRADE_GROUP" />		
+        <property name="isLateDeal" type="yes_no" column="T02_IS_LATE_DEAL" />		
+
+		<many-to-one name="mandant" class="de.westlb.mgb.model.impl.MandantImpl">
+			<column name="FK_T02_T09_MANDANT" sql-type="VARCHAR2(3)" />
+		</many-to-one>
+
+		<!--  Property used for Read-Access -->     
+        <many-to-one name="counterparty" class="de.westlb.mgb.model.impl.CounterpartyImpl">
+        	<column name="FK_T02_T67_COUNTERPARTY" index="I02_COUNTERPARTY" />
+		</many-to-one>  
+
+		<property name="changedDate" column="T02_CHANGED_DATE" />
+		<property name="changedBy" column="T02_CHANGED_BY" length="10"/>
+		<property name="createdBy" column="T02_CREATED_BY" length="10"/>
+		<property name="creationDate" column="T02_CREATION_DATE"/>
+
+
+<!-- The subclasses -->
+		<joined-subclass name="de.westlb.mgb.model.impl.EquityImpl" table="T23_EQUITY">
+			<key column="T23_ID"/>
+				<property name="sourceSystemExchange" column="T23_SRC_EXCHANGE" length="10" />
+				<many-to-one name="exchangeMappingPriority" column="FK_T23_T22_EXCHANGE_MAP_PRIO" class="de.westlb.mgb.model.impl.ExchangeMappingEntryPrioImpl" />
+		        <property name="bagatelleLimit" column="T23_BAGATELLE_LIMIT"/>  		    
+		        <property name="turnoverLimit" column="T23_TURNOVER_LIMIT"/>      
+		        <property name="isBuy" type="yes_no" column="T23_IS_BUY" length="1" />
+		        <property name="isInternalDeal" type="yes_no" column="T23_IS_INTERNAL_DEAL" length="1" />
+		        <property name="isNet" type="yes_no" column="T23_IS_NET" length="1" />
+		        <property name="isOtc" type="yes_no" column="T23_IS_OTC" length="1" />
+		        <property name="isStorno" type="yes_no" column="T23_IS_STORNO" length="1" />
+		        <property name="isWarrant" type="yes_no" column="T23_IS_WARRANT" length="1" />
+		        <property name="isForeignExchange" type="yes_no" column="T23_IS_FOREIGN_EXCHANGE" />
+		        <property name="isBuySellIdentical" type="yes_no" column="T23_IS_BUY_SELL_IDENTICAL" />
+		        <property name="fxRate" column="t23_fx_rate" />
+		        <property name="volumeMultiplicator" column="t23_volume_multiplicator" />
+
+<!-- PRIME EQUITY -->
+		    <joined-subclass name="de.westlb.mgb.model.impl.PrimeEquityImpl" table="T24_PRIME_EQUITY">
+				<key column="T24_ID"/>
+		        <property name="automaticTradeFlag" column="T24_AUTOMATIC_TRADE_FLAG" length="1" />
+		        <property name="creationDateTime" column="T24_CREATION_DATETIME" />
+		        <property name="instrumentId" column="T24_INSTRUMENT_ID" length="50" />
+		        <property name="instrumentName" column="T24_INSTRUMENT_NAME" length="50" />
+		        <property name="internalInstrumentFlag" column="T24_INTERNAL_INSTRUMENT_FLAG" length="1" />
+		        <property name="tradeType" column="T24_TRADE_TYPE" length="50"/>
+		        <property name="underlyingInstrumentId" column="T24_UND_INSTR_ID" length="50" />
+		        <property name="underlyingInstrumentIsinCode" column="T24_UND_INSTR_ISIN_CODE" length="16" />
+		        <property name="underlyingInstrumentName" column="T24_UND_INSTR_NAME" length="50" />
+		        <property name="freeText" column="T24_FREE_TEXT" length="255" />
+		        <property name="expiryCombinationDate" column="t24_expiry_combination_date" />
+		        <property name="expiryOptionDate" column="t24_expiry_option_date" />
+		        <property name="issueDate" column="t24_issue_date" />
+		        <property name="subType" column="t24_sub_type" />
+		        <property name="putCallFlag" column="t24_put_call_flag" length="1" />        
+        		<property name="strikePrice" column="t24_strike_price" />
+		        <property name="quoteType" column="t24_quote_type" length="20" />
+		        <property name="contractSize" column="t24_contract_size" />
+		   </joined-subclass>
+
+		</joined-subclass>
+
+	    <joined-subclass name="de.westlb.mgb.model.impl.SummitBondImpl" table="T57_SUMMIT_BOND">
+				<key column="T57_ID"/>
+				<many-to-one name="bloombergInstrument" column="FK_T57_T05_BLB_INSTRUMENT" class="de.westlb.mgb.model.impl.InstrumentImpl" />
+        		<property name="status" column="T57_STATUS" length="50"/>							
+		        <property name="fxEuroRate" column="T57_FX_EURO_RATE"/>  				    
+		        <property name="tradeType" column="T57_TRADE_TYPE" length="50"/>				    
+		        <property name="subType" column="T57_SUB_TYPE" length="50"/>  					    
+		        <property name="category" column="T57_CATEGORY" length="50"/>  					    
+		        <property name="startDay" column="T57_START_DAY"/>  					    
+		        <property name="expireDay" column="T57_EXPIRE_DAY"/>  				    
+		        <property name="instrumentName" column="T57_INSTRUMENT_NAME"/>  					    
+		        <property name="instrumentStartDay" column="T57_INSTRUMENT_START_DAY"/>  					    
+		        <property name="instrumentExpireDay" column="T57_INSTRUMENT_EXPIRE_DAY"/>  				    
+		        <property name="issuer" column="T57_ISSUER" length="50"/>  					    
+		        <property name="alias" column="T57_ALIAS" length="50"/>		  				    
+		        <property name="updatedBy" column="T57_UPDATED_BY" length="50"/> 					    
+		        <property name="tradePrice" column="T57_TRADE_PRICE"/>  		    
+		        <property name="marketPrice" column="T57_MARKET_PRICE"/>  		    
+		        <property name="theoreticalPrice" column="T57_THEOR_PRICE"/>      
+		        <property name="version" column="T57_VERSION"/>      
+		        <property name="bagatelleLimit" column="T57_BAGATELLE_LIMIT"/>  		    
+		        <property name="turnoverLimit" column="T57_TURNOVER_LIMIT"/>      
+	        	<property name="isExchangeTraded" type="yes_no" column="T57_IS_EXCHANGE_TRADED" />
+	        	<property name="isIntraDayStorno" type="yes_no" column="T57_IS_INTRA_DAY_STORNO" />
+	        	<property name="isSmallCustomer" type="yes_no" column="T57_IS_SMALL_CUSTOMER" />
+	        	<property name="isStorno" type="yes_no" column="T57_IS_STORNO" />
+	        	<property name="isMccRelevantChange" type="yes_no" column="T57_IS_MCC_RELEVANT_CHANGE" />
+		        <property name="isBagatelle" type="yes_no" column="T57_IS_BAGATELLE" />
+		        <property name="isOutOfTurnoverLimit" type="yes_no" column="T57_IS_OUT_OF_TURNOVER_LIMIT" />
+				<!--
+		        <property name="isBookWithBloombergPrices" type="yes_no" column="T57_IS_BOOK_WITH_BLB_PRICE" />
+		        <property name="isCategoryWithBloombergPrices" type="yes_no" column="T57_IS_CATEGORY_WITH_BLB_PRICE" />
+		        <property name="isCategoryWithHighLowBloombergPrices" type="yes_no" column="T57_IS_CATEGORY_WITH_H_L_PRICE" />
+				-->
+		        <property name="isCurrentVersion" type="yes_no" column="T57_IS_CURRENT_VERSION" />
+		        <property name="description" column="T57_DESCRIPTION" length="255"/>
+ 		        <property name="counterpartyReference" column="T57_COUNTERPARTY_REFERENCE" length="50"/>  				    
+		        <property name="structure" column="T57_STRUCTURE" length="12"/>
+		        <property name="company" column="T57_COMPANY" length="50"/>
+		        <property name="isBackToBack" type="yes_no" column="T57_IS_BACK_TO_BACK"/>
+		        <property name="isBackToBackCheck" type="yes_no" column="T57_IS_BACK_TO_BACK_CHECK"/>
+		        <property name="bonification" column="T57_BONIFICATION"/>
+		        <property name="customerType" column="T57_CUSTOMER_TYPE" length="50"/>
+		        <property name="legalName" column="T57_LEGAL_NAME" />
+		        <property name="marketer" column="T57_MARKETER" length="50"/>
+
+		</joined-subclass>
+
+
+<!-- REPO -->
+		<joined-subclass name="de.westlb.mgb.model.impl.RepoImpl" table="T26_REPO">
+			<key column="T26_ID"/>
+	        <property name="instrumentCode" column="T26_INSTRUMENT_CODE" length="50" />
+	        <property name="instrumentType" column="T26_INSTRUMENT_TYPE" length="50" />
+	        <property name="underlyingInstrumentType" column="T26_UNDERLYING_INSTRUMENT_TYPE" length="50" />
+	        <property name="underlyingValGroup" column="T26_UNDERLYING_VAL_GROUP" length="50" />
+	        <property name="yieldCurve" column="T26_YIELD_CURVE" length="50" />
+	        <property name="startDate" column="T26_START_DATE"/>
+	        <property name="endDate" column="T26_END_DATE"/>
+	        <property name="dayCount" column="T26_DAY_COUNT" length="20" />
+	        <property name="repoRate" column="T26_REPO_RATE"/>
+	        <property name="yieldCurveRate" column="T26_YIELD_CURVE_RATE"/>
+	        <property name="startCash" column="T26_START_CASH"/>
+	        <property name="endCash" column="T26_END_CASH"/>
+	        <property name="days" column="T26_DAYS" />
+	        <property name="rateDiff" column="T26_RATE_DIFF"/>
+	        <property name="profitLossDiff" column="T26_PROFIT_LOSS_DIFF"/>
+	        <property name="foreignExchangeRate" column="T26_FOREIGN_EXCHANGE_RATE"/>
+	        <property name="profitLossDiffEuro" column="T26_PROFIT_LOSS_DIFF_EURO"/>
+	        <property name="basePointTolerance"	column="T26_BASEPOINT_TOLERANCE"/>
+	        <property name="mccStatus" column="T26_MCC_STATUS" length="20" />
+	        <property name="openEndFlag" column="T26_OPEN_END_FLAG" length="1" />
+	        <property name="transactionReference" column="T26_TRANSACTION_REFERENCE" length="50" />				
+
+<!-- SUMMIT REPO -->
+		    <joined-subclass name="de.westlb.mgb.model.impl.SummitRepoImpl" table="T59_SUMMIT_REPO">
+				<key column="T59_ID"/>
+				<many-to-one name="bloombergInstrument" column="FK_T59_T05_BLB_INSTRUMENT" class="de.westlb.mgb.model.impl.InstrumentImpl" />
+				<many-to-one name="bondInstrument" column="FK_T59_T05_BOND_INSTRUMENT" class="de.westlb.mgb.model.impl.PriceCheckInstrumentImpl" />
+		        <property name="status" column="T59_STATUS" length="20" />
+		        <property name="version" column="T59_VERSION"/>      
+	        	<property name="underlyingCategory" column="T59_UNDERLYING_CATEGORY" length="50" />
+	        	<property name="fundingSpread" column="T59_FUNDING_SPREAD"/>
+				<property name="customerType" column="T59_CUSTOMER_TYPE" length="50" />
+				<property name="doneDate" column="T59_DONE_DATE"/>
+				<property name="verifyDate" column="T59_VERIFY_DATE"/>
+				<property name="marketPriceUnderlying" column="T59_MARKET_PRICE_UNDERLYING"/>
+				<property name="dealAccruedInterest" column="T59_DEAL_ACCRUED_INTEREST"/>
+				<property name="startPrice" column="T59_START_PRICE"/>
+				<property name="bondAccruedInterest" column="T59_BOND_ACCRUED_INTEREST"/>
+				<property name="npv" column="T59_NPV"/>
+				<property name="repoMarketType" column="T59_MARKET_TYPE" length="50" />
+ 	    	    <property name="isStorno" type="yes_no" column="T59_IS_STORNO" />
+ 	    	    <property name="isIntraDayStorno" type="yes_no" column="T59_IS_INTRA_DAY_STORNO" />
+		        <property name="isMccRelevantChange" type="yes_no" column="T59_IS_MCC_RELEVANT_CHANGE" />
+		        <property name="predecessorInStornoChain" type="yes_no" column="T59_STORNO_PREDECESSOR" />
+		        <property name="exceedsMaxPlDiff" type="yes_no" column="T59_EXCEEDS_MAX_PL_DIFF" />
+		        <property name="isPosiDepo" type="yes_no" column="T59_IS_POSI_DEPO" />
+		        <property name="isBagatelle" type="yes_no" column="T59_IS_BAGATELLE" />
+		        <property name="isCurrentVersion" type="yes_no" column="T59_IS_CURRENT_VERSION" />
+		        <property name="isOpenEndTerminated" type="yes_no" column="T59_IS_OPEN_END_TERMINATED" />
+
+   		    </joined-subclass>
+		</joined-subclass>
+
+
+<!-- ABSTRACT MONEY MARKET -->
+	    <joined-subclass name="de.westlb.mgb.model.impl.AbstractMoneyMarketImpl" table="T96_MM_FX">
+			<key column="T96_ID"/>
+
+<!-- SUMMIT MONEY MARKET  -->
+			<joined-subclass name="de.westlb.mgb.model.impl.SummitMoneyMarketImpl" table="T99_SUMMIT_MM">
+				<key column="T99_ID"/>
+        		<property name="tradeVersion" column="T99_trade_version"/>
+        		<property name="status" column="T99_status" length="50"/>
+        		<property name="type" column="T99_type" length="50"/>
+        		<property name="subType" column="T99_sub_type" length="50"/>
+        		<property name="index" column="T99_index" length="50"/>
+        		<property name="info" column="T99_info" length="255"/>
+        		<property name="maturityDate" column="T99_maturity_date"/>
+        		<property name="marginPoints" column="T99_margin_points"/>
+				<property name="marketRate" column="T99_MARKET_RATE"/>
+        		<property name="eodRate" column="T99_eod_rate"/>
+        		<property name="eodRateDate" column="T99_eod_rate_date"/>
+        		<property name="autoRateReset" type="yes_no" column="T99_auto_rate_reset"/>
+        		<property name="eodRateMM" column="T99_eod_rate_mm"/>
+		        <property name="bagatelleLimit" column="T99_BAGATELLE_LIMIT"/>  		    
+		        <property name="turnoverLimit" column="T99_TURNOVER_LIMIT"/>      
+		        <property name="isBagatelle" type="yes_no" column="T99_IS_BAGATELLE" />
+		        <property name="isOutOfTurnoverLimit" type="yes_no" column="T99_IS_OUT_OF_TURNOVER_LIMIT" />
+		        <property name="isMccRelevantChange" type="yes_no" column="T99_IS_MCC_RELEVANT_CHANGE" />
+
+   		    </joined-subclass>
+
+<!-- SUMMIT FOREIGN EXCHANGE  -->
+			<joined-subclass name="de.westlb.mgb.model.impl.SummitForeignExchangeImpl" table="T101_SUMMIT_FX">
+				<key column="T101_ID"/>
+		        <property name="tradeVersion" column="t101_trade_version"/>
+		        <property name="status" column="t101_status" length="50"/>
+		        <property name="type" column="t101_type" length="50"/>
+		        <property name="subType" column="t101_sub_type" length="50"/>
+		        <property name="farDate" column="t101_far_date"/>
+		        <property name="spotRate" column="t101_spot_rate"/>
+		        <property name="fwdPointsNearLeg" column="t101_fwd_points_near_leg"/>
+		        <property name="fwdPointsFarLeg" column="t101_fwd_points_far_leg"/>
+		        <property name="marginPoints" column="t101_margin_points"/>
+				<property name="marketRate" column="T101_MARKET_RATE"/>
+		        <property name="farAmount" column="t101_far_amount"/>
+		        <property name="marketPointsNearLeg" column="t101_market_points_near_leg"/>
+		        <property name="marketPointsFarLeg" column="t101_market_points_far_leg"/>
+        		<property name="info" column="T101_info" length="255"/>
+		        <property name="eodRate" column="t101_eod_rate"/>
+		        <property name="eodRateDate" column="t101_eod_rate_date"/>
+		        <property name="eodRateFX" column="t101_eod_rate_fx"/>
+		        <property name="bagatelleLimit" column="T101_BAGATELLE_LIMIT"/>  		    
+		        <property name="turnoverLimit" column="T101_TURNOVER_LIMIT"/>      
+		        <property name="isBagatelle" type="yes_no" column="T101_IS_BAGATELLE" />
+		        <property name="isOutOfTurnoverLimit" type="yes_no" column="T101_IS_OUT_OF_TURNOVER_LIMIT" />
+
+   		    </joined-subclass>
+		</joined-subclass>
+
+
+<!-- SUMMIT DERIVATIVE -->
+	    <joined-subclass name="de.westlb.mgb.model.impl.SummitDerivativeImpl" table="T91_SUMMIT_DERIVATIVE">
+			<key column="T91_ID"/>
+			<set name="assets" inverse="true" lazy="true" sort="natural" cascade="save-update,delete" batch-size="20">
+				<key column="FK_T92_T02_TRADE" />
+				<one-to-many class="de.westlb.mgb.model.impl.AssetImpl" />
+			</set>
+	        <property name="auditCurrent" column="T91_AUDIT_CURRENT" length="1"/>
+	        <property name="asOfDate" column="T91_AS_OF_DATE"/>
+	        <property name="tradeType" column="T91_TRADE_TYPE" length="50"/>
+	        <property name="version" column="T91_VERSION"/>
+	        <property name="structureId" column="T91_STRUCTURE_ID" length="50"/>
+	        <property name="tradeStatus" column="T91_TRADE_STATUS" length="50"/>
+	        <property name="doneDate" column="T91_DONE_DATE"/>
+	        <property name="verifyDate" column="T91_VERIFY_DATE"/>
+	        <property name="cancelDate" column="T91_CANCEL_DATE"/>
+	        <property name="comment" column="T91_COMMENT" length="100"/>
+	        <property name="internalExternal" column="T91_INTERNAL_EXTERNAL" length="1"/>
+	        <property name="desk" column="T91_DESK" length="50"/>
+	        <property name="company" column="T91_COMPANY" length="50"/>
+   	        <property name="vega" column="T91_VEGA"/>
+   	        <property name="delta" column="T91_DELTA"/>
+   	        <property name="premium" column="T91_PREMIUM"/>
+   	        <property name="exercised" column="T91_EXERCISED"/>
+   	        <property name="amendUser" column="T91_AMEND_USER" length="50"/>
+   	        <property name="auditUser" column="T91_AUDIT_USER" length="50"/>
+   	        <property name="termAssignStatus" column="T91_TERM_ASSIGN_STATUS"/>
+   	        <property name="termTradeDate" column="T91_TERM_TRADE_DATE"/>
+   	        <property name="termInputDate" column="T91_TERM_INPUT_DATE"/>
+   	        <property name="termEffDate" column="T91_TERM_EFF_DATE"/>
+  	        <property name="deviation" column="T91_DEVIATION"/>
+   	        <property name="turnover" column="T91_TURNOVER"/>
+ 	        <property name="isBagatelle" type="yes_no" column="T91_IS_BAGATELLE" />
+	        <property name="isHighTurnover" type="yes_no" column="T91_IS_HIGH_TURNOVER" />
+	        <property name="isStandard" type="yes_no" column="T91_IS_STANDRARD" />
+        	<property name="isMccRelevantChange" type="yes_no" column="T91_IS_MCC_RELEVANT_CHANGE" />
+   	        <property name="resetRemark" column="t91_reset_remark" length="50"/>			
+   	        <property name="amendmentNpvChange" column="T91_AMENDMENT_NPV_CHANGE"/>
+   	        <property name="amendmentNpv" column="T91_AMENDMENT_NPV"/>
+
+		</joined-subclass>
+	</class>
+
+</hibernate-mapping>

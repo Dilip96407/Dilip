@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="de.westlb.mgb.model.impl.MailImpl" table="T48_MAIL" lazy="false">
+ 		<id name="longId" type="long" column="T48_ID">
+			<generator class="sequence">
+                <param name="sequence">HIB_SEQ</param>			
+			</generator>
+		</id>	        
+		<property name="type" column="T48_TYPE" length="20"/>
+		<property name="creationDate" column="T48_CREATION_DATE"/>
+        <many-to-one name="receiver" lazy="proxy" column="FK_T48_T01_RECEIVER" />
+        <many-to-one name="sender" lazy="proxy" column="FK_T48_T01_SENDER" />
+        <property name="text" column="T48_TEXT" length="4000"/>
+        <property name="subject" column="T48_SUBJECT" />
+        <many-to-one name="parent" lazy="proxy" class="de.westlb.mgb.model.impl.MailImpl">
+			<column name="FK_T48_T48_PARENT"/>
+		</many-to-one>
+		<set name="childs" inverse="true" lazy="true" cascade="save-update,delete">
+			<key column="FK_T48_T48_PARENT" />
+			<one-to-many class="de.westlb.mgb.model.impl.MailImpl" />
+		</set>
+		
+		<many-to-one name="trade" lazy="proxy" class="de.westlb.mgb.model.impl.TradeImpl">
+			<column name="FK_T48_T02_TRADE" index="I48_TRADE"/>
+		</many-to-one>
+		
+		<set name="recipients" inverse="true" lazy="true" cascade="save-update,delete" >
+			<key column="FK_T62_T48_MAIL" />
+			<one-to-many class="de.westlb.mgb.model.impl.MailRecipientImpl" />
+		</set>
+		
+    </class>
+
+</hibernate-mapping>
+<!-- parsed in 0ms -->

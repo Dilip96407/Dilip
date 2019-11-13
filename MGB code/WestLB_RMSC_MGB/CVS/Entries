@@ -1,0 +1,42 @@
+/.classpath/1.26/Fri Dec  9 10:21:18 2016/-ko/
+/.compatibility/1.1/Wed Jan 18 14:38:45 2006/-kb/
+/.contentsettings/1.1/Tue Sep 30 08:33:21 2003/-kb/
+/.cvsignore/1.8/Wed Jun 17 12:33:59 2015//
+/.j2ee/1.2/Wed Jan 18 14:38:46 2006/-kb/
+/.project/1.12/Fri Feb  1 13:20:23 2013/-ko/
+/.runtime/1.2/Wed Jan 18 14:38:45 2006/-kb/
+/.serverPreference/1.1/Wed Jul 30 14:26:22 2003/-kb/
+/.tomcatplugin/1.1/Tue Oct  7 10:59:38 2003/-kb/
+/.websettings/1.2/Wed Jan 18 14:38:46 2006/-kb/
+/.zipCreation/1.2/Wed Sep 24 09:13:35 2003/-kb/
+D/Bridge2Java////
+D/Java Source////
+D/JavaDocSrc////
+D/Web Content////
+D/build////
+/build.number/1.146/Mon May  7 11:47:54 2018/-kb/
+/build.xml/1.98/Mon Jun 17 09:04:05 2019/-ko/
+/build_properties.xml/1.81/Mon May  7 11:47:42 2018/-ko/
+/build_targets.xml/1.7/Wed Jun 17 15:40:43 2015/-ko/
+/build_user_properties.xml/1.3/Fri Dec  9 10:22:22 2016//
+D/client////
+/copy_pdf_docu_into_workspace.bat/1.5/Tue Apr 25 11:59:05 2017//
+/copy_test.sh/1.1/Tue Jul  2 10:08:15 2019/-kb/
+D/dataimport////
+/deploy_local.xml/1.6/Wed Jun 24 14:03:49 2015//
+/env_dev.properties/1.26/Tue Mar 13 11:35:26 2018/-ko/
+/env_prd.properties/1.37/Wed Mar 21 12:22:11 2018/-ko/
+/env_uat.properties/1.37/Tue Mar 20 19:47:04 2018/-ko/
+/hibernate-mapping-2.0.dtd/1.1/Tue Sep 30 08:33:21 2003/-kb/
+/install_mgb.ksh/1.32/Tue Apr 28 16:29:11 2015/-kb/
+/keystore/1.3/Wed Oct  7 11:54:46 2015/-kb/
+D/libs////
+/mgb_server.jardesc/1.2/Wed Jan 18 14:38:45 2006//
+D/misc////
+D/qs////
+/readme.txt/1.2/Thu Jun 24 10:02:57 2004/-ko/
+D/reports////
+D/resource////
+D/server////
+/tools.xls/1.1/Tue Aug 12 11:04:02 2003/-kb/
+D/wsdl////

@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="de.westlb.mgb.model.impl.StateRulesImpl" table="T34_STATE_RULES" lazy="false">
+    	<cache usage="read-write"/>
+		<id name="longId" type="long" column="T34_ID">
+			<generator class="sequence">
+				<param name="sequence">HIB_SEQ</param>
+			</generator>
+		</id>
+		<many-to-one name="finalState" class="de.westlb.mgb.model.impl.StateImpl">
+			<column name="FK_T34_T10_FINAL_STATE_CODE" sql-type="VARCHAR2(50)" />
+			<column name="FK_T34_T10_MANDANT_CODE" sql-type="VARCHAR2(3)"/>
+		</many-to-one>
+		<many-to-one name="sourceSystem" lazy="false" class="de.westlb.mgb.model.impl.SourceSystemImpl">
+			<column name="FK_T34_T07_SOURCE_SYSTEM" sql-type="VARCHAR2(3)" />
+		</many-to-one>
+        <property name="comment" column="T34_COMMENT" />
+        <property name="conditionName" column="T34_CONDITION_NAME" />
+        <property name="priority" column="T34_PRIORITY" />
+        <property name="stage" column="T34_STAGE" />
+        <property name="changedDate" column="T34_CHANGED_DATE"/>
+ 		<property name="changedBy" column="T34_CHANGED_BY" length="10"/>
+		<property name="createdBy" column="T34_CREATED_BY" length="10"/>
+        <property name="creationDate" column="T34_CREATION_DATE" />
+    </class>
+
+</hibernate-mapping>

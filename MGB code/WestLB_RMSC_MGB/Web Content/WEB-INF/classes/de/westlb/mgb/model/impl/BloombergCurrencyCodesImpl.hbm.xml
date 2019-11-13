@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="de.westlb.mgb.model.impl.BloombergCurrencyCodesImpl" table="T40_BLOOMBERG_CURRENCY_CODES" lazy="false">
+    	<id name="isoCurrencyCode" column="T40_ISO_CURRENCY_CODE" length="3">
+	    	<!-- We are going to assign the id manually -->
+    		<generator class="assigned"></generator>
+    	</id>
+        <property name="bloombergCurrencyCode" column="T40_BLOOMBERG_CURRENCY_CODE" length="2" />
+        <property name="currencyName" column="T40_CURRENCY_NAME" length="50" />
+
+        <property name="changedDate" column="T40_CHANGED_DATE"/>
+ 		<property name="changedBy" column="T40_CHANGED_BY" length="10" />  
+		<property name="createdBy" column="T40_CREATED_BY" length="10" /> 
+        <property name="creationDate" column="T40_CREATION_DATE" />
+    </class>
+
+</hibernate-mapping>

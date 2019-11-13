@@ -1,0 +1,533 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+ <globalConfiguration>
+  <parameter name="sendMultiRefs" value="true"/>
+  <parameter name="disablePrettyXML" value="true"/>
+  <parameter name="adminPassword" value="admin"/>
+  <parameter name="attachments.Directory" value="axis-attachments"/>
+  <parameter name="axis.sendMinimizedElements" value="true"/>
+  <parameter name="enableNamespacePrefixOptimization" value="true"/>
+  <parameter name="sendXMLDeclaration" value="true"/>
+  <parameter name="sendXsiTypes" value="true"/>
+  <parameter name="attachments.implementation" value="org.apache.axis.attachments.AttachmentsImpl"/>
+  <requestFlow>
+   <handler type="java:org.apache.axis.handlers.JWSHandler">
+    <parameter name="scope" value="session"/>
+   </handler>
+   <handler type="java:org.apache.axis.handlers.JWSHandler">
+    <parameter name="scope" value="request"/>
+    <parameter name="extension" value=".jwr"/>
+   </handler>
+  </requestFlow>
+ </globalConfiguration>
+ <handler name="user_check" type="java:de.westlb.mgb.server.security.AxisNtlmAuthenticationHandler"/>
+ <handler name="URLMapper" type="java:org.apache.axis.handlers.http.URLMapper"/>
+ <requestFlow name="checks">
+  <handler type="java:org.apache.axis.handlers.SimpleAuthenticationHandler"/>
+  <handler type="java:org.apache.axis.handlers.SimpleAuthorizationHandler"/>
+ </requestFlow>
+ <handler name="LocalResponder" type="java:org.apache.axis.transport.local.LocalResponder"/>
+ <handler name="Authenticate" type="java:org.apache.axis.handlers.SimpleAuthenticationHandler"/>
+ <service name="urn:cominfo" provider="java:RPC">
+  <parameter name="allowedMethods" value="getInfo"/>
+  <parameter name="allowedRoles" value="user3"/>
+  <parameter name="className" value="samples.stock.ComInfoService"/>
+ </service>
+ <service name="AdminService" provider="java:MSG">
+  <parameter name="allowedMethods" value="AdminService"/>
+  <parameter name="enableRemoteAdmin" value="false"/>
+  <parameter name="className" value="org.apache.axis.utils.Admin"/>
+  <namespace>http://xml.apache.org/axis/wsdd/</namespace>
+ </service>
+ <service name="Version" provider="java:RPC">
+  <parameter name="allowedMethods" value="getVersion"/>
+  <parameter name="className" value="org.apache.axis.Version"/>
+ </service>
+ <service name="Mgb" provider="java:RPC">
+  <operation name="close" qname="ns1:close" soapAction="" xmlns:ns1="urn:mgb"/>
+  <operation name="login" qname="ns2:login" soapAction="" xmlns:ns2="urn:mgb">
+   <parameter name="in0" type="soapenc:string" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"/>
+   <parameter name="in1" type="soapenc:string" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"/>
+   <parameter name="in2" type="soapenc:string" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </operation>
+  <operation name="getDomainUser" qname="ns3:getDomainUser" returnQName="getDomainUserReturn" returnType="soapenc:string" soapAction="" xmlns:ns3="urn:mgb" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"/>
+  <operation name="adminLogin" qname="ns4:adminLogin" returnQName="adminLoginReturn" returnType="xsd:boolean" soapAction="" xmlns:ns4="urn:mgb" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <parameter name="in0" type="soapenc:string" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"/>
+   <parameter name="in1" type="soapenc:string" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </operation>
+  <operation name="deleteAddon" qname="ns5:deleteAddon" soapAction="" xmlns:ns5="urn:mgb">
+   <parameter name="in0" type="soapenc:long" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </operation>
+  <operation name="getUserStatistic" qname="ns6:getUserStatistic" returnQName="getUserStatisticReturn" returnType="ns6:ArrayOf_tns2_UserStatisticVo" soapAction="" xmlns:ns6="urn:mgb"/>
+  <operation name="deleteJob" qname="ns7:deleteJob" soapAction="" xmlns:ns7="urn:mgb">
+   <parameter name="in0" type="soapenc:long" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </operation>
+  <operation name="deleteTrader" qname="ns8:deleteTrader" soapAction="" xmlns:ns8="urn:mgb">
+   <parameter name="in0" type="soapenc:long" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </operation>
+  <operation name="deleteEmployee" qname="ns9:deleteEmployee" soapAction="" xmlns:ns9="urn:mgb">
+   <parameter name="in0" type="soapenc:long" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </operation>
+  <operation name="deleteExchange" qname="ns10:deleteExchange" soapAction="" xmlns:ns10="urn:mgb">
+   <parameter name="in0" type="soapenc:long" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </operation>
+  <operation name="deleteExchangeMapping" qname="ns11:deleteExchangeMapping" soapAction="" xmlns:ns11="urn:mgb">
+   <parameter name="in0" type="soapenc:long" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </operation>
+  <operation name="deletePriceCheckCategory" qname="ns12:deletePriceCheckCategory" soapAction="" xmlns:ns12="urn:mgb">
+   <parameter name="in0" type="soapenc:long" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </operation>
+  <operation name="deleteStateCode" qname="ns13:deleteStateCode" soapAction="" xmlns:ns13="urn:mgb">
+   <parameter name="in0" type="soapenc:string" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </operation>
+  <operation name="findAllAddons" qname="ns14:findAllAddons" returnQName="findAllAddonsReturn" returnType="ns14:ArrayOf_tns2_AddonSearchResultEntryVo" soapAction="" xmlns:ns14="urn:mgb"/>
+  <operation name="findAllBloombergMaturityCodes" qname="ns15:findAllBloombergMaturityCodes" returnQName="findAllBloombergMaturityCodesReturn" returnType="ns15:ArrayOf_tns2_BloombergMaturityCodeVo" soapAction="" xmlns:ns15="urn:mgb"/>
+  <operation name="findAllBloombergCurrencyCodes" qname="ns16:findAllBloombergCurrencyCodes" returnQName="findAllBloombergCurrencyCodesReturn" returnType="ns16:ArrayOf_tns2_BloombergCurrencyCodeVo" soapAction="" xmlns:ns16="urn:mgb"/>
+  <operation name="findEmployeesByReclamationRequired" qname="ns17:findEmployeesByReclamationRequired" returnQName="findEmployeesByReclamationRequiredReturn" returnType="ns17:ArrayOf_tns2_EmployeeSearchResultEntryVo" soapAction="" xmlns:ns17="urn:mgb"/>
+  <operation name="findInstruments" qname="ns18:findInstruments" returnQName="findInstrumentsReturn" returnType="ns18:ArrayOf_tns2_InstrumentSearchResultEntryVo" soapAction="" xmlns:ns18="urn:mgb">
+   <parameter name="in0" type="ns19:InstrumentSearchParamsVo" xmlns:ns19="http://vo.server.client.mgb.westlb.de"/>
+  </operation>
+  <operation name="findNewInstruments" qname="ns20:findNewInstruments" returnQName="findNewInstrumentsReturn" returnType="ns20:ArrayOf_tns2_InstrumentSearchResultEntryVo" soapAction="" xmlns:ns20="urn:mgb"/>
+  <operation name="findNewLocations" qname="ns20:findNewLocations" returnQName="findNewLocationsReturn" returnType="ns20:ArrayOf_tns2_TradeSearchResultEntryVo" soapAction="" xmlns:ns20="urn:mgb"/>
+  <operation name="findTradesLateReclReqByEmployee" qname="ns21:findTradesLateReclReqByEmployee" returnQName="findTradesLateReclReqByEmployeeReturn" returnType="ns21:ArrayOf_tns2_TradeSearchResultEntryVo" soapAction="" xmlns:ns21="urn:mgb">
+   <parameter name="in0" type="soapenc:long" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </operation>
+  <operation name="findTradesMiscReclReqByEmployee" qname="ns22:findTradesMiscReclReqByEmployee" returnQName="findTradesMiscReclReqByEmployeeReturn" returnType="ns22:ArrayOf_tns2_TradeSearchResultEntryVo" soapAction="" xmlns:ns22="urn:mgb">
+   <parameter name="in0" type="soapenc:long" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </operation>
+  <operation name="findDualControlJobs" qname="ns23:findDualControlJobs" returnQName="findDualControlJobsReturn" returnType="ns23:ArrayOf_tns2_DualControlJobSearchResultEntryVo" soapAction="" xmlns:ns23="urn:mgb">
+   <parameter name="in0" type="ns24:DualControlJobSearchParamsVo" xmlns:ns24="http://vo.server.client.mgb.westlb.de"/>
+  </operation>
+  <operation name="getDualControlJobVo" qname="ns26:getDualControlJobVo" returnQName="getDualControlJobVoReturn" returnType="ns25:DualControlJobVo" soapAction="" xmlns:ns25="http://vo.server.client.mgb.westlb.de" xmlns:ns26="urn:mgb">
+   <parameter name="in0" type="soapenc:long" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </operation>
+  <operation name="getExchange" qname="ns28:getExchange" returnQName="getExchangeReturn" returnType="ns27:ExchangeVo" soapAction="" xmlns:ns27="http://vo.server.client.mgb.westlb.de" xmlns:ns28="urn:mgb">
+   <parameter name="in0" type="soapenc:long" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </operation>
+  <operation name="getInstrument" qname="ns30:getInstrument" returnQName="getInstrumentReturn" returnType="ns29:InstrumentVo" soapAction="" xmlns:ns29="http://vo.server.client.mgb.westlb.de" xmlns:ns30="urn:mgb">
+   <parameter name="in0" type="soapenc:long" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </operation>
+  <operation name="getStateCode" qname="ns32:getStateCode" returnQName="getStateCodeReturn" returnType="ns31:StateCodeVo" soapAction="" xmlns:ns31="http://vo.server.client.mgb.westlb.de" xmlns:ns32="urn:mgb">
+   <parameter name="in0" type="soapenc:string" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </operation>
+  <operation name="assignPriceCheckCategoryToInstrument" qname="ns33:assignPriceCheckCategoryToInstrument" soapAction="" xmlns:ns33="urn:mgb">
+   <parameter name="in0" type="soapenc:long" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"/>
+   <parameter name="in1" type="soapenc:long" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </operation>
+  <operation name="findAllExchanges" qname="ns34:findAllExchanges" returnQName="findAllExchangesReturn" returnType="ns34:ArrayOf_tns2_ExchangeSearchResultEntryVo" soapAction="" xmlns:ns34="urn:mgb"/>
+  <operation name="findAllJobs" qname="ns35:findAllJobs" returnQName="findAllJobsReturn" returnType="ns35:ArrayOf_tns2_JobVo" soapAction="" xmlns:ns35="urn:mgb">
+   <parameter name="in0" type="ns36:JobSearchParamsVo" xmlns:ns36="http://vo.server.client.mgb.westlb.de"/>
+  </operation>
+  <operation name="findAllPriceCheckCategories" qname="ns37:findAllPriceCheckCategories" returnQName="findAllPriceCheckCategoriesReturn" returnType="ns37:ArrayOf_tns2_PriceCheckCategoryVo" soapAction="" xmlns:ns37="urn:mgb"/>
+  <operation name="findAllSourceSystems" qname="ns38:findAllSourceSystems" returnQName="findAllSourceSystemsReturn" returnType="ns38:ArrayOf_tns2_SourceSystemVo" soapAction="" xmlns:ns38="urn:mgb"/>
+  <operation name="findAllConditions" qname="ns39:findAllConditions" returnQName="findAllConditionsReturn" returnType="ns39:ArrayOf_tns2_ConditionVo" soapAction="" xmlns:ns39="urn:mgb"/>
+  <operation name="getAddon" qname="ns41:getAddon" returnQName="getAddonReturn" returnType="ns40:AddonVo" soapAction="" xmlns:ns40="http://vo.server.client.mgb.westlb.de" xmlns:ns41="urn:mgb">
+   <parameter name="in0" type="soapenc:long" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </operation>
+  <operation name="getCurrentDataSelection" qname="ns43:getCurrentDataSelection" returnQName="getCurrentDataSelectionReturn" returnType="ns42:DataSelectionVo" soapAction="" xmlns:ns42="http://vo.server.client.mgb.westlb.de" xmlns:ns43="urn:mgb"/>
+  <operation name="getDataSelection" qname="ns45:getDataSelection" returnQName="getDataSelectionReturn" returnType="ns44:DataSelectionVo" soapAction="" xmlns:ns44="http://vo.server.client.mgb.westlb.de" xmlns:ns45="urn:mgb"/>
+  <operation name="setDataSelection" qname="ns46:setDataSelection" soapAction="" xmlns:ns46="urn:mgb">
+   <parameter name="in0" type="ns47:DataSelectionVo" xmlns:ns47="http://vo.server.client.mgb.westlb.de"/>
+  </operation>
+  <operation name="getStateCodes" qname="ns48:getStateCodes" returnQName="getStateCodesReturn" returnType="ns48:ArrayOf_tns2_StateCodeVo" soapAction="" xmlns:ns48="urn:mgb">
+   <parameter name="in0" type="soapenc:string" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </operation>
+  <operation name="getCheckState" qname="ns50:getCheckState" returnQName="getCheckStateReturn" returnType="ns49:CheckStateVo" soapAction="" xmlns:ns49="http://vo.server.client.mgb.westlb.de" xmlns:ns50="urn:mgb">
+   <parameter name="in0" type="ns50:ArrayOf_soapenc_long"/>
+  </operation>
+  <operation name="getCheckState" qname="ns52:getCheckState" returnQName="getCheckStateReturn" returnType="ns51:CheckStateVo" soapAction="" xmlns:ns51="http://vo.server.client.mgb.westlb.de" xmlns:ns52="urn:mgb"/>
+  <operation name="findTrades" qname="ns53:findTrades" returnQName="findTradesReturn" returnType="ns53:ArrayOf_tns2_TradeSearchResultEntryVo" soapAction="" xmlns:ns53="urn:mgb">
+   <parameter name="in0" type="ns54:TradeSearchParamsVo" xmlns:ns54="http://vo.server.client.mgb.westlb.de"/>
+  </operation>
+  <operation name="findTradesOverviewVo" qname="ns55:findTradesOverviewVo" returnQName="findTradesOverviewVoReturn" returnType="ns55:ArrayOf_tns2_TradeOverviewVo" soapAction="" xmlns:ns55="urn:mgb">
+   <parameter name="in0" type="ns56:TradeSearchParamsVo" xmlns:ns56="http://vo.server.client.mgb.westlb.de"/>
+  </operation>
+  <operation name="getTradeOverview" qname="ns58:getTradeOverview" returnQName="getTradeOverviewReturn" returnType="ns57:TradeOverviewVo" soapAction="" xmlns:ns57="http://vo.server.client.mgb.westlb.de" xmlns:ns58="urn:mgb">
+   <parameter name="in0" type="xsd:anyType" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </operation>
+  <operation name="getTradeReclamation" qname="ns60:getTradeReclamation" returnQName="getTradeReclamationReturn" returnType="ns59:TradeReclamationVo" soapAction="" xmlns:ns59="http://vo.server.client.mgb.westlb.de" xmlns:ns60="urn:mgb">
+   <parameter name="in0" type="xsd:anyType" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </operation>
+  <operation name="getStateStatistic" qname="ns62:getStateStatistic" returnQName="getStateStatisticReturn" returnType="ns61:StateStatisticEntryVo" soapAction="" xmlns:ns61="http://vo.server.client.mgb.westlb.de" xmlns:ns62="urn:mgb">
+   <parameter name="in0" type="soapenc:string" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </operation>
+  <operation name="getHistory" qname="ns63:getHistory" returnQName="getHistoryReturn" returnType="ns63:ArrayOf_tns2_TradeHistoryEntryVo" soapAction="" xmlns:ns63="urn:mgb">
+   <parameter name="in0" type="xsd:anyType" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </operation>
+  <operation name="getTradeParameter" qname="ns65:getTradeParameter" returnQName="getTradeParameterReturn" returnType="ns64:TradeParameterVo" soapAction="" xmlns:ns64="http://vo.server.client.mgb.westlb.de" xmlns:ns65="urn:mgb">
+   <parameter name="in0" type="xsd:anyType" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </operation>
+  <operation name="getCurrentReclamationState" qname="ns67:getCurrentReclamationState" returnQName="getCurrentReclamationStateReturn" returnType="ns66:TradeHistoryEntryVo" soapAction="" xmlns:ns66="http://vo.server.client.mgb.westlb.de" xmlns:ns67="urn:mgb">
+   <parameter name="in0" type="soapenc:long" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </operation>
+  <operation name="createNewJob" qname="ns68:createNewJob" soapAction="" xmlns:ns68="urn:mgb">
+   <parameter name="in0" type="soapenc:string" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"/>
+   <parameter name="in1" type="soapenc:base64Binary" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </operation>
+  <operation name="saveStateCode" qname="ns69:saveStateCode" soapAction="" xmlns:ns69="urn:mgb">
+   <parameter name="in0" type="ns70:StateCodeVo" xmlns:ns70="http://vo.server.client.mgb.westlb.de"/>
+  </operation>
+  <operation name="saveTradeState" qname="ns71:saveTradeState" soapAction="" xmlns:ns71="urn:mgb">
+   <parameter name="in0" type="ns71:ArrayOf_soapenc_long"/>
+   <parameter name="in1" type="ns72:TradeHistoryEntryVo" xmlns:ns72="http://vo.server.client.mgb.westlb.de"/>
+   <parameter name="in2" type="soapenc:base64Binary" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </operation>
+  <operation name="saveTradeState" qname="ns73:saveTradeState" soapAction="" xmlns:ns73="urn:mgb">
+   <parameter name="in0" type="ns74:TradeHistoryEntryVo" xmlns:ns74="http://vo.server.client.mgb.westlb.de"/>
+   <parameter name="in1" type="soapenc:base64Binary" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </operation>
+  <operation name="startReadAttachment" qname="ns75:startReadAttachment" returnQName="startReadAttachmentReturn" returnType="xsd:long" soapAction="" xmlns:ns75="urn:mgb" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <parameter name="in0" type="soapenc:long" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </operation>
+  <operation name="readAttachment" qname="ns76:readAttachment" returnQName="readAttachmentReturn" returnType="soapenc:base64Binary" soapAction="" xmlns:ns76="urn:mgb" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+   <parameter name="in0" type="soapenc:long"/>
+   <parameter name="in1" type="xsd:long" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <parameter name="in2" type="xsd:long" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </operation>
+  <operation name="endReadAttachment" qname="ns77:endReadAttachment" soapAction="" xmlns:ns77="urn:mgb">
+   <parameter name="in0" type="soapenc:long" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </operation>
+  <operation name="closeReclamation" qname="ns78:closeReclamation" soapAction="" xmlns:ns78="urn:mgb">
+   <parameter name="in0" type="soapenc:long" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"/>
+   <parameter name="in1" type="soapenc:string" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </operation>
+  <operation name="findNewTrader" qname="ns79:findNewTrader" returnQName="findNewTraderReturn" returnType="ns79:ArrayOf_tns2_TraderSearchResultEntryVo" soapAction="" xmlns:ns79="urn:mgb"/>
+  <operation name="findEmployees" qname="ns80:findEmployees" returnQName="findEmployeesReturn" returnType="ns80:ArrayOf_tns2_EmployeeSearchResultEntryVo" soapAction="" xmlns:ns80="urn:mgb">
+   <parameter name="in0" type="ns81:EmployeeSearchParamsVo" xmlns:ns81="http://vo.server.client.mgb.westlb.de"/>
+  </operation>
+  <operation name="assignTraderToEmployee" qname="ns82:assignTraderToEmployee" soapAction="" xmlns:ns82="urn:mgb">
+   <parameter name="in0" type="soapenc:long" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"/>
+   <parameter name="in1" type="soapenc:long" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </operation>
+  <operation name="getEmployee" qname="ns84:getEmployee" returnQName="getEmployeeReturn" returnType="ns83:EmployeeVo" soapAction="" xmlns:ns83="http://vo.server.client.mgb.westlb.de" xmlns:ns84="urn:mgb">
+   <parameter name="in0" type="soapenc:long" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </operation>
+  <operation name="saveAddon" qname="ns85:saveAddon" soapAction="" xmlns:ns85="urn:mgb">
+   <parameter name="in0" type="ns86:AddonVo" xmlns:ns86="http://vo.server.client.mgb.westlb.de"/>
+  </operation>
+  <operation name="saveEmployee" qname="ns87:saveEmployee" returnQName="saveEmployeeReturn" returnType="soapenc:long" soapAction="" xmlns:ns87="urn:mgb" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+   <parameter name="in0" type="ns88:EmployeeVo" xmlns:ns88="http://vo.server.client.mgb.westlb.de"/>
+  </operation>
+  <operation name="saveExchange" qname="ns89:saveExchange" soapAction="" xmlns:ns89="urn:mgb">
+   <parameter name="in0" type="ns90:ExchangeVo" xmlns:ns90="http://vo.server.client.mgb.westlb.de"/>
+  </operation>
+  <operation name="saveExchangeMapping" qname="ns91:saveExchangeMapping" soapAction="" xmlns:ns91="urn:mgb">
+   <parameter name="in0" type="ns92:ExchangeMappingVo" xmlns:ns92="http://vo.server.client.mgb.westlb.de"/>
+  </operation>
+  <operation name="getSessionInfo" qname="ns94:getSessionInfo" returnQName="getSessionInfoReturn" returnType="ns93:SessionInfoVo" soapAction="" xmlns:ns93="http://vo.server.client.mgb.westlb.de" xmlns:ns94="urn:mgb"/>
+  <operation name="getPriceCheckCategory" qname="ns96:getPriceCheckCategory" returnQName="getPriceCheckCategoryReturn" returnType="ns95:PriceCheckCategoryVo" soapAction="" xmlns:ns95="http://vo.server.client.mgb.westlb.de" xmlns:ns96="urn:mgb">
+   <parameter name="in0" type="soapenc:long" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </operation>
+  <operation name="getPrice" qname="ns98:getPrice" returnQName="getPriceReturn" returnType="ns97:PriceVo" soapAction="" xmlns:ns97="http://vo.server.client.mgb.westlb.de" xmlns:ns98="urn:mgb">
+   <parameter name="in0" type="ns97:RequestVo"/>
+  </operation>
+  <operation name="savePrice" qname="ns99:savePrice" soapAction="" xmlns:ns99="urn:mgb">
+   <parameter name="in0" type="ns100:RequestVo" xmlns:ns100="http://vo.server.client.mgb.westlb.de"/>
+   <parameter name="in1" type="ns101:PriceVo" xmlns:ns101="http://vo.server.client.mgb.westlb.de"/>
+  </operation>
+  <operation name="savePrices" qname="ns102:savePrices" soapAction="" xmlns:ns102="urn:mgb">
+   <parameter name="in0" type="ns102:ArrayOf_tns2_RequestVo"/>
+   <parameter name="in1" type="ns102:ArrayOf_tns2_PriceVo"/>
+  </operation>
+  <operation name="savePriceCheckCategory" qname="ns103:savePriceCheckCategory" soapAction="" xmlns:ns103="urn:mgb">
+   <parameter name="in0" type="ns104:PriceCheckCategoryVo" xmlns:ns104="http://vo.server.client.mgb.westlb.de"/>
+  </operation>
+  <operation name="getUnsolvedRequests" qname="ns105:getUnsolvedRequests" returnQName="getUnsolvedRequestsReturn" returnType="ns105:ArrayOf_tns2_RequestVo" soapAction="" xmlns:ns105="urn:mgb">
+   <parameter name="in0" type="soapenc:string" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </operation>
+  <operation name="getUnvalidatedRequests" qname="ns106:getUnvalidatedRequests" returnQName="getUnvalidatedRequestsReturn" returnType="ns106:ArrayOf_tns2_RequestVo" soapAction="" xmlns:ns106="urn:mgb">
+   <parameter name="in0" type="soapenc:string" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </operation>
+  <operation name="updateRequest" qname="ns107:updateRequest" soapAction="" xmlns:ns107="urn:mgb">
+   <parameter name="in0" type="ns108:RequestVo" xmlns:ns108="http://vo.server.client.mgb.westlb.de"/>
+  </operation>
+  <operation name="updateRequests" qname="ns109:updateRequests" soapAction="" xmlns:ns109="urn:mgb">
+   <parameter name="in0" type="ns109:ArrayOf_tns2_RequestVo"/>
+  </operation>
+  <operation name="getTradeState" qname="ns111:getTradeState" returnQName="getTradeStateReturn" returnType="ns110:TradeHistoryEntryVo" soapAction="" xmlns:ns110="http://vo.server.client.mgb.westlb.de" xmlns:ns111="urn:mgb">
+   <parameter name="in0" type="xsd:anyType" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </operation>
+  <operation name="confirmDualControlJobs" qname="ns112:confirmDualControlJobs" soapAction="" xmlns:ns112="urn:mgb">
+   <parameter name="in0" type="ns112:ArrayOf_soapenc_long"/>
+  </operation>
+  <operation name="deleteDualControlJobs" qname="ns113:deleteDualControlJobs" soapAction="" xmlns:ns113="urn:mgb">
+   <parameter name="in0" type="ns113:ArrayOf_soapenc_long"/>
+  </operation>
+  <operation name="getAutoCheckTrades" qname="ns114:getAutoCheckTrades" returnQName="getAutoCheckTradesReturn" returnType="ns114:ArrayOf_tns2_AutoCheckVo" soapAction="" xmlns:ns114="urn:mgb"/>
+  <operation name="getStateRules" qname="ns115:getStateRules" returnQName="getStateRulesReturn" returnType="ns115:ArrayOf_tns2_StateRulesVo" soapAction="" xmlns:ns115="urn:mgb"/>
+  <operation name="saveInitialTradeReclamationState" qname="ns116:saveInitialTradeReclamationState" soapAction="" xmlns:ns116="urn:mgb">
+   <parameter name="in0" type="soapenc:long" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"/>
+   <parameter name="in1" type="soapenc:base64Binary" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"/>
+   <parameter name="in2" type="soapenc:string" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </operation>
+  <operation name="getStornoGroup" qname="ns117:getStornoGroup" returnQName="getStornoGroupReturn" returnType="ns117:ArrayOf_tns2_StornoGroupVo" soapAction="" xmlns:ns117="urn:mgb">
+   <parameter name="in0" type="soapenc:long" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </operation>
+  <operation name="getRepoTradeOverview" qname="ns119:getRepoTradeOverview" returnQName="getRepoTradeOverviewReturn" returnType="ns118:RepoTradeOverviewVo" soapAction="" xmlns:ns118="http://vo.server.client.mgb.westlb.de" xmlns:ns119="urn:mgb">
+   <parameter name="in0" type="xsd:anyType" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </operation>
+  <operation name="keepAlive" qname="ns121:keepAlive" soapAction="" xmlns:ns121="urn:mgb"/>
+  <operation name="getMgbConfigurationValue" qname="ns122:getMgbConfigurationValue" returnQName="getMgbConfigurationValueReturn" returnType="soapenc:string" soapAction="" xmlns:ns122="urn:mgb" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+   <parameter name="in0" type="soapenc:string"/>
+  </operation>
+  <operation name="findAllMgbConfigurations" qname="ns123:findAllMgbConfigurations" returnQName="findAllMgbConfigurationsReturn" returnType="ns123:ArrayOf_tns2_MgbConfigurationVo" soapAction="" xmlns:ns123="urn:mgb"/>
+  <operation name="saveMgbConfiguration" qname="ns124:saveMgbConfiguration" soapAction="" xmlns:ns124="urn:mgb">
+   <parameter name="in0" type="ns125:MgbConfigurationVo" xmlns:ns125="http://vo.server.client.mgb.westlb.de"/>
+  </operation>
+  <operation name="setJobStatus" qname="ns126:setJobStatus" soapAction="" xmlns:ns126="urn:mgb">
+   <parameter name="in0" type="soapenc:long" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"/>
+   <parameter name="in1" type="soapenc:string" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </operation>
+  <operation name="setMarketDataProxyDirectory" qname="ns127:setMarketDataProxyDirectory" soapAction="" xmlns:ns127="urn:mgb">
+   <parameter name="in0" type="soapenc:string" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </operation>
+  <operation name="getStatisticReport" qname="ns129:getStatisticReport" returnQName="getStatisticReportReturn" returnType="ns128:StatisticReportVo" soapAction="" xmlns:ns128="http://vo.server.client.mgb.westlb.de" xmlns:ns129="urn:mgb">
+   <parameter name="in0" type="ns128:StatisticReportParamsVo"/>
+  </operation>
+  <operation name="getStatisticCubeReport" qname="ns131:getStatisticCubeReport" returnQName="getStatisticCubeReportReturn" returnType="ns130:StatisticCubeReportVo" soapAction="" xmlns:ns130="http://vo.server.client.mgb.westlb.de" xmlns:ns131="urn:mgb">
+   <parameter name="in0" type="ns130:StatisticReportParamsVo"/>
+  </operation>
+  <operation name="findAllBooks" qname="ns132:findAllBooks" returnQName="findAllBooksReturn" returnType="ns132:ArrayOf_tns2_BookSearchResultEntryVo" soapAction="" xmlns:ns132="urn:mgb"/>
+  <operation name="getMail" qname="ns134:getMail" returnQName="getMailReturn" returnType="ns133:MailVo" soapAction="" xmlns:ns133="http://vo.server.client.mgb.westlb.de" xmlns:ns134="urn:mgb">
+   <parameter name="in0" type="xsd:long" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </operation>
+  <operation name="prepareMail" qname="ns136:prepareMail" returnQName="prepareMailReturn" returnType="ns135:MailVo" soapAction="" xmlns:ns135="http://vo.server.client.mgb.westlb.de" xmlns:ns136="urn:mgb">
+   <parameter name="in0" type="ns135:SendMailParamsVo"/>
+  </operation>
+  <operation name="sendMail" qname="ns137:sendMail" soapAction="" xmlns:ns137="urn:mgb">
+   <parameter name="in0" type="ns138:MailVo" xmlns:ns138="http://vo.server.client.mgb.westlb.de"/>
+   <parameter name="in1" type="soapenc:base64Binary" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </operation>
+  <operation name="findMailsByTradeId" qname="ns139:findMailsByTradeId" returnQName="findMailsByTradeIdReturn" returnType="ns139:ArrayOf_tns2_MailSearchResultEntryVo" soapAction="" xmlns:ns139="urn:mgb">
+   <parameter name="in0" type="soapenc:long" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </operation>
+  <operation name="findTraderInboxMails" qname="ns140:findTraderInboxMails" returnQName="findTraderInboxMailsReturn" returnType="ns140:ArrayOf_tns2_InboxMailVo" soapAction="" xmlns:ns140="urn:mgb"/>
+  <operation name="sendTraderResponseMail" qname="ns141:sendTraderResponseMail" soapAction="" xmlns:ns141="urn:mgb">
+   <parameter name="in0" type="soapenc:long" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"/>
+   <parameter name="in1" type="soapenc:string" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </operation>
+  <operation name="findTradesReclRequired" qname="ns142:findTradesReclRequired" returnQName="findTradesReclRequiredReturn" returnType="ns142:ArrayOf_tns2_TradeReclRequiredVo" soapAction="" xmlns:ns142="urn:mgb"/>
+  <operation name="prepareAndSendMail" qname="ns143:prepareAndSendMail" soapAction="" xmlns:ns143="urn:mgb">
+   <parameter name="in0" type="ns143:ArrayOf_tns2_SendMailParamsVo"/>
+  </operation>
+  <operation name="runAndSaveAutomaticCheck" qname="ns144:runAndSaveAutomaticCheck" soapAction="" xmlns:ns144="urn:mgb">
+   <parameter name="in0" type="ns144:ArrayOf_tns2_PriceVo"/>
+  </operation>
+  <operation name="findTradesForStatisticRow" qname="ns145:findTradesForStatisticRow" returnQName="findTradesForStatisticRowReturn" returnType="ns145:ArrayOf_tns2_TradeSearchResultEntryVo" soapAction="" xmlns:ns145="urn:mgb">
+   <parameter name="in0" type="ns146:StatisticReportParamsVo" xmlns:ns146="http://vo.server.client.mgb.westlb.de"/>
+  </operation>
+  <operation name="findTradeOverviewVosForStatisticRow" qname="ns147:findTradeOverviewVosForStatisticRow" returnQName="findTradeOverviewVosForStatisticRowReturn" returnType="ns147:ArrayOf_tns2_TradeOverviewVo" soapAction="" xmlns:ns147="urn:mgb">
+   <parameter name="in0" type="ns148:StatisticReportParamsVo" xmlns:ns148="http://vo.server.client.mgb.westlb.de"/>
+  </operation>
+  <operation name="saveReclStateAfterEmployeeReport" qname="ns149:saveReclStateAfterEmployeeReport" soapAction="" xmlns:ns149="urn:mgb">
+   <parameter name="in0" type="soapenc:long" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </operation>
+  <operation name="isTradeOwned" qname="ns150:isTradeOwned" returnQName="isTradeOwnedReturn" returnType="xsd:boolean" soapAction="" xmlns:ns150="urn:mgb" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <parameter name="in0" type="soapenc:long" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"/>
+   <parameter name="in1" type="soapenc:string" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </operation>
+  <operation name="isTradeAccessGranted" qname="ns151:isTradeAccessGranted" returnQName="isTradeAccessGrantedReturn" returnType="xsd:boolean" soapAction="" xmlns:ns151="urn:mgb" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <parameter name="in0" type="soapenc:long" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"/>
+   <parameter name="in1" type="soapenc:string" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </operation>
+  <operation name="saveEmployeeAndRoles" qname="ns152:saveEmployeeAndRoles" returnQName="saveEmployeeAndRolesReturn" returnType="soapenc:long" soapAction="" xmlns:ns152="urn:mgb" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+   <parameter name="in0" type="ns153:EmployeeVo" xmlns:ns153="http://vo.server.client.mgb.westlb.de"/>
+  </operation>
+  <operation name="findAllEmployees" qname="ns154:findAllEmployees" returnQName="findAllEmployeesReturn" returnType="ns154:ArrayOf_tns2_EmployeeVo" soapAction="" xmlns:ns154="urn:mgb">
+   <parameter name="in0" type="ns155:EmployeeSearchParamsVo" xmlns:ns155="http://vo.server.client.mgb.westlb.de"/>
+  </operation>
+  <operation name="getChildMails" qname="ns156:getChildMails" returnQName="getChildMailsReturn" returnType="ns156:ArrayOf_tns2_MailVo" soapAction="" xmlns:ns156="urn:mgb">
+   <parameter name="in0" type="soapenc:long" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"/>
+   <parameter name="in1" type="xsd:boolean" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <parameter name="in2" type="ns156:ArrayOf_soapenc_string"/>
+  </operation>
+  <operation name="getStornoGroupFromTrade" qname="ns158:getStornoGroupFromTrade" returnQName="getStornoGroupFromTradeReturn" returnType="soapenc:boolean" soapAction="" xmlns:ns158="urn:mgb" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+   <parameter name="in0" type="xsd:anyType" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </operation>
+  <operation name="getRecentJobs" qname="ns159:getRecentJobs" returnQName="getRecentJobsReturn" returnType="ns159:ArrayOf_tns2_JobVo" soapAction="" xmlns:ns159="urn:mgb">
+   <parameter name="in0" type="soapenc:string" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </operation>
+  <operation name="getMgbTask" qname="ns161:getMgbTask" returnQName="getMgbTaskReturn" returnType="ns160:MgbTaskVo" soapAction="" xmlns:ns160="http://vo.server.client.mgb.westlb.de" xmlns:ns161="urn:mgb">
+   <parameter name="in0" type="soapenc:long" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </operation>
+  <operation name="saveMgbTask" qname="ns162:saveMgbTask" returnQName="saveMgbTaskReturn" returnType="soapenc:long" soapAction="" xmlns:ns162="urn:mgb" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+   <parameter name="in0" type="ns163:MgbTaskVo" xmlns:ns163="http://vo.server.client.mgb.westlb.de"/>
+  </operation>
+  <operation name="findPriceDeviations" qname="ns164:findPriceDeviations" returnQName="findPriceDeviationsReturn" returnType="ns164:ArrayOf_tns2_PriceDeviationVo" soapAction="" xmlns:ns164="urn:mgb">
+   <parameter name="in0" type="ns165:TradeSearchParamsVo" xmlns:ns165="http://vo.server.client.mgb.westlb.de"/>
+  </operation>
+  <operation name="getPriceDeviationStatistic" qname="ns166:getPriceDeviationStatistic" returnQName="getPriceDeviationStatisticReturn" returnType="ns166:ArrayOf_tns2_PriceDeviationStatisticVo" soapAction="" xmlns:ns166="urn:mgb">
+   <parameter name="in0" type="ns167:TradeSearchParamsVo" xmlns:ns167="http://vo.server.client.mgb.westlb.de"/>
+  </operation>
+  <operation name="fetchPrices" qname="ns174:fetchPrices" returnQName="fetchPricesReturn" returnType="xsd:boolean" soapAction="" xmlns:ns174="urn:mgb" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <parameter name="in0" type="soapenc:string" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"/>
+   <parameter name="in1" type="soapenc:base64Binary" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </operation>
+  <operation name="isBusy" qname="ns184:isBusy" returnQName="isBusyReturn" returnType="xsd:boolean" soapAction="" xmlns:ns184="urn:mgb" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <operation name="getClientConfig" qname="ns185:getClientConfig" returnQName="getClientConfigReturn" returnType="xsd:anyType" soapAction="" xmlns:ns185="urn:mgb" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <parameter name="in0" type="soapenc:string" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </operation>
+  <operation name="setClientConfig" qname="ns186:setClientConfig" soapAction="" xmlns:ns186="urn:mgb">
+   <parameter name="in0" type="soapenc:string" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"/>
+   <parameter name="in1" type="xsd:anyType" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </operation>
+  <operation name="runSampleChecks" qname="ns187:runSampleChecks" soapAction="" xmlns:ns187="urn:mgb"/>
+  <operation name="getStateCodeMap" qname="ns188:getStateCodeMap" returnQName="getStateCodeMapReturn" returnType="xsd:anyType" soapAction="" xmlns:ns188="urn:mgb" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <parameter name="in0" type="soapenc:string" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"/>
+   <parameter name="in1" type="soapenc:string" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </operation>
+  <operation name="findAllTimePeriods" qname="ns189:findAllTimePeriods" returnQName="findAllTimePeriodsReturn" returnType="ns189:ArrayOf_soapenc_string" soapAction="" xmlns:ns189="urn:mgb">
+   <parameter name="in0" type="soapenc:string" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </operation>
+  <operation name="getRequestPriceConversionFactorMap" qname="ns190:getRequestPriceConversionFactorMap" returnQName="getRequestPriceConversionFactorMapReturn" returnType="xsd:anyType" soapAction="" xmlns:ns190="urn:mgb" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <operation name="findAllReports" qname="ns191:findAllReports" returnQName="findAllReportsReturn" returnType="ns191:ArrayOf_soapenc_string" soapAction="" xmlns:ns191="urn:mgb">
+  </operation>
+  <operation name="downloadJobFile" qname="ns192:downloadJobFile" returnQName="downloadJobFileReturn" returnType="soapenc:base64Binary" soapAction="" xmlns:ns192="urn:mgb" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+   <parameter name="in0" type="soapenc:long"/>
+   <parameter name="in1" type="soapenc:string"/>
+  </operation>
+  <operation name="findAllMandants" qname="ns193:findAllMandants" returnQName="findAllMandantsReturn" returnType="ns193:ArrayOf_tns2_MandantVo" soapAction="" xmlns:ns193="urn:mgb"/>
+  <operation name="findAllReportClients" qname="ns194:findAllReportClients" returnQName="findAllReportClientsReturn" returnType="ns194:ArrayOf_soapenc_string" soapAction="" xmlns:ns194="urn:mgb">
+  </operation>
+  <operation name="findReports" qname="ns195:findReports" returnQName="findReportReturn" returnType="ns195:ArrayOf_soapenc_string" soapAction="" xmlns:ns194="urn:mgb">
+   <parameter name="in0" type="soapenc:string" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </operation>
+  <parameter name="wsdlServicePort" value="Mgb"/>
+  <parameter name="className" value="de.westlb.mgb.client.server.MgbSoapBindingImpl"/>
+  <parameter name="typeMappingVersion" value="1.2"/>
+  <parameter name="allowedMethods" value="findEmployeesByReclamationRequired getSessionInfo getCurrentDataSelection getStornoGroup findAllPriceCheckCategories sendMail isTradeAccessGranted findTraderInboxMails saveInitialTradeReclamationState runAndSaveAutomaticCheck deleteExchangeMapping findAllBloombergCurrencyCodes startReadAttachment getStateCodes setClientConfig findTradesMiscReclReqByEmployee deleteDualControlJobs getMgbTask findAllBloombergMaturityCodes findTradeOverviewVosForStatisticRow findAllMandants getMgbConfigurationValue assignPriceCheckCategoryToInstrument getTradeParameter updateRequests saveMgbConfiguration getChildMails deleteExchange endReadAttachment getRequestPriceConversionFactorMap findAllTimePeriods findEmployees setMarketDataProxyDirectory isBusy setDataSelection prepareAndSendMail saveExchangeMapping findTrades getHistory getRecentJobs findAllEmployees findTradesForStatisticRow sendTraderResponseMail saveEmployee updateRequest findAllAddons getUserStatistic downloadJobFile getUnvalidatedRequests getCurrentReclamationState prepareMail getStateRules adminLogin getAutoCheckTrades deleteTrader saveTradeState deleteStateCode saveStateCode savePriceCheckCategory fetchPrices getDomainUser saveReclStateAfterEmployeeReport getExchange getStateStatistic saveExchange getUnsolvedRequests saveEmployeeAndRoles close findAllExchanges getClientConfig getStatisticReport getTradeOverview login getStateCode getMail deleteAddon createNewJob findDualControlJobs getDataSelection getPriceCheckCategory getInstrument keepAlive getEmployee assignTraderToEmployee runSampleChecks getAddon deleteJob findPriceDeviations saveMgbTask getStatisticCubeReport findNewTrader getStornoGroupFromTrade deletePriceCheckCategory findNewInstruments findNewLocations saveAddon savePrice readAttachment getPrice deleteEmployee closeReclamation findAllJobs findReports findAllReports findAllReportClients getStateCodeMap findInstruments findAllMgbConfigurations getTradeState confirmDualControlJobs setJobStatus getDualControlJobVo getRepoTradeOverview findMailsByTradeId findTradesReclRequired getPriceDeviationStatistic getTradeReclamation findTradesOverviewVo getCheckState findTradesLateReclReqByEmployee findAllBooks isTradeOwned findAllSourceSystems savePrices findAllConditions"/>
+  <parameter name="wsdlServiceElement" value="MgbService"/>
+  <parameter name="wsdlTargetNamespace" value="urn:mgb"/>
+  <parameter name="wsdlPortType" value="Mgb"/>
+  <parameter name="scope" value="Session"/>
+  <parameter name="schemaUnqualified" value="http://vo.server.client.mgb.westlb.de,urn:mgb"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" qname="ns194:ExchangeSearchResultEntryVo" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:de.westlb.mgb.client.server.vo.ExchangeSearchResultEntryVo" xmlns:ns194="http://vo.server.client.mgb.westlb.de"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" qname="ns195:PriceVo" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:de.westlb.mgb.client.server.vo.PriceVo" xmlns:ns195="http://vo.server.client.mgb.westlb.de"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" qname="ns196:PriceCheckCategoryVo" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:de.westlb.mgb.client.server.vo.PriceCheckCategoryVo" xmlns:ns196="http://vo.server.client.mgb.westlb.de"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" qname="ns197:StateRulesVo" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:de.westlb.mgb.client.server.vo.StateRulesVo" xmlns:ns197="http://vo.server.client.mgb.westlb.de"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" qname="ns199:InboxMailVo" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:de.westlb.mgb.client.server.vo.InboxMailVo" xmlns:ns199="http://vo.server.client.mgb.westlb.de"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" qname="ns200:MgbTaskVo" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:de.westlb.mgb.client.server.vo.MgbTaskVo" xmlns:ns200="http://vo.server.client.mgb.westlb.de"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" qname="ns201:TradeParameterVo" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:de.westlb.mgb.client.server.vo.TradeParameterVo" xmlns:ns201="http://vo.server.client.mgb.westlb.de"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" qname="ns202:InstrumentSearchResultEntryVo" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:de.westlb.mgb.client.server.vo.InstrumentSearchResultEntryVo" xmlns:ns202="http://vo.server.client.mgb.westlb.de"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" qname="ns203:JobSearchParamsVo" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:de.westlb.mgb.client.server.vo.JobSearchParamsVo" xmlns:ns203="http://vo.server.client.mgb.westlb.de"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" qname="ns204:EmployeeSearchParamsVo" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:de.westlb.mgb.client.server.vo.EmployeeSearchParamsVo" xmlns:ns204="http://vo.server.client.mgb.westlb.de"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" qname="ns205:SourceSystemVo" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:de.westlb.mgb.client.server.vo.SourceSystemVo" xmlns:ns205="http://vo.server.client.mgb.westlb.de"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" qname="ns206:InstrumentSearchParamsVo" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:de.westlb.mgb.client.server.vo.InstrumentSearchParamsVo" xmlns:ns206="http://vo.server.client.mgb.westlb.de"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" qname="ns207:BloombergMaturityCodeVo" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:de.westlb.mgb.client.server.vo.BloombergMaturityCodeVo" xmlns:ns207="http://vo.server.client.mgb.westlb.de"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" qname="ns208:TradeSearchResultEntryVo" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:de.westlb.mgb.client.server.vo.TradeSearchResultEntryVo" xmlns:ns208="http://vo.server.client.mgb.westlb.de"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" qname="ns209:InstrumentVo" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:de.westlb.mgb.client.server.vo.InstrumentVo" xmlns:ns209="http://vo.server.client.mgb.westlb.de"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" qname="ns210:MailVo" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:de.westlb.mgb.client.server.vo.MailVo" xmlns:ns210="http://vo.server.client.mgb.westlb.de"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" qname="ns211:ExchangeVo" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:de.westlb.mgb.client.server.vo.ExchangeVo" xmlns:ns211="http://vo.server.client.mgb.westlb.de"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" qname="ns212:AddonSearchResultEntryVo" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:de.westlb.mgb.client.server.vo.AddonSearchResultEntryVo" xmlns:ns212="http://vo.server.client.mgb.westlb.de"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" qname="ns213:DualControlJobVo" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:de.westlb.mgb.client.server.vo.DualControlJobVo" xmlns:ns213="http://vo.server.client.mgb.westlb.de"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" qname="ns214:TradeHistoryEntryVo" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:de.westlb.mgb.client.server.vo.TradeHistoryEntryVo" xmlns:ns214="http://vo.server.client.mgb.westlb.de"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" qname="ns215:MgbConfigurationVo" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:de.westlb.mgb.client.server.vo.MgbConfigurationVo" xmlns:ns215="http://vo.server.client.mgb.westlb.de"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" qname="ns217:StatisticReportVo" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:de.westlb.mgb.client.server.vo.StatisticReportVo" xmlns:ns217="http://vo.server.client.mgb.westlb.de"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" qname="ns219:AutoCheckVo" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:de.westlb.mgb.client.server.vo.AutoCheckVo" xmlns:ns219="http://vo.server.client.mgb.westlb.de"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" qname="ns220:StatisticCubeRowVo" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:de.westlb.mgb.client.server.vo.StatisticCubeRowVo" xmlns:ns220="http://vo.server.client.mgb.westlb.de"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" qname="ns221:BloombergCurrencyCodeVo" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:de.westlb.mgb.client.server.vo.BloombergCurrencyCodeVo" xmlns:ns221="http://vo.server.client.mgb.westlb.de"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" qname="ns222:StateCodeVo" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:de.westlb.mgb.client.server.vo.StateCodeVo" xmlns:ns222="http://vo.server.client.mgb.westlb.de"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" qname="ns223:PriceDeviationStatisticVo" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:de.westlb.mgb.client.server.vo.PriceDeviationStatisticVo" xmlns:ns223="http://vo.server.client.mgb.westlb.de"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" qname="ns224:TradeReclRequiredVo" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:de.westlb.mgb.client.server.vo.TradeReclRequiredVo" xmlns:ns224="http://vo.server.client.mgb.westlb.de"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" qname="ns225:TraderSearchResultEntryVo" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:de.westlb.mgb.client.server.vo.TraderSearchResultEntryVo" xmlns:ns225="http://vo.server.client.mgb.westlb.de"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" qname="ns226:StatisticRowVo" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:de.westlb.mgb.client.server.vo.StatisticRowVo" xmlns:ns226="http://vo.server.client.mgb.westlb.de"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" qname="ns228:CheckStateVo" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:de.westlb.mgb.client.server.vo.CheckStateVo" xmlns:ns228="http://vo.server.client.mgb.westlb.de"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" qname="ns229:EmployeeSearchResultEntryVo" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:de.westlb.mgb.client.server.vo.EmployeeSearchResultEntryVo" xmlns:ns229="http://vo.server.client.mgb.westlb.de"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" qname="ns230:PriceDeviationVo" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:de.westlb.mgb.client.server.vo.PriceDeviationVo" xmlns:ns230="http://vo.server.client.mgb.westlb.de"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" qname="ns231:StatisticReportParamsVo" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:de.westlb.mgb.client.server.vo.StatisticReportParamsVo" xmlns:ns231="http://vo.server.client.mgb.westlb.de"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" qname="ns232:ExchangeMappingVo" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:de.westlb.mgb.client.server.vo.ExchangeMappingVo" xmlns:ns232="http://vo.server.client.mgb.westlb.de"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" qname="ns233:AddonVo" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:de.westlb.mgb.client.server.vo.AddonVo" xmlns:ns233="http://vo.server.client.mgb.westlb.de"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" qname="ns234:MailSearchResultEntryVo" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:de.westlb.mgb.client.server.vo.MailSearchResultEntryVo" xmlns:ns234="http://vo.server.client.mgb.westlb.de"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" qname="ns235:StatisticReportVoBase" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:de.westlb.mgb.client.server.vo.StatisticReportVoBase" xmlns:ns235="http://vo.server.client.mgb.westlb.de"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" qname="ns237:AssetVo" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:de.westlb.mgb.client.server.vo.AssetVo" xmlns:ns237="http://vo.server.client.mgb.westlb.de"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" qname="ns238:StornoGroupVo" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:de.westlb.mgb.client.server.vo.StornoGroupVo" xmlns:ns238="http://vo.server.client.mgb.westlb.de"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" qname="ns239:DualControlJobSearchResultEntryVo" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:de.westlb.mgb.client.server.vo.DualControlJobSearchResultEntryVo" xmlns:ns239="http://vo.server.client.mgb.westlb.de"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" qname="ns240:DualControlJobSearchParamsVo" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:de.westlb.mgb.client.server.vo.DualControlJobSearchParamsVo" xmlns:ns240="http://vo.server.client.mgb.westlb.de"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" qname="ns241:UserStatisticVo" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:de.westlb.mgb.client.server.vo.UserStatisticVo" xmlns:ns241="http://vo.server.client.mgb.westlb.de"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" qname="ns242:StateStatisticEntryVo" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:de.westlb.mgb.client.server.vo.StateStatisticEntryVo" xmlns:ns242="http://vo.server.client.mgb.westlb.de"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" qname="ns243:TradeReclamationVo" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:de.westlb.mgb.client.server.vo.TradeReclamationVo" xmlns:ns243="http://vo.server.client.mgb.westlb.de"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" qname="ns244:EmployeeVo" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:de.westlb.mgb.client.server.vo.EmployeeVo" xmlns:ns244="http://vo.server.client.mgb.westlb.de"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" qname="ns245:RequestVo" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:de.westlb.mgb.client.server.vo.RequestVo" xmlns:ns245="http://vo.server.client.mgb.westlb.de"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" qname="ns246:StatisticContextVo" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:de.westlb.mgb.client.server.vo.StatisticContextVo" xmlns:ns246="http://vo.server.client.mgb.westlb.de"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" qname="ns247:TradeSearchParamsVo" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:de.westlb.mgb.client.server.vo.TradeSearchParamsVo" xmlns:ns247="http://vo.server.client.mgb.westlb.de"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" qname="ns250:BookSearchResultEntryVo" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:de.westlb.mgb.client.server.vo.BookSearchResultEntryVo" xmlns:ns250="http://vo.server.client.mgb.westlb.de"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" qname="ns251:SendMailParamsVo" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:de.westlb.mgb.client.server.vo.SendMailParamsVo" xmlns:ns251="http://vo.server.client.mgb.westlb.de"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" qname="ns252:MandantVo" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:de.westlb.mgb.client.server.vo.MandantVo" xmlns:ns252="http://vo.server.client.mgb.westlb.de"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" qname="ns253:TradeOverviewVo" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:de.westlb.mgb.client.server.vo.TradeOverviewVo" xmlns:ns253="http://vo.server.client.mgb.westlb.de"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" qname="ns255:SessionInfoVo" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:de.westlb.mgb.client.server.vo.SessionInfoVo" xmlns:ns255="http://vo.server.client.mgb.westlb.de"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" qname="ns256:JobVo" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:de.westlb.mgb.client.server.vo.JobVo" xmlns:ns256="http://vo.server.client.mgb.westlb.de"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" qname="ns257:StatisticCubeReportVo" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:de.westlb.mgb.client.server.vo.StatisticCubeReportVo" xmlns:ns257="http://vo.server.client.mgb.westlb.de"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" qname="ns258:RepoTradeOverviewVo" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:de.westlb.mgb.client.server.vo.RepoTradeOverviewVo" xmlns:ns258="http://vo.server.client.mgb.westlb.de"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" qname="ns259:ConditionVo" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:de.westlb.mgb.client.server.vo.ConditionVo" xmlns:ns259="http://vo.server.client.mgb.westlb.de"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" qname="ns260:DataSelectionVo" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:de.westlb.mgb.client.server.vo.DataSelectionVo" xmlns:ns260="http://vo.server.client.mgb.westlb.de"/>
+  <arrayMapping innerType="ns262:BloombergMaturityCodeVo" languageSpecificType="java:de.westlb.mgb.client.server.vo.BloombergMaturityCodeVo[]" qname="ns261:ArrayOf_tns2_BloombergMaturityCodeVo" xmlns:ns261="urn:mgb" xmlns:ns262="http://vo.server.client.mgb.westlb.de"/>
+  <arrayMapping innerType="xsd:anyType" languageSpecificType="java:java.lang.Object[]" qname="ns263:ArrayOf_xsd_anyType" xmlns:ns263="urn:mgb" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <arrayMapping innerType="ns265:MailSearchResultEntryVo" languageSpecificType="java:de.westlb.mgb.client.server.vo.MailSearchResultEntryVo[]" qname="ns264:ArrayOf_tns2_MailSearchResultEntryVo" xmlns:ns264="urn:mgb" xmlns:ns265="http://vo.server.client.mgb.westlb.de"/>
+  <arrayMapping innerType="soapenc:long" languageSpecificType="java:java.lang.Long[]" qname="ns268:ArrayOf_soapenc_long" xmlns:ns268="urn:mgb" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"/>
+  <arrayMapping innerType="ns270:StornoGroupVo" languageSpecificType="java:de.westlb.mgb.client.server.vo.StornoGroupVo[]" qname="ns269:ArrayOf_tns2_StornoGroupVo" xmlns:ns269="urn:mgb" xmlns:ns270="http://vo.server.client.mgb.westlb.de"/>
+  <arrayMapping innerType="ns272:BookSearchResultEntryVo" languageSpecificType="java:de.westlb.mgb.client.server.vo.BookSearchResultEntryVo[]" qname="ns271:ArrayOf_tns2_BookSearchResultEntryVo" xmlns:ns271="urn:mgb" xmlns:ns272="http://vo.server.client.mgb.westlb.de"/>
+  <arrayMapping innerType="soapenc:double" languageSpecificType="java:java.lang.Double[]" qname="ns273:ArrayOf_soapenc_double" xmlns:ns273="urn:mgb" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"/>
+  <arrayMapping innerType="ns275:MandantVo" languageSpecificType="java:de.westlb.mgb.client.server.vo.MandantVo[]" qname="ns274:ArrayOf_tns2_MandantVo" xmlns:ns274="urn:mgb" xmlns:ns275="http://vo.server.client.mgb.westlb.de"/>
+  <arrayMapping innerType="ns277:TradeReclRequiredVo" languageSpecificType="java:de.westlb.mgb.client.server.vo.TradeReclRequiredVo[]" qname="ns276:ArrayOf_tns2_TradeReclRequiredVo" xmlns:ns276="urn:mgb" xmlns:ns277="http://vo.server.client.mgb.westlb.de"/>
+  <arrayMapping innerType="ns279:ConditionVo" languageSpecificType="java:de.westlb.mgb.client.server.vo.ConditionVo[]" qname="ns278:ArrayOf_tns2_ConditionVo" xmlns:ns278="urn:mgb" xmlns:ns279="http://vo.server.client.mgb.westlb.de"/>
+  <arrayMapping innerType="ns281:StateStatisticEntryVo" languageSpecificType="java:de.westlb.mgb.client.server.vo.StateStatisticEntryVo[]" qname="ns280:ArrayOf_tns2_StateStatisticEntryVo" xmlns:ns280="urn:mgb" xmlns:ns281="http://vo.server.client.mgb.westlb.de"/>
+  <arrayMapping innerType="ns283:PriceVo" languageSpecificType="java:de.westlb.mgb.client.server.vo.PriceVo[]" qname="ns282:ArrayOf_tns2_PriceVo" xmlns:ns282="urn:mgb" xmlns:ns283="http://vo.server.client.mgb.westlb.de"/>
+  <arrayMapping innerType="ns285:SourceSystemVo" languageSpecificType="java:de.westlb.mgb.client.server.vo.SourceSystemVo[]" qname="ns284:ArrayOf_tns2_SourceSystemVo" xmlns:ns284="urn:mgb" xmlns:ns285="http://vo.server.client.mgb.westlb.de"/>
+  <arrayMapping innerType="ns287:EmployeeVo" languageSpecificType="java:de.westlb.mgb.client.server.vo.EmployeeVo[]" qname="ns286:ArrayOf_tns2_EmployeeVo" xmlns:ns286="urn:mgb" xmlns:ns287="http://vo.server.client.mgb.westlb.de"/>
+  <arrayMapping innerType="ns289:StatisticContextVo" languageSpecificType="java:de.westlb.mgb.client.server.vo.StatisticContextVo[]" qname="ns288:ArrayOf_tns2_StatisticContextVo" xmlns:ns288="urn:mgb" xmlns:ns289="http://vo.server.client.mgb.westlb.de"/>
+  <arrayMapping innerType="ns291:AutoCheckVo" languageSpecificType="java:de.westlb.mgb.client.server.vo.AutoCheckVo[]" qname="ns290:ArrayOf_tns2_AutoCheckVo" xmlns:ns290="urn:mgb" xmlns:ns291="http://vo.server.client.mgb.westlb.de"/>
+  <arrayMapping innerType="ns295:PriceDeviationStatisticVo" languageSpecificType="java:de.westlb.mgb.client.server.vo.PriceDeviationStatisticVo[]" qname="ns294:ArrayOf_tns2_PriceDeviationStatisticVo" xmlns:ns294="urn:mgb" xmlns:ns295="http://vo.server.client.mgb.westlb.de"/>
+  <arrayMapping innerType="ns297:DualControlJobSearchResultEntryVo" languageSpecificType="java:de.westlb.mgb.client.server.vo.DualControlJobSearchResultEntryVo[]" qname="ns296:ArrayOf_tns2_DualControlJobSearchResultEntryVo" xmlns:ns296="urn:mgb" xmlns:ns297="http://vo.server.client.mgb.westlb.de"/>
+  <arrayMapping innerType="ns299:InboxMailVo" languageSpecificType="java:de.westlb.mgb.client.server.vo.InboxMailVo[]" qname="ns298:ArrayOf_tns2_InboxMailVo" xmlns:ns298="urn:mgb" xmlns:ns299="http://vo.server.client.mgb.westlb.de"/>
+  <arrayMapping innerType="soapenc:string" languageSpecificType="java:java.lang.String[]" qname="ns300:ArrayOf_soapenc_string" xmlns:ns300="urn:mgb" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"/>
+  <arrayMapping innerType="ns302:PriceCheckCategoryVo" languageSpecificType="java:de.westlb.mgb.client.server.vo.PriceCheckCategoryVo[]" qname="ns301:ArrayOf_tns2_PriceCheckCategoryVo" xmlns:ns301="urn:mgb" xmlns:ns302="http://vo.server.client.mgb.westlb.de"/>
+  <arrayMapping innerType="ns304:InstrumentSearchResultEntryVo" languageSpecificType="java:de.westlb.mgb.client.server.vo.InstrumentSearchResultEntryVo[]" qname="ns303:ArrayOf_tns2_InstrumentSearchResultEntryVo" xmlns:ns303="urn:mgb" xmlns:ns304="http://vo.server.client.mgb.westlb.de"/>
+  <arrayMapping innerType="ns308:EmployeeSearchResultEntryVo" languageSpecificType="java:de.westlb.mgb.client.server.vo.EmployeeSearchResultEntryVo[]" qname="ns307:ArrayOf_tns2_EmployeeSearchResultEntryVo" xmlns:ns307="urn:mgb" xmlns:ns308="http://vo.server.client.mgb.westlb.de"/>
+  <arrayMapping innerType="ns312:MgbConfigurationVo" languageSpecificType="java:de.westlb.mgb.client.server.vo.MgbConfigurationVo[]" qname="ns311:ArrayOf_tns2_MgbConfigurationVo" xmlns:ns311="urn:mgb" xmlns:ns312="http://vo.server.client.mgb.westlb.de"/>
+  <arrayMapping innerType="ns314:TraderVo" languageSpecificType="java:de.westlb.mgb.client.server.vo.TraderVo[]" qname="ns313:ArrayOf_tns2_TraderVo" xmlns:ns313="urn:mgb" xmlns:ns314="http://vo.server.client.mgb.westlb.de"/>
+  <arrayMapping innerType="ns316:MailVo" languageSpecificType="java:de.westlb.mgb.client.server.vo.MailVo[]" qname="ns315:ArrayOf_tns2_MailVo" xmlns:ns315="urn:mgb" xmlns:ns316="http://vo.server.client.mgb.westlb.de"/>
+  <arrayMapping innerType="ns318:BloombergCurrencyCodeVo" languageSpecificType="java:de.westlb.mgb.client.server.vo.BloombergCurrencyCodeVo[]" qname="ns317:ArrayOf_tns2_BloombergCurrencyCodeVo" xmlns:ns317="urn:mgb" xmlns:ns318="http://vo.server.client.mgb.westlb.de"/>
+  <arrayMapping innerType="ns320:RequestVo" languageSpecificType="java:de.westlb.mgb.client.server.vo.RequestVo[]" qname="ns319:ArrayOf_tns2_RequestVo" xmlns:ns319="urn:mgb" xmlns:ns320="http://vo.server.client.mgb.westlb.de"/>
+  <arrayMapping innerType="ns322:TradeHistoryEntryVo" languageSpecificType="java:de.westlb.mgb.client.server.vo.TradeHistoryEntryVo[]" qname="ns321:ArrayOf_tns2_TradeHistoryEntryVo" xmlns:ns321="urn:mgb" xmlns:ns322="http://vo.server.client.mgb.westlb.de"/>
+  <arrayMapping innerType="ns324:ExchangeMappingVo" languageSpecificType="java:de.westlb.mgb.client.server.vo.ExchangeMappingVo[]" qname="ns323:ArrayOf_tns2_ExchangeMappingVo" xmlns:ns323="urn:mgb" xmlns:ns324="http://vo.server.client.mgb.westlb.de"/>
+  <arrayMapping innerType="ns326:StatisticRowVo" languageSpecificType="java:de.westlb.mgb.client.server.vo.StatisticRowVo[]" qname="ns325:ArrayOf_tns2_StatisticRowVo" xmlns:ns325="urn:mgb" xmlns:ns326="http://vo.server.client.mgb.westlb.de"/>
+  <arrayMapping innerType="ns328:AssetVo" languageSpecificType="java:de.westlb.mgb.client.server.vo.AssetVo[]" qname="ns327:ArrayOf_tns2_AssetVo" xmlns:ns327="urn:mgb" xmlns:ns328="http://vo.server.client.mgb.westlb.de"/>
+  <arrayMapping innerType="soapenc:int" languageSpecificType="java:java.lang.Integer[]" qname="ns329:ArrayOf_soapenc_int" xmlns:ns329="urn:mgb" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"/>
+  <arrayMapping innerType="ns331:StatisticCubeRowVo" languageSpecificType="java:de.westlb.mgb.client.server.vo.StatisticCubeRowVo[]" qname="ns330:ArrayOf_tns2_StatisticCubeRowVo" xmlns:ns330="urn:mgb" xmlns:ns331="http://vo.server.client.mgb.westlb.de"/>
+  <arrayMapping innerType="ns333:TraderSearchResultEntryVo" languageSpecificType="java:de.westlb.mgb.client.server.vo.TraderSearchResultEntryVo[]" qname="ns332:ArrayOf_tns2_TraderSearchResultEntryVo" xmlns:ns332="urn:mgb" xmlns:ns333="http://vo.server.client.mgb.westlb.de"/>
+  <arrayMapping innerType="ns335:JobVo" languageSpecificType="java:de.westlb.mgb.client.server.vo.JobVo[]" qname="ns334:ArrayOf_tns2_JobVo" xmlns:ns334="urn:mgb" xmlns:ns335="http://vo.server.client.mgb.westlb.de"/>
+  <arrayMapping innerType="ns337:StateCodeVo" languageSpecificType="java:de.westlb.mgb.client.server.vo.StateCodeVo[]" qname="ns336:ArrayOf_tns2_StateCodeVo" xmlns:ns336="urn:mgb" xmlns:ns337="http://vo.server.client.mgb.westlb.de"/>
+  <arrayMapping innerType="ns339:AddonSearchResultEntryVo" languageSpecificType="java:de.westlb.mgb.client.server.vo.AddonSearchResultEntryVo[]" qname="ns338:ArrayOf_tns2_AddonSearchResultEntryVo" xmlns:ns338="urn:mgb" xmlns:ns339="http://vo.server.client.mgb.westlb.de"/>
+  <arrayMapping innerType="ns341:PriceDeviationVo" languageSpecificType="java:de.westlb.mgb.client.server.vo.PriceDeviationVo[]" qname="ns340:ArrayOf_tns2_PriceDeviationVo" xmlns:ns340="urn:mgb" xmlns:ns341="http://vo.server.client.mgb.westlb.de"/>
+  <arrayMapping innerType="ns343:SendMailParamsVo" languageSpecificType="java:de.westlb.mgb.client.server.vo.SendMailParamsVo[]" qname="ns342:ArrayOf_tns2_SendMailParamsVo" xmlns:ns342="urn:mgb" xmlns:ns343="http://vo.server.client.mgb.westlb.de"/>
+  <arrayMapping innerType="ns345:TradeSearchResultEntryVo" languageSpecificType="java:de.westlb.mgb.client.server.vo.TradeSearchResultEntryVo[]" qname="ns344:ArrayOf_tns2_TradeSearchResultEntryVo" xmlns:ns344="urn:mgb" xmlns:ns345="http://vo.server.client.mgb.westlb.de"/>
+  <arrayMapping innerType="ns347:StateRulesVo" languageSpecificType="java:de.westlb.mgb.client.server.vo.StateRulesVo[]" qname="ns346:ArrayOf_tns2_StateRulesVo" xmlns:ns346="urn:mgb" xmlns:ns347="http://vo.server.client.mgb.westlb.de"/>
+  <arrayMapping innerType="ns349:UserStatisticVo" languageSpecificType="java:de.westlb.mgb.client.server.vo.UserStatisticVo[]" qname="ns348:ArrayOf_tns2_UserStatisticVo" xmlns:ns348="urn:mgb" xmlns:ns349="http://vo.server.client.mgb.westlb.de"/>
+  <arrayMapping innerType="ns351:TradeOverviewVo" languageSpecificType="java:de.westlb.mgb.client.server.vo.TradeOverviewVo[]" qname="ns350:ArrayOf_tns2_TradeOverviewVo" xmlns:ns350="urn:mgb" xmlns:ns351="http://vo.server.client.mgb.westlb.de"/>
+  <arrayMapping innerType="ns353:ExchangeSearchResultEntryVo" languageSpecificType="java:de.westlb.mgb.client.server.vo.ExchangeSearchResultEntryVo[]" qname="ns352:ArrayOf_tns2_ExchangeSearchResultEntryVo" xmlns:ns352="urn:mgb" xmlns:ns353="http://vo.server.client.mgb.westlb.de"/>
+ </service>
+ <service name="urn:xmltoday-delayed-quotes" provider="java:RPC">
+  <requestFlow name="checks">
+   <handler type="java:org.apache.axis.handlers.SimpleAuthenticationHandler"/>
+   <handler type="java:org.apache.axis.handlers.SimpleAuthorizationHandler"/>
+  </requestFlow>
+  <parameter name="allowedMethods" value="getQuote test"/>
+  <parameter name="allowedRoles" value="user1,user2"/>
+  <parameter name="className" value="samples.stock.StockQuoteService"/>
+  <parameter name="wsdlServicePort" value="GetQuote"/>
+ </service>
+ <transport name="http">
+  <requestFlow>
+   <handler type="URLMapper"/>
+   <handler type="java:org.apache.axis.handlers.http.HTTPAuthHandler"/>
+  </requestFlow>
+  <parameter name="qs.list" value="org.apache.axis.transport.http.QSListHandler"/>
+  <parameter name="qs.method" value="org.apache.axis.transport.http.QSMethodHandler"/>
+  <parameter name="qs.wsdl" value="org.apache.axis.transport.http.QSWSDLHandler"/>
+ </transport>
+ <transport name="local">
+  <responseFlow>
+   <handler type="LocalResponder"/>
+  </responseFlow>
+ </transport>
+</deployment>

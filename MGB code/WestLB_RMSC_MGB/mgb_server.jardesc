@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jardesc>
+    <jar path="C:/Daten/workspaces/rad_600/mgb_workspace/WestLB_RMSC_MGB_SPK_IF/Web Content/WEB-INF/lib/mgb_server.jar"/>
+    <options buildIfNeeded="false" compress="true" descriptionLocation="/WestLB_RMSC_MGB/mgb_server.jardesc" exportErrors="true" exportWarnings="true" overwrite="false" saveDescription="true" useSourceFolders="false"/>
+    <manifest generateManifest="true" manifestLocation="" manifestVersion="1.0" reuseManifest="false" saveManifest="false" usesManifest="true">
+        <sealing sealJar="false">
+            <packagesToSeal/>
+            <packagesToUnSeal/>
+        </sealing>
+    </manifest>
+    <selectedElements exportClassFiles="true" exportJavaFiles="false" exportOutputFolder="false">
+        <javaElement handleIdentifier="=WestLB_RMSC_MGB/JavaSource"/>
+    </selectedElements>
+</jardesc>

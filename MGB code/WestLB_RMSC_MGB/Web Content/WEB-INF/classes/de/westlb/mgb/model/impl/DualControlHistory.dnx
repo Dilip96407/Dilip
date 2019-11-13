@@ -1,0 +1,489 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.rational.xtools.umlvisualizer.emfnotation:Pack xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.rational.xtools.umlvisualizer.emfnotation="http:///com/rational/xtools/umlvisualizer/emfnotation.ecore" Id="c52f6e02-00fb-e728-265c-0f10272daa77" version="8">
+  <Diagram DiagramId="c52f6e03-00fb-e83b-42fd-0f10272daa77">
+    <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:PositionalGeneralView" LineColor="4009615" FillColor="13565951" Font="MS Sans Serif|10|0|" Visible="true" FactoryHint="" ShapeStereotypeStyle="2" Id="c5307d05-00fb-e46d-0f2f-0f10272daa77" sourceConnectors="c5550de2-00fb-e19f-26b1-0f10272daa77 c5550dee-00fb-ee84-4009-0f10272daa77 c555cf85-00fb-fb5d-64b0-0f10272daa77 c5561382-00fb-e1e3-79e0-0f10272daa77 c5563b91-00fb-fe50-2c99-0f10272daa77 c5567fac-00fb-f082-041d-0f10272daa77 c556abcc-00fb-fe7d-7727-0f10272daa77 c557ba3a-00fb-f5f0-7256-0f10272daa77" PositionX="7050" PositionY="1550" ExtentX="150" ExtentY="150" Autosize="true" VisibilityStyle="2" ShowCompartmentTitle="false" CompartmentStereotypeStyle="2" ShowParentName="false">
+      <SemanticReference Id="emfsemantic:(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})" Name="DualControlJobImpl" Kind="29"/>
+      <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:NameCompartmentView" Visible="true" FactoryHint="Stereotype" ShapeStereotypeStyle="2" Id="c5307d19-00fb-f788-334d-0f10272daa77">
+        <SemanticReference Id="emfsemantic:(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})" Name="DualControlJobImpl" Kind="29"/>
+      </children>
+      <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:NameCompartmentView" Visible="true" FactoryHint="Name" ShapeStereotypeStyle="2" Id="c5307d37-00fb-f379-0a8d-0f10272daa77">
+        <SemanticReference Id="emfsemantic:(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})" Name="DualControlJobImpl" Kind="29"/>
+      </children>
+      <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:ListCompartmentView" Visible="true" FactoryHint="Attribute" ShapeStereotypeStyle="2" Id="c5307d38-00fb-f8d8-1caf-0f10272daa77" Ratio="-1.0" Collapsed="false">
+        <SemanticReference Id="emfsemantic:(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})" Name="DualControlJobImpl" Kind="29"/>
+      </children>
+      <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:ListCompartmentView" Visible="false" FactoryHint="Operation" ShapeStereotypeStyle="2" Id="c5307d39-00fb-f9eb-335b-0f10272daa77" Ratio="-1.0" Collapsed="false">
+        <SemanticReference Id="emfsemantic:(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})" Name="DualControlJobImpl" Kind="29"/>
+      </children>
+    </children>
+    <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:PositionalGeneralView" LineColor="4009615" FillColor="13565951" Font="MS Sans Serif|10|0|" Visible="true" FactoryHint="" ShapeStereotypeStyle="2" Id="c5550d38-00fb-fff3-1022-0f10272daa77" targetConnectors="c5550de2-00fb-e19f-26b1-0f10272daa77 c5550dee-00fb-ee84-4009-0f10272daa77" PositionX="22850" PositionY="700" ExtentX="150" ExtentY="150" Autosize="true" VisibilityStyle="2" ShowCompartmentTitle="false" CompartmentStereotypeStyle="2" ShowParentName="false">
+      <SemanticReference Id="emfsemantic:(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.EmployeeImpl})" Name="EmployeeImpl" Kind="29"/>
+      <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:NameCompartmentView" Visible="true" FactoryHint="Stereotype" ShapeStereotypeStyle="2" Id="c5550d39-00fb-e106-1d79-0f10272daa77">
+        <SemanticReference Id="emfsemantic:(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.EmployeeImpl})" Name="EmployeeImpl" Kind="29"/>
+      </children>
+      <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:NameCompartmentView" Visible="true" FactoryHint="Name" ShapeStereotypeStyle="2" Id="c5550d3a-00fb-fdcd-2686-0f10272daa77">
+        <SemanticReference Id="emfsemantic:(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.EmployeeImpl})" Name="EmployeeImpl" Kind="29"/>
+      </children>
+      <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:ListCompartmentView" Visible="true" FactoryHint="Attribute" ShapeStereotypeStyle="2" Id="c5550d3b-00fb-fee0-2e44-0f10272daa77" Ratio="-1.0" Collapsed="false">
+        <SemanticReference Id="emfsemantic:(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.EmployeeImpl})" Name="EmployeeImpl" Kind="29"/>
+      </children>
+      <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:ListCompartmentView" Visible="false" FactoryHint="Operation" ShapeStereotypeStyle="2" Id="c5550d3c-00fb-e43f-37e8-0f10272daa77" Ratio="-1.0" Collapsed="false">
+        <SemanticReference Id="emfsemantic:(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.EmployeeImpl})" Name="EmployeeImpl" Kind="29"/>
+      </children>
+    </children>
+    <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:ConnectorView" LineColor="4009615" Font="MS Sans Serif|10|0|" Visible="true" FactoryHint="" ShapeStereotypeStyle="2" Id="c5550de2-00fb-e19f-26b1-0f10272daa77" Routing="0" Smoothness="0" AvoidObstructions="false" ClosestDistance="false" SourceAnchor="anchor" TargetAnchor="anchor" JumpLinksStatus="0" JumpLinksType="1" JumpLinksReverse="false" ShowCompartmentTitle="false" source="c5307d05-00fb-e46d-0f2f-0f10272daa77" target="c5550d38-00fb-fff3-1022-0f10272daa77">
+      <SemanticReference Id="emfsemantic:(~sc{%UMLAssociation^c55502da-00fb-fc56-7654-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.EmployeeImpl}))" Name="" Kind="12"/>
+      <Labels Visible="true" FactoryHint="Name" ShapeStereotypeStyle="2" Id="c5550de3-00fb-e2b2-327b-0f10272daa77" FromLine="-18" FromEnd="50" IsPercentage="true">
+        <SemanticReference Id="emfsemantic:(~sc{%UMLAssociation^c55502da-00fb-fc56-7654-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.EmployeeImpl}))" Name="" Kind="12"/>
+        <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:NameCompartmentView" Visible="true" FactoryHint="Stereotype" ShapeStereotypeStyle="2" Id="c5550de4-00fb-e812-3d4d-0f10272daa77">
+          <SemanticReference Id="emfsemantic:(~sc{%UMLAssociation^c55502da-00fb-fc56-7654-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.EmployeeImpl}))" Name="" Kind="12"/>
+        </children>
+        <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:NameCompartmentView" Visible="true" FactoryHint="Name" ShapeStereotypeStyle="2" Id="c5550de5-00fb-e925-472d-0f10272daa77">
+          <SemanticReference Id="emfsemantic:(~sc{%UMLAssociation^c55502da-00fb-fc56-7654-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.EmployeeImpl}))" Name="" Kind="12"/>
+        </children>
+      </Labels>
+      <Labels Visible="true" FactoryHint="ToMultiplicity" ShapeStereotypeStyle="2" Id="c5550de6-00fb-e5ec-52ef-0f10272daa77" FromLine="-16" FromEnd="10" IsPercentage="true">
+        <SemanticReference Id="emfsemantic:(~sc{%UMLAssociationEnd}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~sc{%UMLAssociation^c55502da-00fb-fc56-7654-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.EmployeeImpl}))(~role_name{!pid%WestLB_RMSC_MGB}{}))" Name="" Kind="13"/>
+        <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:NameCompartmentView" Visible="true" FactoryHint="ToMultiplicity" ShapeStereotypeStyle="2" Id="c5550de7-00fb-e6ff-5e71-0f10272daa77">
+          <SemanticReference Id="emfsemantic:(~sc{%UMLAssociationEnd}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~sc{%UMLAssociation^c55502da-00fb-fc56-7654-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.EmployeeImpl}))(~role_name{!pid%WestLB_RMSC_MGB}{}))" Name="" Kind="13"/>
+        </children>
+      </Labels>
+      <Labels Visible="true" FactoryHint="ToRole" ShapeStereotypeStyle="2" Id="c5550de8-00fb-ec5e-696f-0f10272daa77" FromLine="15" FromEnd="10" IsPercentage="true">
+        <SemanticReference Id="emfsemantic:(~sc{%UMLAssociationEnd}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~sc{%UMLAssociation^c55502da-00fb-fc56-7654-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.EmployeeImpl}))(~role_name{!pid%WestLB_RMSC_MGB}{}))" Name="" Kind="13"/>
+        <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:NameCompartmentView" Visible="true" FactoryHint="ToRole" ShapeStereotypeStyle="2" Id="c5550de9-00fb-ed71-74ba-0f10272daa77">
+          <SemanticReference Id="emfsemantic:(~sc{%UMLAssociationEnd}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~sc{%UMLAssociation^c55502da-00fb-fc56-7654-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.EmployeeImpl}))(~role_name{!pid%WestLB_RMSC_MGB}{}))" Name="" Kind="13"/>
+        </children>
+      </Labels>
+      <Labels Visible="true" FactoryHint="FromMultiplicity" ShapeStereotypeStyle="2" Id="c5550dea-00fb-ea38-7fc8-0f10272daa77" FromLine="-16" FromEnd="90" IsPercentage="true">
+        <SemanticReference Id="emfsemantic:(~sc{%UMLAssociationEnd}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.EmployeeImpl})(~sc{%UMLAssociation^c55502da-00fb-fc56-7654-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.EmployeeImpl}))(~role_name{!pid%WestLB_RMSC_MGB}{%requestedBy}))" Name="requestedBy" Kind="13"/>
+        <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:NameCompartmentView" Visible="true" FactoryHint="FromMultiplicity" ShapeStereotypeStyle="2" Id="c5550deb-00fb-eb4b-0b4c-0f10272daa77">
+          <SemanticReference Id="emfsemantic:(~sc{%UMLAssociationEnd}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.EmployeeImpl})(~sc{%UMLAssociation^c55502da-00fb-fc56-7654-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.EmployeeImpl}))(~role_name{!pid%WestLB_RMSC_MGB}{%requestedBy}))" Name="requestedBy" Kind="13"/>
+        </children>
+      </Labels>
+      <Labels Visible="true" FactoryHint="FromRole" ShapeStereotypeStyle="2" Id="c5550dec-00fb-f0ab-1654-0f10272daa77" FromLine="15" FromEnd="90" IsPercentage="true">
+        <SemanticReference Id="emfsemantic:(~sc{%UMLAssociationEnd}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.EmployeeImpl})(~sc{%UMLAssociation^c55502da-00fb-fc56-7654-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.EmployeeImpl}))(~role_name{!pid%WestLB_RMSC_MGB}{%requestedBy}))" Name="requestedBy" Kind="13"/>
+        <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:NameCompartmentView" Visible="true" FactoryHint="FromRole" ShapeStereotypeStyle="2" Id="c5550ded-00fb-f1be-21b8-0f10272daa77">
+          <SemanticReference Id="emfsemantic:(~sc{%UMLAssociationEnd}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.EmployeeImpl})(~sc{%UMLAssociation^c55502da-00fb-fc56-7654-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.EmployeeImpl}))(~role_name{!pid%WestLB_RMSC_MGB}{%requestedBy}))" Name="requestedBy" Kind="13"/>
+        </children>
+      </Labels>
+      <BendPoints x="178" y="-58"/>
+      <BendPoints x="-182" y="-36"/>
+      <BendPoints x="222" y="-72"/>
+      <BendPoints x="-138" y="-50"/>
+      <BendPoints x="273" y="-54"/>
+      <BendPoints x="-87" y="-32"/>
+    </children>
+    <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:ConnectorView" LineColor="4009615" Font="MS Sans Serif|10|0|" Visible="true" FactoryHint="" ShapeStereotypeStyle="2" Id="c5550dee-00fb-ee84-4009-0f10272daa77" Routing="0" Smoothness="0" AvoidObstructions="false" ClosestDistance="false" SourceAnchor="anchor" TargetAnchor="anchor" JumpLinksStatus="0" JumpLinksType="1" JumpLinksReverse="false" ShowCompartmentTitle="false" source="c5307d05-00fb-e46d-0f2f-0f10272daa77" target="c5550d38-00fb-fff3-1022-0f10272daa77">
+      <SemanticReference Id="emfsemantic:(~sc{%UMLAssociation^c55502db-00fb-fd69-7f7f-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.EmployeeImpl}))" Name="" Kind="12"/>
+      <Labels Visible="true" FactoryHint="Name" ShapeStereotypeStyle="2" Id="c5550def-00fb-ef98-4c28-0f10272daa77" FromLine="-18" FromEnd="50" IsPercentage="true">
+        <SemanticReference Id="emfsemantic:(~sc{%UMLAssociation^c55502db-00fb-fd69-7f7f-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.EmployeeImpl}))" Name="" Kind="12"/>
+        <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:NameCompartmentView" Visible="true" FactoryHint="Stereotype" ShapeStereotypeStyle="2" Id="c5550df0-00fb-f294-56a8-0f10272daa77">
+          <SemanticReference Id="emfsemantic:(~sc{%UMLAssociation^c55502db-00fb-fd69-7f7f-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.EmployeeImpl}))" Name="" Kind="12"/>
+        </children>
+        <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:NameCompartmentView" Visible="true" FactoryHint="Name" ShapeStereotypeStyle="2" Id="c5550df1-00fb-f3a7-60f8-0f10272daa77">
+          <SemanticReference Id="emfsemantic:(~sc{%UMLAssociation^c55502db-00fb-fd69-7f7f-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.EmployeeImpl}))" Name="" Kind="12"/>
+        </children>
+      </Labels>
+      <Labels Visible="true" FactoryHint="ToMultiplicity" ShapeStereotypeStyle="2" Id="c5550df2-00fb-f06e-6c4d-0f10272daa77" FromLine="-16" FromEnd="10" IsPercentage="true">
+        <SemanticReference Id="emfsemantic:(~sc{%UMLAssociationEnd}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~sc{%UMLAssociation^c55502db-00fb-fd69-7f7f-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.EmployeeImpl}))(~role_name{!pid%WestLB_RMSC_MGB}{}))" Name="" Kind="13"/>
+        <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:NameCompartmentView" Visible="true" FactoryHint="ToMultiplicity" ShapeStereotypeStyle="2" Id="c5550df3-00fb-f181-77ad-0f10272daa77">
+          <SemanticReference Id="emfsemantic:(~sc{%UMLAssociationEnd}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~sc{%UMLAssociation^c55502db-00fb-fd69-7f7f-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.EmployeeImpl}))(~role_name{!pid%WestLB_RMSC_MGB}{}))" Name="" Kind="13"/>
+        </children>
+      </Labels>
+      <Labels Visible="true" FactoryHint="ToRole" ShapeStereotypeStyle="2" Id="c5550df4-00fb-f6e0-02ef-0f10272daa77" FromLine="15" FromEnd="10" IsPercentage="true">
+        <SemanticReference Id="emfsemantic:(~sc{%UMLAssociationEnd}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~sc{%UMLAssociation^c55502db-00fb-fd69-7f7f-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.EmployeeImpl}))(~role_name{!pid%WestLB_RMSC_MGB}{}))" Name="" Kind="13"/>
+        <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:NameCompartmentView" Visible="true" FactoryHint="ToRole" ShapeStereotypeStyle="2" Id="c5550df5-00fb-f7f3-0e40-0f10272daa77">
+          <SemanticReference Id="emfsemantic:(~sc{%UMLAssociationEnd}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~sc{%UMLAssociation^c55502db-00fb-fd69-7f7f-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.EmployeeImpl}))(~role_name{!pid%WestLB_RMSC_MGB}{}))" Name="" Kind="13"/>
+        </children>
+      </Labels>
+      <Labels Visible="true" FactoryHint="FromMultiplicity" ShapeStereotypeStyle="2" Id="c5550df6-00fb-f4ba-1942-0f10272daa77" FromLine="-16" FromEnd="90" IsPercentage="true">
+        <SemanticReference Id="emfsemantic:(~sc{%UMLAssociationEnd}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.EmployeeImpl})(~sc{%UMLAssociation^c55502db-00fb-fd69-7f7f-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.EmployeeImpl}))(~role_name{!pid%WestLB_RMSC_MGB}{%commitedBy}))" Name="commitedBy" Kind="13"/>
+        <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:NameCompartmentView" Visible="true" FactoryHint="FromMultiplicity" ShapeStereotypeStyle="2" Id="c5550df7-00fb-f5cd-249d-0f10272daa77">
+          <SemanticReference Id="emfsemantic:(~sc{%UMLAssociationEnd}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.EmployeeImpl})(~sc{%UMLAssociation^c55502db-00fb-fd69-7f7f-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.EmployeeImpl}))(~role_name{!pid%WestLB_RMSC_MGB}{%commitedBy}))" Name="commitedBy" Kind="13"/>
+        </children>
+      </Labels>
+      <Labels Visible="true" FactoryHint="FromRole" ShapeStereotypeStyle="2" Id="c5550df8-00fb-fb2d-2fa2-0f10272daa77" FromLine="15" FromEnd="90" IsPercentage="true">
+        <SemanticReference Id="emfsemantic:(~sc{%UMLAssociationEnd}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.EmployeeImpl})(~sc{%UMLAssociation^c55502db-00fb-fd69-7f7f-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.EmployeeImpl}))(~role_name{!pid%WestLB_RMSC_MGB}{%commitedBy}))" Name="commitedBy" Kind="13"/>
+        <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:NameCompartmentView" Visible="true" FactoryHint="FromRole" ShapeStereotypeStyle="2" Id="c5550df9-00fb-fc40-3b05-0f10272daa77">
+          <SemanticReference Id="emfsemantic:(~sc{%UMLAssociationEnd}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.EmployeeImpl})(~sc{%UMLAssociation^c55502db-00fb-fd69-7f7f-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.EmployeeImpl}))(~role_name{!pid%WestLB_RMSC_MGB}{%commitedBy}))" Name="commitedBy" Kind="13"/>
+        </children>
+      </Labels>
+      <BendPoints x="178" y="18"/>
+      <BendPoints x="-182" y="40"/>
+      <BendPoints x="258" y="27"/>
+      <BendPoints x="-102" y="49"/>
+      <BendPoints x="273" y="19"/>
+      <BendPoints x="-87" y="41"/>
+    </children>
+    <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:PositionalGeneralView" LineColor="4009615" FillColor="13565951" Font="MS Sans Serif|10|0|" Visible="true" FactoryHint="" ShapeStereotypeStyle="2" Id="c555cf3f-00fb-fc8e-632e-0f10272daa77" targetConnectors="c555cf85-00fb-fb5d-64b0-0f10272daa77" PositionX="3300" PositionY="13150" ExtentX="150" ExtentY="150" Autosize="true" VisibilityStyle="2" ShowCompartmentTitle="false" CompartmentStereotypeStyle="2" ShowParentName="false">
+      <SemanticReference Id="emfsemantic:(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.AddonImpl})" Name="AddonImpl" Kind="29"/>
+      <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:NameCompartmentView" Visible="true" FactoryHint="Stereotype" ShapeStereotypeStyle="2" Id="c555cf40-00fb-e450-7048-0f10272daa77">
+        <SemanticReference Id="emfsemantic:(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.AddonImpl})" Name="AddonImpl" Kind="29"/>
+      </children>
+      <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:NameCompartmentView" Visible="true" FactoryHint="Name" ShapeStereotypeStyle="2" Id="c555cf41-00fb-e564-797d-0f10272daa77">
+        <SemanticReference Id="emfsemantic:(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.AddonImpl})" Name="AddonImpl" Kind="29"/>
+      </children>
+      <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:ListCompartmentView" Visible="true" FactoryHint="Attribute" ShapeStereotypeStyle="2" Id="c555cf42-00fb-e22a-012e-0f10272daa77" Ratio="-1.0" Collapsed="false">
+        <SemanticReference Id="emfsemantic:(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.AddonImpl})" Name="AddonImpl" Kind="29"/>
+      </children>
+      <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:ListCompartmentView" Visible="false" FactoryHint="Operation" ShapeStereotypeStyle="2" Id="c555cf49-00fb-edfc-0b1b-0f10272daa77" Ratio="-1.0" Collapsed="false">
+        <SemanticReference Id="emfsemantic:(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.AddonImpl})" Name="AddonImpl" Kind="29"/>
+      </children>
+    </children>
+    <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:ConnectorView" LineColor="4009615" Font="MS Sans Serif|10|0|" Visible="true" FactoryHint="" ShapeStereotypeStyle="2" Id="c555cf85-00fb-fb5d-64b0-0f10272daa77" Routing="0" Smoothness="0" AvoidObstructions="false" ClosestDistance="false" SourceAnchor="anchor" TargetAnchor="anchor" JumpLinksStatus="0" JumpLinksType="1" JumpLinksReverse="false" ShowCompartmentTitle="false" source="c5307d05-00fb-e46d-0f2f-0f10272daa77" target="c555cf3f-00fb-fc8e-632e-0f10272daa77">
+      <SemanticReference Id="emfsemantic:(~sc{%UMLAssociation^c555c87a-00fb-fc75-6d0e-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.AddonImpl}))" Name="" Kind="12"/>
+      <Labels Visible="true" FactoryHint="Name" ShapeStereotypeStyle="2" Id="c555cf86-00fb-f823-70e4-0f10272daa77" FromLine="-18" FromEnd="50" IsPercentage="true">
+        <SemanticReference Id="emfsemantic:(~sc{%UMLAssociation^c555c87a-00fb-fc75-6d0e-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.AddonImpl}))" Name="" Kind="12"/>
+        <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:NameCompartmentView" Visible="true" FactoryHint="Stereotype" ShapeStereotypeStyle="2" Id="c555cf87-00fb-f937-7b64-0f10272daa77">
+          <SemanticReference Id="emfsemantic:(~sc{%UMLAssociation^c555c87a-00fb-fc75-6d0e-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.AddonImpl}))" Name="" Kind="12"/>
+        </children>
+        <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:NameCompartmentView" Visible="true" FactoryHint="Name" ShapeStereotypeStyle="2" Id="c555cf88-00fb-fe96-05b2-0f10272daa77">
+          <SemanticReference Id="emfsemantic:(~sc{%UMLAssociation^c555c87a-00fb-fc75-6d0e-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.AddonImpl}))" Name="" Kind="12"/>
+        </children>
+      </Labels>
+      <Labels Visible="true" FactoryHint="ToMultiplicity" ShapeStereotypeStyle="2" Id="c555cf89-00fb-ffa9-1109-0f10272daa77" FromLine="-16" FromEnd="10" IsPercentage="true">
+        <SemanticReference Id="emfsemantic:(~sc{%UMLAssociationEnd}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~sc{%UMLAssociation^c555c87a-00fb-fc75-6d0e-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.AddonImpl}))(~role_name{!pid%WestLB_RMSC_MGB}{}))" Name="" Kind="13"/>
+        <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:NameCompartmentView" Visible="true" FactoryHint="ToMultiplicity" ShapeStereotypeStyle="2" Id="c555cf8a-00fb-fc70-1c65-0f10272daa77">
+          <SemanticReference Id="emfsemantic:(~sc{%UMLAssociationEnd}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~sc{%UMLAssociation^c555c87a-00fb-fc75-6d0e-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.AddonImpl}))(~role_name{!pid%WestLB_RMSC_MGB}{}))" Name="" Kind="13"/>
+        </children>
+      </Labels>
+      <Labels Visible="true" FactoryHint="ToRole" ShapeStereotypeStyle="2" Id="c555cf8b-00fb-fd83-27a1-0f10272daa77" FromLine="15" FromEnd="10" IsPercentage="true">
+        <SemanticReference Id="emfsemantic:(~sc{%UMLAssociationEnd}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~sc{%UMLAssociation^c555c87a-00fb-fc75-6d0e-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.AddonImpl}))(~role_name{!pid%WestLB_RMSC_MGB}{}))" Name="" Kind="13"/>
+        <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:NameCompartmentView" Visible="true" FactoryHint="ToRole" ShapeStereotypeStyle="2" Id="c555cf8c-00fb-e2e2-32f0-0f10272daa77">
+          <SemanticReference Id="emfsemantic:(~sc{%UMLAssociationEnd}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~sc{%UMLAssociation^c555c87a-00fb-fc75-6d0e-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.AddonImpl}))(~role_name{!pid%WestLB_RMSC_MGB}{}))" Name="" Kind="13"/>
+        </children>
+      </Labels>
+      <Labels Visible="true" FactoryHint="FromMultiplicity" ShapeStereotypeStyle="2" Id="c555cf8d-00fb-e3f6-3dee-0f10272daa77" FromLine="-16" FromEnd="90" IsPercentage="true">
+        <SemanticReference Id="emfsemantic:(~sc{%UMLAssociationEnd}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.AddonImpl})(~sc{%UMLAssociation^c555c87a-00fb-fc75-6d0e-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.AddonImpl}))(~role_name{!pid%WestLB_RMSC_MGB}{%addon}))" Name="addon" Kind="13"/>
+        <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:NameCompartmentView" Visible="true" FactoryHint="FromMultiplicity" ShapeStereotypeStyle="2" Id="c555cf8e-00fb-e0bc-493f-0f10272daa77">
+          <SemanticReference Id="emfsemantic:(~sc{%UMLAssociationEnd}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.AddonImpl})(~sc{%UMLAssociation^c555c87a-00fb-fc75-6d0e-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.AddonImpl}))(~role_name{!pid%WestLB_RMSC_MGB}{%addon}))" Name="addon" Kind="13"/>
+        </children>
+      </Labels>
+      <Labels Visible="true" FactoryHint="FromRole" ShapeStereotypeStyle="2" Id="c555cf8f-00fb-e1cf-543a-0f10272daa77" FromLine="15" FromEnd="90" IsPercentage="true">
+        <SemanticReference Id="emfsemantic:(~sc{%UMLAssociationEnd}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.AddonImpl})(~sc{%UMLAssociation^c555c87a-00fb-fc75-6d0e-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.AddonImpl}))(~role_name{!pid%WestLB_RMSC_MGB}{%addon}))" Name="addon" Kind="13"/>
+        <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:NameCompartmentView" Visible="true" FactoryHint="FromRole" ShapeStereotypeStyle="2" Id="c555cf90-00fb-e4cc-5f93-0f10272daa77">
+          <SemanticReference Id="emfsemantic:(~sc{%UMLAssociationEnd}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.AddonImpl})(~sc{%UMLAssociation^c555c87a-00fb-fc75-6d0e-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.AddonImpl}))(~role_name{!pid%WestLB_RMSC_MGB}{%addon}))" Name="addon" Kind="13"/>
+        </children>
+      </Labels>
+      <BendPoints x="-178" y="-103"/>
+      <BendPoints x="47" y="29"/>
+      <BendPoints x="-212" y="-118"/>
+      <BendPoints x="13" y="14"/>
+    </children>
+    <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:PositionalGeneralView" LineColor="4009615" FillColor="13565951" Font="MS Sans Serif|10|0|" Visible="true" FactoryHint="" ShapeStereotypeStyle="2" Id="c5561332-00fb-fca1-291a-0f10272daa77" targetConnectors="c5561382-00fb-e1e3-79e0-0f10272daa77" PositionX="9800" PositionY="12900" ExtentX="150" ExtentY="150" Autosize="true" VisibilityStyle="2" ShowCompartmentTitle="false" CompartmentStereotypeStyle="2" ShowParentName="false">
+      <SemanticReference Id="emfsemantic:(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.InstrumentImpl})" Name="InstrumentImpl" Kind="29"/>
+      <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:NameCompartmentView" Visible="true" FactoryHint="Stereotype" ShapeStereotypeStyle="2" Id="c5561333-00fb-fdb4-36a1-0f10272daa77">
+        <SemanticReference Id="emfsemantic:(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.InstrumentImpl})" Name="InstrumentImpl" Kind="29"/>
+      </children>
+      <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:NameCompartmentView" Visible="true" FactoryHint="Name" ShapeStereotypeStyle="2" Id="c5561334-00fb-e314-3fb2-0f10272daa77">
+        <SemanticReference Id="emfsemantic:(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.InstrumentImpl})" Name="InstrumentImpl" Kind="29"/>
+      </children>
+      <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:ListCompartmentView" Visible="true" FactoryHint="Attribute" ShapeStereotypeStyle="2" Id="c5561335-00fb-e427-4764-0f10272daa77" Ratio="-1.0" Collapsed="false">
+        <SemanticReference Id="emfsemantic:(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.InstrumentImpl})" Name="InstrumentImpl" Kind="29"/>
+      </children>
+      <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:ListCompartmentView" Visible="false" FactoryHint="Operation" ShapeStereotypeStyle="2" Id="c5561336-00fb-e0ee-50f6-0f10272daa77" Ratio="-1.0" Collapsed="false">
+        <SemanticReference Id="emfsemantic:(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.InstrumentImpl})" Name="InstrumentImpl" Kind="29"/>
+      </children>
+    </children>
+    <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:ConnectorView" LineColor="4009615" Font="MS Sans Serif|10|0|" Visible="true" FactoryHint="" ShapeStereotypeStyle="2" Id="c5561382-00fb-e1e3-79e0-0f10272daa77" Routing="0" Smoothness="0" AvoidObstructions="false" ClosestDistance="false" SourceAnchor="anchor" TargetAnchor="anchor" JumpLinksStatus="0" JumpLinksType="1" JumpLinksReverse="false" ShowCompartmentTitle="false" source="c5307d05-00fb-e46d-0f2f-0f10272daa77" target="c5561332-00fb-fca1-291a-0f10272daa77">
+      <SemanticReference Id="emfsemantic:(~sc{%UMLAssociation^c5560b5f-00fb-e5c9-43c4-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.InstrumentImpl}))" Name="" Kind="12"/>
+      <Labels Visible="true" FactoryHint="Name" ShapeStereotypeStyle="2" Id="c5561383-00fb-e2f6-0620-0f10272daa77" FromLine="-18" FromEnd="50" IsPercentage="true">
+        <SemanticReference Id="emfsemantic:(~sc{%UMLAssociation^c5560b5f-00fb-e5c9-43c4-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.InstrumentImpl}))" Name="" Kind="12"/>
+        <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:NameCompartmentView" Visible="true" FactoryHint="Stereotype" ShapeStereotypeStyle="2" Id="c5561384-00fb-e856-10b7-0f10272daa77">
+          <SemanticReference Id="emfsemantic:(~sc{%UMLAssociation^c5560b5f-00fb-e5c9-43c4-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.InstrumentImpl}))" Name="" Kind="12"/>
+        </children>
+        <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:NameCompartmentView" Visible="true" FactoryHint="Name" ShapeStereotypeStyle="2" Id="c5561385-00fb-e969-1ad8-0f10272daa77">
+          <SemanticReference Id="emfsemantic:(~sc{%UMLAssociation^c5560b5f-00fb-e5c9-43c4-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.InstrumentImpl}))" Name="" Kind="12"/>
+        </children>
+      </Labels>
+      <Labels Visible="true" FactoryHint="ToMultiplicity" ShapeStereotypeStyle="2" Id="c5561386-00fb-e62f-262d-0f10272daa77" FromLine="-16" FromEnd="10" IsPercentage="true">
+        <SemanticReference Id="emfsemantic:(~sc{%UMLAssociationEnd}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~sc{%UMLAssociation^c5560b5f-00fb-e5c9-43c4-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.InstrumentImpl}))(~role_name{!pid%WestLB_RMSC_MGB}{}))" Name="" Kind="13"/>
+        <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:NameCompartmentView" Visible="true" FactoryHint="ToMultiplicity" ShapeStereotypeStyle="2" Id="c5561387-00fb-e742-318f-0f10272daa77">
+          <SemanticReference Id="emfsemantic:(~sc{%UMLAssociationEnd}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~sc{%UMLAssociation^c5560b5f-00fb-e5c9-43c4-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.InstrumentImpl}))(~role_name{!pid%WestLB_RMSC_MGB}{}))" Name="" Kind="13"/>
+        </children>
+      </Labels>
+      <Labels Visible="true" FactoryHint="ToRole" ShapeStereotypeStyle="2" Id="c5561388-00fb-eca2-3cd3-0f10272daa77" FromLine="15" FromEnd="10" IsPercentage="true">
+        <SemanticReference Id="emfsemantic:(~sc{%UMLAssociationEnd}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~sc{%UMLAssociation^c5560b5f-00fb-e5c9-43c4-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.InstrumentImpl}))(~role_name{!pid%WestLB_RMSC_MGB}{}))" Name="" Kind="13"/>
+        <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:NameCompartmentView" Visible="true" FactoryHint="ToRole" ShapeStereotypeStyle="2" Id="c5561389-00fb-edb5-4826-0f10272daa77">
+          <SemanticReference Id="emfsemantic:(~sc{%UMLAssociationEnd}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~sc{%UMLAssociation^c5560b5f-00fb-e5c9-43c4-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.InstrumentImpl}))(~role_name{!pid%WestLB_RMSC_MGB}{}))" Name="" Kind="13"/>
+        </children>
+      </Labels>
+      <Labels Visible="true" FactoryHint="FromMultiplicity" ShapeStereotypeStyle="2" Id="c556138a-00fb-ea7c-532a-0f10272daa77" FromLine="-16" FromEnd="90" IsPercentage="true">
+        <SemanticReference Id="emfsemantic:(~sc{%UMLAssociationEnd}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.InstrumentImpl})(~sc{%UMLAssociation^c5560b5f-00fb-e5c9-43c4-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.InstrumentImpl}))(~role_name{!pid%WestLB_RMSC_MGB}{%instrument}))" Name="instrument" Kind="13"/>
+        <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:NameCompartmentView" Visible="true" FactoryHint="FromMultiplicity" ShapeStereotypeStyle="2" Id="c556138b-00fb-eb8f-5e89-0f10272daa77">
+          <SemanticReference Id="emfsemantic:(~sc{%UMLAssociationEnd}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.InstrumentImpl})(~sc{%UMLAssociation^c5560b5f-00fb-e5c9-43c4-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.InstrumentImpl}))(~role_name{!pid%WestLB_RMSC_MGB}{%instrument}))" Name="instrument" Kind="13"/>
+        </children>
+      </Labels>
+      <Labels Visible="true" FactoryHint="FromRole" ShapeStereotypeStyle="2" Id="c556138c-00fb-f0ee-6992-0f10272daa77" FromLine="15" FromEnd="90" IsPercentage="true">
+        <SemanticReference Id="emfsemantic:(~sc{%UMLAssociationEnd}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.InstrumentImpl})(~sc{%UMLAssociation^c5560b5f-00fb-e5c9-43c4-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.InstrumentImpl}))(~role_name{!pid%WestLB_RMSC_MGB}{%instrument}))" Name="instrument" Kind="13"/>
+        <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:NameCompartmentView" Visible="true" FactoryHint="FromRole" ShapeStereotypeStyle="2" Id="c556138d-00fb-f201-74f9-0f10272daa77">
+          <SemanticReference Id="emfsemantic:(~sc{%UMLAssociationEnd}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.InstrumentImpl})(~sc{%UMLAssociation^c5560b5f-00fb-e5c9-43c4-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.InstrumentImpl}))(~role_name{!pid%WestLB_RMSC_MGB}{%instrument}))" Name="instrument" Kind="13"/>
+        </children>
+      </Labels>
+      <BendPoints x="-178" y="-95"/>
+      <BendPoints x="47" y="27"/>
+      <BendPoints x="-212" y="-108"/>
+      <BendPoints x="13" y="14"/>
+    </children>
+    <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:PositionalGeneralView" LineColor="4009615" FillColor="13565951" Font="MS Sans Serif|10|0|" Visible="true" FactoryHint="" ShapeStereotypeStyle="2" Id="c5563b55-00fb-f0f0-29fb-0f10272daa77" targetConnectors="c5563b91-00fb-fe50-2c99-0f10272daa77" PositionX="19350" PositionY="12750" ExtentX="150" ExtentY="150" Autosize="true" VisibilityStyle="2" ShowCompartmentTitle="false" CompartmentStereotypeStyle="2" ShowParentName="false">
+      <SemanticReference Id="emfsemantic:(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.ExchangeImpl})" Name="ExchangeImpl" Kind="29"/>
+      <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:NameCompartmentView" Visible="true" FactoryHint="Stereotype" ShapeStereotypeStyle="2" Id="c5563b5f-00fb-f763-3727-0f10272daa77">
+        <SemanticReference Id="emfsemantic:(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.ExchangeImpl})" Name="ExchangeImpl" Kind="29"/>
+      </children>
+      <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:NameCompartmentView" Visible="true" FactoryHint="Name" ShapeStereotypeStyle="2" Id="c5563b60-00fb-ff25-4043-0f10272daa77">
+        <SemanticReference Id="emfsemantic:(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.ExchangeImpl})" Name="ExchangeImpl" Kind="29"/>
+      </children>
+      <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:ListCompartmentView" Visible="true" FactoryHint="Attribute" ShapeStereotypeStyle="2" Id="c5563b61-00fb-e038-480e-0f10272daa77" Ratio="-1.0" Collapsed="false">
+        <SemanticReference Id="emfsemantic:(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.ExchangeImpl})" Name="ExchangeImpl" Kind="29"/>
+      </children>
+      <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:ListCompartmentView" Visible="false" FactoryHint="Operation" ShapeStereotypeStyle="2" Id="c5563b62-00fb-fcff-51b7-0f10272daa77" Ratio="-1.0" Collapsed="false">
+        <SemanticReference Id="emfsemantic:(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.ExchangeImpl})" Name="ExchangeImpl" Kind="29"/>
+      </children>
+    </children>
+    <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:ConnectorView" LineColor="4009615" Font="MS Sans Serif|10|0|" Visible="true" FactoryHint="" ShapeStereotypeStyle="2" Id="c5563b91-00fb-fe50-2c99-0f10272daa77" Routing="0" Smoothness="0" AvoidObstructions="false" ClosestDistance="false" SourceAnchor="anchor" TargetAnchor="anchor" JumpLinksStatus="0" JumpLinksType="1" JumpLinksReverse="false" ShowCompartmentTitle="false" source="c5307d05-00fb-e46d-0f2f-0f10272daa77" target="c5563b55-00fb-f0f0-29fb-0f10272daa77">
+      <SemanticReference Id="emfsemantic:(~sc{%UMLAssociation^c556325f-00fb-e349-62d8-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.ExchangeImpl}))" Name="" Kind="12"/>
+      <Labels Visible="true" FactoryHint="Name" ShapeStereotypeStyle="2" Id="c5563b92-00fb-fb17-386c-0f10272daa77" FromLine="-18" FromEnd="50" IsPercentage="true">
+        <SemanticReference Id="emfsemantic:(~sc{%UMLAssociation^c556325f-00fb-e349-62d8-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.ExchangeImpl}))" Name="" Kind="12"/>
+        <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:NameCompartmentView" Visible="true" FactoryHint="Stereotype" ShapeStereotypeStyle="2" Id="c5563b9b-00fb-e4c3-42eb-0f10272daa77">
+          <SemanticReference Id="emfsemantic:(~sc{%UMLAssociation^c556325f-00fb-e349-62d8-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.ExchangeImpl}))" Name="" Kind="12"/>
+        </children>
+        <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:NameCompartmentView" Visible="true" FactoryHint="Name" ShapeStereotypeStyle="2" Id="c5563b9c-00fb-ea23-4cf3-0f10272daa77">
+          <SemanticReference Id="emfsemantic:(~sc{%UMLAssociation^c556325f-00fb-e349-62d8-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.ExchangeImpl}))" Name="" Kind="12"/>
+        </children>
+      </Labels>
+      <Labels Visible="true" FactoryHint="ToMultiplicity" ShapeStereotypeStyle="2" Id="c5563b9d-00fb-eb36-5827-0f10272daa77" FromLine="-16" FromEnd="10" IsPercentage="true">
+        <SemanticReference Id="emfsemantic:(~sc{%UMLAssociationEnd}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~sc{%UMLAssociation^c556325f-00fb-e349-62d8-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.ExchangeImpl}))(~role_name{!pid%WestLB_RMSC_MGB}{}))" Name="" Kind="13"/>
+        <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:NameCompartmentView" Visible="true" FactoryHint="ToMultiplicity" ShapeStereotypeStyle="2" Id="c5563b9e-00fb-e7fc-637f-0f10272daa77">
+          <SemanticReference Id="emfsemantic:(~sc{%UMLAssociationEnd}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~sc{%UMLAssociation^c556325f-00fb-e349-62d8-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.ExchangeImpl}))(~role_name{!pid%WestLB_RMSC_MGB}{}))" Name="" Kind="13"/>
+        </children>
+      </Labels>
+      <Labels Visible="true" FactoryHint="ToRole" ShapeStereotypeStyle="2" Id="c5563b9f-00fb-e90f-6e79-0f10272daa77" FromLine="15" FromEnd="10" IsPercentage="true">
+        <SemanticReference Id="emfsemantic:(~sc{%UMLAssociationEnd}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~sc{%UMLAssociation^c556325f-00fb-e349-62d8-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.ExchangeImpl}))(~role_name{!pid%WestLB_RMSC_MGB}{}))" Name="" Kind="13"/>
+        <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:NameCompartmentView" Visible="true" FactoryHint="ToRole" ShapeStereotypeStyle="2" Id="c5563ba0-00fb-f0d2-79fa-0f10272daa77">
+          <SemanticReference Id="emfsemantic:(~sc{%UMLAssociationEnd}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~sc{%UMLAssociation^c556325f-00fb-e349-62d8-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.ExchangeImpl}))(~role_name{!pid%WestLB_RMSC_MGB}{}))" Name="" Kind="13"/>
+        </children>
+      </Labels>
+      <Labels Visible="true" FactoryHint="FromMultiplicity" ShapeStereotypeStyle="2" Id="c5563ba1-00fb-f1e5-04ff-0f10272daa77" FromLine="-16" FromEnd="90" IsPercentage="true">
+        <SemanticReference Id="emfsemantic:(~sc{%UMLAssociationEnd}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.ExchangeImpl})(~sc{%UMLAssociation^c556325f-00fb-e349-62d8-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.ExchangeImpl}))(~role_name{!pid%WestLB_RMSC_MGB}{%exchange}))" Name="exchange" Kind="13"/>
+        <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:NameCompartmentView" Visible="true" FactoryHint="FromMultiplicity" ShapeStereotypeStyle="2" Id="c5563ba2-00fb-eeac-1051-0f10272daa77">
+          <SemanticReference Id="emfsemantic:(~sc{%UMLAssociationEnd}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.ExchangeImpl})(~sc{%UMLAssociation^c556325f-00fb-e349-62d8-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.ExchangeImpl}))(~role_name{!pid%WestLB_RMSC_MGB}{%exchange}))" Name="exchange" Kind="13"/>
+        </children>
+      </Labels>
+      <Labels Visible="true" FactoryHint="FromRole" ShapeStereotypeStyle="2" Id="c5563ba3-00fb-efbf-1b53-0f10272daa77" FromLine="15" FromEnd="90" IsPercentage="true">
+        <SemanticReference Id="emfsemantic:(~sc{%UMLAssociationEnd}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.ExchangeImpl})(~sc{%UMLAssociation^c556325f-00fb-e349-62d8-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.ExchangeImpl}))(~role_name{!pid%WestLB_RMSC_MGB}{%exchange}))" Name="exchange" Kind="13"/>
+        <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:NameCompartmentView" Visible="true" FactoryHint="FromRole" ShapeStereotypeStyle="2" Id="c5563ba4-00fb-f51f-26d7-0f10272daa77">
+          <SemanticReference Id="emfsemantic:(~sc{%UMLAssociationEnd}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.ExchangeImpl})(~sc{%UMLAssociation^c556325f-00fb-e349-62d8-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.ExchangeImpl}))(~role_name{!pid%WestLB_RMSC_MGB}{%exchange}))" Name="exchange" Kind="13"/>
+        </children>
+      </Labels>
+      <BendPoints x="-178" y="-88"/>
+      <BendPoints x="47" y="25"/>
+      <BendPoints x="-212" y="-99"/>
+      <BendPoints x="13" y="14"/>
+    </children>
+    <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:PositionalGeneralView" LineColor="4009615" FillColor="13565951" Font="MS Sans Serif|10|0|" Visible="true" FactoryHint="" ShapeStereotypeStyle="2" Id="c5567f5c-00fb-eb41-41e2-0f10272daa77" targetConnectors="c5567fac-00fb-f082-041d-0f10272daa77" PositionX="24950" PositionY="12800" ExtentX="150" ExtentY="150" Autosize="true" VisibilityStyle="2" ShowCompartmentTitle="false" CompartmentStereotypeStyle="2" ShowParentName="false">
+      <SemanticReference Id="emfsemantic:(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.PriceCheckCategoryImpl})" Name="PriceCheckCategoryImpl" Kind="29"/>
+      <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:NameCompartmentView" Visible="true" FactoryHint="Stereotype" ShapeStereotypeStyle="2" Id="c5567f66-00fb-f417-4f41-0f10272daa77">
+        <SemanticReference Id="emfsemantic:(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.PriceCheckCategoryImpl})" Name="PriceCheckCategoryImpl" Kind="29"/>
+      </children>
+      <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:NameCompartmentView" Visible="true" FactoryHint="Name" ShapeStereotypeStyle="2" Id="c5567f67-00fb-f52a-5860-0f10272daa77">
+        <SemanticReference Id="emfsemantic:(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.PriceCheckCategoryImpl})" Name="PriceCheckCategoryImpl" Kind="29"/>
+      </children>
+      <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:ListCompartmentView" Visible="true" FactoryHint="Attribute" ShapeStereotypeStyle="2" Id="c5567f68-00fb-fa89-601d-0f10272daa77" Ratio="-1.0" Collapsed="false">
+        <SemanticReference Id="emfsemantic:(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.PriceCheckCategoryImpl})" Name="PriceCheckCategoryImpl" Kind="29"/>
+      </children>
+      <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:ListCompartmentView" Visible="false" FactoryHint="Operation" ShapeStereotypeStyle="2" Id="c5567f69-00fb-fb9c-69cd-0f10272daa77" Ratio="-1.0" Collapsed="false">
+        <SemanticReference Id="emfsemantic:(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.PriceCheckCategoryImpl})" Name="PriceCheckCategoryImpl" Kind="29"/>
+      </children>
+    </children>
+    <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:ConnectorView" LineColor="4009615" Font="MS Sans Serif|10|0|" Visible="true" FactoryHint="" ShapeStereotypeStyle="2" Id="c5567fac-00fb-f082-041d-0f10272daa77" Routing="0" Smoothness="0" AvoidObstructions="false" ClosestDistance="false" SourceAnchor="anchor" TargetAnchor="anchor" JumpLinksStatus="0" JumpLinksType="1" JumpLinksReverse="false" ShowCompartmentTitle="false" source="c5307d05-00fb-e46d-0f2f-0f10272daa77" target="c5567f5c-00fb-eb41-41e2-0f10272daa77">
+      <SemanticReference Id="emfsemantic:(~sc{%UMLAssociation^c556754e-00fb-ece6-78b4-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.PriceCheckCategoryImpl}))" Name="" Kind="12"/>
+      <Labels Visible="true" FactoryHint="Name" ShapeStereotypeStyle="2" Id="c5567fad-00fb-f195-1018-0f10272daa77" FromLine="-18" FromEnd="50" IsPercentage="true">
+        <SemanticReference Id="emfsemantic:(~sc{%UMLAssociation^c556754e-00fb-ece6-78b4-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.PriceCheckCategoryImpl}))" Name="" Kind="12"/>
+        <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:NameCompartmentView" Visible="true" FactoryHint="Stereotype" ShapeStereotypeStyle="2" Id="c5567fae-00fb-ee5c-1ab8-0f10272daa77">
+          <SemanticReference Id="emfsemantic:(~sc{%UMLAssociation^c556754e-00fb-ece6-78b4-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.PriceCheckCategoryImpl}))" Name="" Kind="12"/>
+        </children>
+        <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:NameCompartmentView" Visible="true" FactoryHint="Name" ShapeStereotypeStyle="2" Id="c5567faf-00fb-ef6f-24b1-0f10272daa77">
+          <SemanticReference Id="emfsemantic:(~sc{%UMLAssociation^c556754e-00fb-ece6-78b4-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.PriceCheckCategoryImpl}))" Name="" Kind="12"/>
+        </children>
+      </Labels>
+      <Labels Visible="true" FactoryHint="ToMultiplicity" ShapeStereotypeStyle="2" Id="c5567fc0-00fb-e600-2ff5-0f10272daa77" FromLine="-16" FromEnd="10" IsPercentage="true">
+        <SemanticReference Id="emfsemantic:(~sc{%UMLAssociationEnd}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~sc{%UMLAssociation^c556754e-00fb-ece6-78b4-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.PriceCheckCategoryImpl}))(~role_name{!pid%WestLB_RMSC_MGB}{}))" Name="" Kind="13"/>
+        <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:NameCompartmentView" Visible="true" FactoryHint="ToMultiplicity" ShapeStereotypeStyle="2" Id="c5567fc1-00fb-e713-3b72-0f10272daa77">
+          <SemanticReference Id="emfsemantic:(~sc{%UMLAssociationEnd}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~sc{%UMLAssociation^c556754e-00fb-ece6-78b4-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.PriceCheckCategoryImpl}))(~role_name{!pid%WestLB_RMSC_MGB}{}))" Name="" Kind="13"/>
+        </children>
+      </Labels>
+      <Labels Visible="true" FactoryHint="ToRole" ShapeStereotypeStyle="2" Id="c5567fc2-00fb-e3da-46c3-0f10272daa77" FromLine="15" FromEnd="10" IsPercentage="true">
+        <SemanticReference Id="emfsemantic:(~sc{%UMLAssociationEnd}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~sc{%UMLAssociation^c556754e-00fb-ece6-78b4-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.PriceCheckCategoryImpl}))(~role_name{!pid%WestLB_RMSC_MGB}{}))" Name="" Kind="13"/>
+        <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:NameCompartmentView" Visible="true" FactoryHint="ToRole" ShapeStereotypeStyle="2" Id="c5567fc3-00fb-e4ed-521f-0f10272daa77">
+          <SemanticReference Id="emfsemantic:(~sc{%UMLAssociationEnd}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~sc{%UMLAssociation^c556754e-00fb-ece6-78b4-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.PriceCheckCategoryImpl}))(~role_name{!pid%WestLB_RMSC_MGB}{}))" Name="" Kind="13"/>
+        </children>
+      </Labels>
+      <Labels Visible="true" FactoryHint="FromMultiplicity" ShapeStereotypeStyle="2" Id="c5567fc4-00fb-ea4d-5d36-0f10272daa77" FromLine="-16" FromEnd="90" IsPercentage="true">
+        <SemanticReference Id="emfsemantic:(~sc{%UMLAssociationEnd}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.PriceCheckCategoryImpl})(~sc{%UMLAssociation^c556754e-00fb-ece6-78b4-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.PriceCheckCategoryImpl}))(~role_name{!pid%WestLB_RMSC_MGB}{%priceCheckCategory}))" Name="priceCheckCategory" Kind="13"/>
+        <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:NameCompartmentView" Visible="true" FactoryHint="FromMultiplicity" ShapeStereotypeStyle="2" Id="c5567fc5-00fb-eb60-68aa-0f10272daa77">
+          <SemanticReference Id="emfsemantic:(~sc{%UMLAssociationEnd}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.PriceCheckCategoryImpl})(~sc{%UMLAssociation^c556754e-00fb-ece6-78b4-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.PriceCheckCategoryImpl}))(~role_name{!pid%WestLB_RMSC_MGB}{%priceCheckCategory}))" Name="priceCheckCategory" Kind="13"/>
+        </children>
+      </Labels>
+      <Labels Visible="true" FactoryHint="FromRole" ShapeStereotypeStyle="2" Id="c5567fc6-00fb-e827-73df-0f10272daa77" FromLine="15" FromEnd="90" IsPercentage="true">
+        <SemanticReference Id="emfsemantic:(~sc{%UMLAssociationEnd}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.PriceCheckCategoryImpl})(~sc{%UMLAssociation^c556754e-00fb-ece6-78b4-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.PriceCheckCategoryImpl}))(~role_name{!pid%WestLB_RMSC_MGB}{%priceCheckCategory}))" Name="priceCheckCategory" Kind="13"/>
+        <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:NameCompartmentView" Visible="true" FactoryHint="FromRole" ShapeStereotypeStyle="2" Id="c5567fc7-00fb-e93a-7f64-0f10272daa77">
+          <SemanticReference Id="emfsemantic:(~sc{%UMLAssociationEnd}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.PriceCheckCategoryImpl})(~sc{%UMLAssociation^c556754e-00fb-ece6-78b4-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.PriceCheckCategoryImpl}))(~role_name{!pid%WestLB_RMSC_MGB}{%priceCheckCategory}))" Name="priceCheckCategory" Kind="13"/>
+        </children>
+      </Labels>
+      <BendPoints x="-178" y="-80"/>
+      <BendPoints x="47" y="23"/>
+      <BendPoints x="-212" y="-89"/>
+      <BendPoints x="13" y="14"/>
+    </children>
+    <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:PositionalGeneralView" LineColor="4009615" FillColor="13565951" Font="MS Sans Serif|10|0|" Visible="true" FactoryHint="" ShapeStereotypeStyle="2" Id="c556ab9a-00fb-e213-280f-0f10272daa77" targetConnectors="c556abcc-00fb-fe7d-7727-0f10272daa77" PositionX="600" PositionY="7400" ExtentX="150" ExtentY="150" Autosize="true" VisibilityStyle="2" ShowCompartmentTitle="false" CompartmentStereotypeStyle="2" ShowParentName="false">
+      <SemanticReference Id="emfsemantic:(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.MgbConfigurationImpl})" Name="MgbConfigurationImpl" Kind="29"/>
+      <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:NameCompartmentView" Visible="true" FactoryHint="Stereotype" ShapeStereotypeStyle="2" Id="c556ab9b-00fb-e326-358d-0f10272daa77">
+        <SemanticReference Id="emfsemantic:(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.MgbConfigurationImpl})" Name="MgbConfigurationImpl" Kind="29"/>
+      </children>
+      <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:NameCompartmentView" Visible="true" FactoryHint="Name" ShapeStereotypeStyle="2" Id="c556ab9c-00fb-e885-3eae-0f10272daa77">
+        <SemanticReference Id="emfsemantic:(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.MgbConfigurationImpl})" Name="MgbConfigurationImpl" Kind="29"/>
+      </children>
+      <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:ListCompartmentView" Visible="true" FactoryHint="Attribute" ShapeStereotypeStyle="2" Id="c556ab9d-00fb-e998-466a-0f10272daa77" Ratio="-1.0" Collapsed="false">
+        <SemanticReference Id="emfsemantic:(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.MgbConfigurationImpl})" Name="MgbConfigurationImpl" Kind="29"/>
+      </children>
+      <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:ListCompartmentView" Visible="false" FactoryHint="Operation" ShapeStereotypeStyle="2" Id="c556ab9e-00fb-e65f-5005-0f10272daa77" Ratio="-1.0" Collapsed="false">
+        <SemanticReference Id="emfsemantic:(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.MgbConfigurationImpl})" Name="MgbConfigurationImpl" Kind="29"/>
+      </children>
+    </children>
+    <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:ConnectorView" LineColor="4009615" Font="MS Sans Serif|10|0|" Visible="true" FactoryHint="" ShapeStereotypeStyle="2" Id="c556abcc-00fb-fe7d-7727-0f10272daa77" Routing="0" Smoothness="0" AvoidObstructions="false" ClosestDistance="false" SourceAnchor="anchor" TargetAnchor="anchor" JumpLinksStatus="0" JumpLinksType="1" JumpLinksReverse="false" ShowCompartmentTitle="false" source="c5307d05-00fb-e46d-0f2f-0f10272daa77" target="c556ab9a-00fb-e213-280f-0f10272daa77">
+      <SemanticReference Id="emfsemantic:(~sc{%UMLAssociation^c556a0a6-00fb-f70e-7e2f-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.MgbConfigurationImpl}))" Name="" Kind="12"/>
+      <Labels Visible="true" FactoryHint="Name" ShapeStereotypeStyle="2" Id="c556abcd-00fb-ff90-0354-0f10272daa77" FromLine="-18" FromEnd="50" IsPercentage="true">
+        <SemanticReference Id="emfsemantic:(~sc{%UMLAssociation^c556a0a6-00fb-f70e-7e2f-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.MgbConfigurationImpl}))" Name="" Kind="12"/>
+        <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:NameCompartmentView" Visible="true" FactoryHint="Stereotype" ShapeStereotypeStyle="2" Id="c556abce-00fb-fc57-0e38-0f10272daa77">
+          <SemanticReference Id="emfsemantic:(~sc{%UMLAssociation^c556a0a6-00fb-f70e-7e2f-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.MgbConfigurationImpl}))" Name="" Kind="12"/>
+        </children>
+        <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:NameCompartmentView" Visible="true" FactoryHint="Name" ShapeStereotypeStyle="2" Id="c556abcf-00fb-fd6a-1821-0f10272daa77">
+          <SemanticReference Id="emfsemantic:(~sc{%UMLAssociation^c556a0a6-00fb-f70e-7e2f-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.MgbConfigurationImpl}))" Name="" Kind="12"/>
+        </children>
+      </Labels>
+      <Labels Visible="true" FactoryHint="ToMultiplicity" ShapeStereotypeStyle="2" Id="c556abd0-00fb-e066-23e2-0f10272daa77" FromLine="-16" FromEnd="10" IsPercentage="true">
+        <SemanticReference Id="emfsemantic:(~sc{%UMLAssociationEnd}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~sc{%UMLAssociation^c556a0a6-00fb-f70e-7e2f-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.MgbConfigurationImpl}))(~role_name{!pid%WestLB_RMSC_MGB}{}))" Name="" Kind="13"/>
+        <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:NameCompartmentView" Visible="true" FactoryHint="ToMultiplicity" ShapeStereotypeStyle="2" Id="c556abd1-00fb-e17a-2f66-0f10272daa77">
+          <SemanticReference Id="emfsemantic:(~sc{%UMLAssociationEnd}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~sc{%UMLAssociation^c556a0a6-00fb-f70e-7e2f-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.MgbConfigurationImpl}))(~role_name{!pid%WestLB_RMSC_MGB}{}))" Name="" Kind="13"/>
+        </children>
+      </Labels>
+      <Labels Visible="true" FactoryHint="ToRole" ShapeStereotypeStyle="2" Id="c556abd2-00fb-fe40-3a6c-0f10272daa77" FromLine="15" FromEnd="10" IsPercentage="true">
+        <SemanticReference Id="emfsemantic:(~sc{%UMLAssociationEnd}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~sc{%UMLAssociation^c556a0a6-00fb-f70e-7e2f-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.MgbConfigurationImpl}))(~role_name{!pid%WestLB_RMSC_MGB}{}))" Name="" Kind="13"/>
+        <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:NameCompartmentView" Visible="true" FactoryHint="ToRole" ShapeStereotypeStyle="2" Id="c556abd3-00fb-ff53-45bf-0f10272daa77">
+          <SemanticReference Id="emfsemantic:(~sc{%UMLAssociationEnd}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~sc{%UMLAssociation^c556a0a6-00fb-f70e-7e2f-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.MgbConfigurationImpl}))(~role_name{!pid%WestLB_RMSC_MGB}{}))" Name="" Kind="13"/>
+        </children>
+      </Labels>
+      <Labels Visible="true" FactoryHint="FromMultiplicity" ShapeStereotypeStyle="2" Id="c556abd4-00fb-e4b3-5129-0f10272daa77" FromLine="-16" FromEnd="90" IsPercentage="true">
+        <SemanticReference Id="emfsemantic:(~sc{%UMLAssociationEnd}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.MgbConfigurationImpl})(~sc{%UMLAssociation^c556a0a6-00fb-f70e-7e2f-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.MgbConfigurationImpl}))(~role_name{!pid%WestLB_RMSC_MGB}{%mgbConfiguration}))" Name="mgbConfiguration" Kind="13"/>
+        <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:NameCompartmentView" Visible="true" FactoryHint="FromMultiplicity" ShapeStereotypeStyle="2" Id="c556abd5-00fb-e5c6-5c9c-0f10272daa77">
+          <SemanticReference Id="emfsemantic:(~sc{%UMLAssociationEnd}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.MgbConfigurationImpl})(~sc{%UMLAssociation^c556a0a6-00fb-f70e-7e2f-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.MgbConfigurationImpl}))(~role_name{!pid%WestLB_RMSC_MGB}{%mgbConfiguration}))" Name="mgbConfiguration" Kind="13"/>
+        </children>
+      </Labels>
+      <Labels Visible="true" FactoryHint="FromRole" ShapeStereotypeStyle="2" Id="c556abd6-00fb-e28d-67f8-0f10272daa77" FromLine="26" FromEnd="64" IsPercentage="true">
+        <SemanticReference Id="emfsemantic:(~sc{%UMLAssociationEnd}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.MgbConfigurationImpl})(~sc{%UMLAssociation^c556a0a6-00fb-f70e-7e2f-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.MgbConfigurationImpl}))(~role_name{!pid%WestLB_RMSC_MGB}{%mgbConfiguration}))" Name="mgbConfiguration" Kind="13"/>
+        <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:NameCompartmentView" Visible="true" FactoryHint="FromRole" ShapeStereotypeStyle="2" Id="c556abd7-00fb-e3a0-7377-0f10272daa77">
+          <SemanticReference Id="emfsemantic:(~sc{%UMLAssociationEnd}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.MgbConfigurationImpl})(~sc{%UMLAssociation^c556a0a6-00fb-f70e-7e2f-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.MgbConfigurationImpl}))(~role_name{!pid%WestLB_RMSC_MGB}{%mgbConfiguration}))" Name="mgbConfiguration" Kind="13"/>
+        </children>
+      </Labels>
+      <BendPoints x="-178" y="-68"/>
+      <BendPoints x="44" y="19"/>
+      <BendPoints x="-209" y="-73"/>
+      <BendPoints x="13" y="14"/>
+    </children>
+    <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:PositionalGeneralView" LineColor="4009615" FillColor="13565951" Font="MS Sans Serif|10|0|" Visible="true" FactoryHint="" ShapeStereotypeStyle="2" Id="c557ba26-00fb-e2d5-463b-0f10272daa77" targetConnectors="c557ba3a-00fb-f5f0-7256-0f10272daa77" PositionX="27450" PositionY="7550" ExtentX="150" ExtentY="150" Autosize="true" VisibilityStyle="2" ShowCompartmentTitle="false" CompartmentStereotypeStyle="2" ShowParentName="false">
+      <SemanticReference Id="emfsemantic:(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.ChangeJournalEntry})" Name="ChangeJournalEntry" Kind="29"/>
+      <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:NameCompartmentView" Visible="true" FactoryHint="Stereotype" ShapeStereotypeStyle="2" Id="c557ba27-00fb-e3e8-541a-0f10272daa77">
+        <SemanticReference Id="emfsemantic:(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.ChangeJournalEntry})" Name="ChangeJournalEntry" Kind="29"/>
+      </children>
+      <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:NameCompartmentView" Visible="true" FactoryHint="Name" ShapeStereotypeStyle="2" Id="c557ba28-00fb-e948-5d2b-0f10272daa77">
+        <SemanticReference Id="emfsemantic:(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.ChangeJournalEntry})" Name="ChangeJournalEntry" Kind="29"/>
+      </children>
+      <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:ListCompartmentView" Visible="true" FactoryHint="Attribute" ShapeStereotypeStyle="2" Id="c557ba29-00fb-ea5b-64eb-0f10272daa77" Ratio="-1.0" Collapsed="false">
+        <SemanticReference Id="emfsemantic:(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.ChangeJournalEntry})" Name="ChangeJournalEntry" Kind="29"/>
+      </children>
+      <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:ListCompartmentView" Visible="false" FactoryHint="Operation" ShapeStereotypeStyle="2" Id="c557ba2a-00fb-e722-6e9c-0f10272daa77" Ratio="-1.0" Collapsed="false">
+        <SemanticReference Id="emfsemantic:(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.ChangeJournalEntry})" Name="ChangeJournalEntry" Kind="29"/>
+      </children>
+    </children>
+    <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:ConnectorView" LineColor="4009615" Font="MS Sans Serif|10|0|" Visible="true" FactoryHint="" ShapeStereotypeStyle="2" Id="c557ba3a-00fb-f5f0-7256-0f10272daa77" Routing="0" Smoothness="0" AvoidObstructions="false" ClosestDistance="false" SourceAnchor="anchor" TargetAnchor="anchor" JumpLinksStatus="0" JumpLinksType="1" JumpLinksReverse="false" ShowCompartmentTitle="false" source="c5307d05-00fb-e46d-0f2f-0f10272daa77" target="c557ba26-00fb-e2d5-463b-0f10272daa77">
+      <SemanticReference Id="emfsemantic:(~sc{%UMLAssociation^c557ae2d-00fb-eca7-4979-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.ChangeJournalEntry}))" Name="" Kind="12"/>
+      <Labels Visible="true" FactoryHint="Name" ShapeStereotypeStyle="2" Id="c557ba3b-00fb-f703-7e41-0f10272daa77" FromLine="-18" FromEnd="50" IsPercentage="true">
+        <SemanticReference Id="emfsemantic:(~sc{%UMLAssociation^c557ae2d-00fb-eca7-4979-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.ChangeJournalEntry}))" Name="" Kind="12"/>
+        <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:NameCompartmentView" Visible="true" FactoryHint="Stereotype" ShapeStereotypeStyle="2" Id="c557ba3c-00fb-fc63-08fc-0f10272daa77">
+          <SemanticReference Id="emfsemantic:(~sc{%UMLAssociation^c557ae2d-00fb-eca7-4979-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.ChangeJournalEntry}))" Name="" Kind="12"/>
+        </children>
+        <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:NameCompartmentView" Visible="true" FactoryHint="Name" ShapeStereotypeStyle="2" Id="c557ba3d-00fb-fd76-12e3-0f10272daa77">
+          <SemanticReference Id="emfsemantic:(~sc{%UMLAssociation^c557ae2d-00fb-eca7-4979-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.ChangeJournalEntry}))" Name="" Kind="12"/>
+        </children>
+      </Labels>
+      <Labels Visible="true" FactoryHint="ToMultiplicity" ShapeStereotypeStyle="2" Id="c557ba3e-00fb-fa3c-1ea7-0f10272daa77" FromLine="-16" FromEnd="10" IsPercentage="true">
+        <SemanticReference Id="emfsemantic:(~sc{%UMLAssociationEnd}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~sc{%UMLAssociation^c557ae2d-00fb-eca7-4979-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.ChangeJournalEntry}))(~role_name{!pid%WestLB_RMSC_MGB}{}))" Name="" Kind="13"/>
+        <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:NameCompartmentView" Visible="true" FactoryHint="ToMultiplicity" ShapeStereotypeStyle="2" Id="c557ba3f-00fb-fb4f-2a28-0f10272daa77">
+          <SemanticReference Id="emfsemantic:(~sc{%UMLAssociationEnd}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~sc{%UMLAssociation^c557ae2d-00fb-eca7-4979-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.ChangeJournalEntry}))(~role_name{!pid%WestLB_RMSC_MGB}{}))" Name="" Kind="13"/>
+        </children>
+      </Labels>
+      <Labels Visible="true" FactoryHint="ToRole" ShapeStereotypeStyle="2" Id="c557ba40-00fb-e312-352c-0f10272daa77" FromLine="15" FromEnd="10" IsPercentage="true">
+        <SemanticReference Id="emfsemantic:(~sc{%UMLAssociationEnd}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~sc{%UMLAssociation^c557ae2d-00fb-eca7-4979-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.ChangeJournalEntry}))(~role_name{!pid%WestLB_RMSC_MGB}{}))" Name="" Kind="13"/>
+        <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:NameCompartmentView" Visible="true" FactoryHint="ToRole" ShapeStereotypeStyle="2" Id="c557ba41-00fb-e425-407d-0f10272daa77">
+          <SemanticReference Id="emfsemantic:(~sc{%UMLAssociationEnd}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~sc{%UMLAssociation^c557ae2d-00fb-eca7-4979-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.ChangeJournalEntry}))(~role_name{!pid%WestLB_RMSC_MGB}{}))" Name="" Kind="13"/>
+        </children>
+      </Labels>
+      <Labels Visible="true" FactoryHint="FromMultiplicity" ShapeStereotypeStyle="2" Id="c557ba42-00fb-e0ec-4b98-0f10272daa77" FromLine="-16" FromEnd="90" IsPercentage="true">
+        <SemanticReference Id="emfsemantic:(~sc{%UMLAssociationEnd}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.ChangeJournalEntry})(~sc{%UMLAssociation^c557ae2d-00fb-eca7-4979-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.ChangeJournalEntry}))(~role_name{!pid%WestLB_RMSC_MGB}{%journalEntries}))" Name="journalEntries" Kind="13"/>
+        <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:NameCompartmentView" Visible="true" FactoryHint="FromMultiplicity" ShapeStereotypeStyle="2" Id="c557ba43-00fb-e1ff-5725-0f10272daa77">
+          <SemanticReference Id="emfsemantic:(~sc{%UMLAssociationEnd}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.ChangeJournalEntry})(~sc{%UMLAssociation^c557ae2d-00fb-eca7-4979-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.ChangeJournalEntry}))(~role_name{!pid%WestLB_RMSC_MGB}{%journalEntries}))" Name="journalEntries" Kind="13"/>
+        </children>
+      </Labels>
+      <Labels Visible="true" FactoryHint="FromRole" ShapeStereotypeStyle="2" Id="c557ba44-00fb-e75f-6239-0f10272daa77" FromLine="15" FromEnd="90" IsPercentage="true">
+        <SemanticReference Id="emfsemantic:(~sc{%UMLAssociationEnd}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.ChangeJournalEntry})(~sc{%UMLAssociation^c557ae2d-00fb-eca7-4979-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.ChangeJournalEntry}))(~role_name{!pid%WestLB_RMSC_MGB}{%journalEntries}))" Name="journalEntries" Kind="13"/>
+        <children xsi:type="com.rational.xtools.umlvisualizer.emfnotation:NameCompartmentView" Visible="true" FactoryHint="FromRole" ShapeStereotypeStyle="2" Id="c557ba45-00fb-e872-6dab-0f10272daa77">
+          <SemanticReference Id="emfsemantic:(~sc{%UMLAssociationEnd}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.ChangeJournalEntry})(~sc{%UMLAssociation^c557ae2d-00fb-eca7-4979-0f10272daa77}(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.ChangeJournalEntry}))(~role_name{!pid%WestLB_RMSC_MGB}{%journalEntries}))" Name="journalEntries" Kind="13"/>
+        </children>
+      </Labels>
+      <BendPoints x="-89" y="-22"/>
+      <BendPoints x="126" y="38"/>
+      <BendPoints x="-204" y="-53"/>
+      <BendPoints x="11" y="7"/>
+    </children>
+    <FieldMappings FieldName="state" FieldType="java.lang.String" FieldPosition="4" ShowAs="Association" Multiplicity="1" Id="c5456c03-00fb-faf6-632f-0f10272daa77">
+      <FieldOwner Id="emfsemantic:(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})"/>
+      <AssocTarget Id="emfsemantic:*"/>
+    </FieldMappings>
+    <FieldMappings FieldName="persistentObject" FieldType="java.sql.Blob" FieldPosition="1" ShowAs="Association" Multiplicity="1" Id="c54602b2-00fb-f0f7-759a-0f10272daa77">
+      <FieldOwner Id="emfsemantic:(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})"/>
+      <AssocTarget Id="emfsemantic:*"/>
+    </FieldMappings>
+    <FieldMappings FieldName="requestedBy" FieldType="de.westlb.mgb.model.impl.EmployeeImpl" FieldPosition="11" ShowAs="Association" Multiplicity="1" Id="c55502da-00fb-fc56-7654-0f10272daa77">
+      <FieldOwner Id="emfsemantic:(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})"/>
+      <AssocTarget Id="emfsemantic:*"/>
+    </FieldMappings>
+    <FieldMappings FieldName="commitedBy" FieldType="de.westlb.mgb.model.impl.EmployeeImpl" FieldPosition="12" ShowAs="Association" Multiplicity="1" Id="c55502db-00fb-fd69-7f7f-0f10272daa77">
+      <FieldOwner Id="emfsemantic:(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})"/>
+      <AssocTarget Id="emfsemantic:*"/>
+    </FieldMappings>
+    <FieldMappings FieldName="addon" FieldType="de.westlb.mgb.model.impl.AddonImpl" FieldPosition="5" ShowAs="Association" Multiplicity="1" Id="c555c87a-00fb-fc75-6d0e-0f10272daa77">
+      <FieldOwner Id="emfsemantic:(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})"/>
+      <AssocTarget Id="emfsemantic:*"/>
+    </FieldMappings>
+    <FieldMappings FieldName="instrument" FieldType="de.westlb.mgb.model.impl.InstrumentImpl" FieldPosition="9" ShowAs="Association" Multiplicity="1" Id="c5560b5f-00fb-e5c9-43c4-0f10272daa77">
+      <FieldOwner Id="emfsemantic:(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})"/>
+      <AssocTarget Id="emfsemantic:*"/>
+    </FieldMappings>
+    <FieldMappings FieldName="exchange" FieldType="de.westlb.mgb.model.impl.ExchangeImpl" FieldPosition="7" ShowAs="Association" Multiplicity="1" Id="c556325f-00fb-e349-62d8-0f10272daa77">
+      <FieldOwner Id="emfsemantic:(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})"/>
+      <AssocTarget Id="emfsemantic:*"/>
+    </FieldMappings>
+    <FieldMappings FieldName="priceCheckCategory" FieldType="de.westlb.mgb.model.impl.PriceCheckCategoryImpl" FieldPosition="6" ShowAs="Association" Multiplicity="1" Id="c556754e-00fb-ece6-78b4-0f10272daa77">
+      <FieldOwner Id="emfsemantic:(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})"/>
+      <AssocTarget Id="emfsemantic:*"/>
+    </FieldMappings>
+    <FieldMappings FieldName="mgbConfiguration" FieldType="de.westlb.mgb.model.impl.MgbConfigurationImpl" FieldPosition="10" ShowAs="Association" Multiplicity="1" Id="c556a0a6-00fb-f70e-7e2f-0f10272daa77">
+      <FieldOwner Id="emfsemantic:(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})"/>
+      <AssocTarget Id="emfsemantic:*"/>
+    </FieldMappings>
+    <FieldMappings FieldName="journalEntries" FieldType="de.westlb.mgb.model.impl.ChangeJournalEntry" FieldPosition="13" ShowAs="Association" Multiplicity="*" Id="c557ae2d-00fb-eca7-4979-0f10272daa77">
+      <FieldOwner Id="emfsemantic:(~jclass{!pid%WestLB_RMSC_MGB}{%de.westlb.mgb.model.impl.DualControlJobImpl})"/>
+      <AssocTarget Id="emfsemantic:*"/>
+    </FieldMappings>
+  </Diagram>
+</com.rational.xtools.umlvisualizer.emfnotation:Pack>

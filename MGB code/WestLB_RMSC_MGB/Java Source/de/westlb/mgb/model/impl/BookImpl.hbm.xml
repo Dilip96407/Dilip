@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping>
+    <class name="de.westlb.mgb.model.impl.BookImpl" table="T44_BOOK" lazy="true" batch-size="20">
+ 		<id name="bookId" column="T44_BOOK_ID" length="100">
+    		<generator class="assigned"></generator>
+		</id>
+        <property name="type" column="T44_BOOK_TYPE" length="50"/>
+        <property name="description" column="T44_BOOK_DESCRIPTION" length="100"/>
+        <property name="account" column="T44_ACCOUNT" />
+        <property name="accountingSystem" column="T44_ACCOUNTING_SYSTEM" length="50"/>
+        <property name="accountingBranch" column="T44_ACCOUNTING_BRANCH" />
+        <property name="businessUnit" column="T44_BUSINESS_UNIT" length="50"/>   
+        <property name="costCenter" column="T44_COST_CENTER" />
+        <property name="costCenterName" column="T44_COST_CENTER_NAME" length="50"/>
+        <property name="wersUnit" column="T44_WERS_UNIT" />
+        <property name="limitPosition" column="T44_LIMIT_POSITION" length="60"/>
+        <property name="mpireLuName" column="T44_MPIRE_LU_NAME" length="100"/>
+        <property name="desk" column="T44_DESK" length="50"/>
+        <property name="pcrPlDesk" column="T44_PCR_PL_DESK" length="75"/>
+        <property name="pcrPlGroup" column="T44_PCR_PL_GROUP" length="75"/>
+        <property name="foSystem" column="T44_FO_SYSTEM" length="50"/>
+        <property name="locationConsolidation" column="T44_LOCATION_CONSOLD" length="50"/>
+        <property name="locationGl" column="T44_LOCATION_GL" length="50"/>
+        <property name="locationPl" column="T44_LOCATION_PL" length="50"/> 
+        <property name="locationTrader">
+        	<column name="T44_LOCATION_TRADER" index="I44_LOCATION_TRADER" length="50"/>
+		</property>        	 
+        <property name="trader" column="T44_TRADER" length="100"/>
+        <property name="tradingHead" column="T44_TRADING_HEAD" length="100"/>
+        <property name="tradingBanking" column="T44_TRADING_BANKING" length="50"/>
+        <property name="tradingType" column="T44_TRADING_TYPE" length="50"/>   
+        <property name="overwriteLocationTrader" column="T44_OVERWRITE_LOCATION_TRADER" length="50"/> 
+        <property name="changedDate" column="T44_CHANGED_DATE"/>            
+    </class>
+</hibernate-mapping>

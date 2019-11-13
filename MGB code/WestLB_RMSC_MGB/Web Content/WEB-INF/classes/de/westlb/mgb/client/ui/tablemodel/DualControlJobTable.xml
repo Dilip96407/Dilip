@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE table SYSTEM "de/westlb/mgb/client/ui/tablemodel/TableModel.dtd">
+
+<table>
+	<column property-name="entityType" header-label="Type">
+		<choice-list list-class="de.westlb.mgb.client.ui.selection_list.DualControlJobEntityTypeList"/>
+	</column>
+	<column property-name="entityName" header-label="Name">
+	</column>
+	<column property-name="operation" header-label="Operation">
+		<choice-list list-class="de.westlb.mgb.client.ui.selection_list.DualControlJobOperationList"/>
+	</column>
+	<column property-name="requestedByName" header-label="Requested by">
+	</column>
+	<column property-name="requestedDate" header-label="Date">
+		<date-format type="time"/>
+	</column>
+</table>

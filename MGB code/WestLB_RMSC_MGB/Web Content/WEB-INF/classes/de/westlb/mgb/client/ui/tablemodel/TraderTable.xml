@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!DOCTYPE table SYSTEM "TableModel.dtd">
+
+<table>
+	<column property-name="traderCode" header-label="Trader ID">
+	</column>
+	<column property-name="traderName" header-label="Trader name">
+	</column>
+	<column property-name="sourceSystemCode" header-label="Source system">
+		<choice-list list-class="de.westlb.mgb.client.ui.selection_list.SourceSystemList"/>
+	</column>
+</table>

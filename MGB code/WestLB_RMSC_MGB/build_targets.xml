@@ -1,0 +1,122 @@
+
+ <!-- =================================================================== -->
+ <!-- This is an accessory function to echo out fileNames                 -->
+ <!-- =================================================================== -->
+  <target name="echo-file">
+    <basename property="fileName" file="${file}"/>
+    <dirname property="dirName" file="${file}"/>
+    <echo message="Dir: ${dirName} File: ${fileName}"/>
+  </target>
+
+  <!-- =================================================================== -->
+  <!-- Determine what dependencies are present                             -->
+  <!-- =================================================================== -->
+
+  <target name="setenv">
+    <condition property="ant.good">
+      <and>
+        <contains string="${ant.version}" substring="Apache Ant version"/>
+      </and>
+    </condition>
+    <mkdir dir="${build.dir}"/>
+    <mkdir dir="${build.dir}/reports"/>
+    <mkdir dir="${build.interface}/classes"/>
+    <mkdir dir="${build.lib}"/>
+    <mkdir dir="${build.work}"/>
+    <mkdir dir="${build.client}"/>
+    <mkdir dir="${build.server}"/>
+   	<mkdir dir="${build.server}/war/client"/>
+    <mkdir dir="${build.work.client}/classes"/>    
+    <mkdir dir="${build.work.server}/classes"/>
+    <mkdir dir="${build.work.war}"/>
+  </target>
+
+  <!-- print out the current enviroment.
+      Also, probe for javadocs being out of date and set javadoc.notrequired
+      to true if they are not needed -->
+  <target name="printEnv" depends="setenv,check-javadoc-needed" >
+
+    <echo message="-----------------------------------------------------------------"/>
+    <echo message="       Build environment for ${name} ${mgb.version} [${year}]   "/>
+    <echo message="-----------------------------------------------------------------"/>
+    <echo message="Building with ${ant.version}"/>
+    <echo message="using build file ${ant.file}"/>
+    <echo message="Java ${java.version} located at ${java.home} "/>
+    <echo message="-----------------------------------------------------------------"/>
+    <echo message="basedir = ${basedir}"/>
+    <echo message="mgb.home = ${mgb.home}"/>
+    <echo message="lib.dir = ${lib.dir}"/>
+    <echo message="build.dir = ${build.dir}"/>
+    <echo message="build.client = ${build.client}"/>
+    <echo message="build.server = ${build.server}"/>
+    <echo message="build.interface = ${build.interface}"/>
+    <echo message="build.work = ${build.work}"/>
+    <echo message=""/>
+    <echo message="--- Property values ---" />
+    <echo message="compile.debug=${compile.debug}" />
+    <echo message="compile.deprecation=${compile.deprecation}" />
+    <echo message="compile.exec=${compile.exec}" />
+    <echo message="compile.fork=${compile.fork}" />
+    <echo message="" />
+    <echo message="-- Network Settings ---"/>
+    <echo message="" />
+    <echo message="http.proxyHost = ${http.proxyHost}" />
+    <echo message="http.proxyPort = ${http.proxyPort}" />
+    <echo message="http.nonProxyHosts = ${http.nonProxyHosts}" />
+    <echo message="http.proxyUser = ${http.proxyUser}" />
+    <echo message="http.proxyPassword = ${http.proxyPassword}" />
+    <echo message="" />
+    <pathconvert targetos="windows" property="server.classpath.as.string" refid="server.classpath"/>
+    <echo message="server.classpath: ${server.classpath.as.string}"/>
+    <pathconvert targetos="windows" property="client.classpath.as.string" refid="client.classpath"/>
+    <echo message="client.classpath: ${client.classpath.as.string}"/>
+    <echo message="" />
+ </target>
+
+ 
+  <!-- see if javadocs are needed by looking for the env.axis_nojavadocs flag -->
+  
+  <target name="check-javadoc-needed"  depends="setenv" >
+
+    <uptodate property="javadoc.notoutofdate"
+              targetfile="${build.javadocs}/index.html">
+      <srcfiles dir="${src.dir}" includes="**/*.java" />
+    </uptodate>
+
+    <!-- for ant1.5+, we can use <isset> here -->
+    <condition property="axis_nojavadocs" value="true">
+      <equals arg1="true" arg2="${env.axis_nojavadocs}"/>
+    </condition>
+    <condition property="mgb_nojavadocs" value="false">
+      <equals arg1="${mgb_nojavadocs}" arg2="$${mgb_nojavadocs}"/>
+    </condition>
+
+    <condition property="javadoc.notrequired" value="true">
+    <or>
+      <equals arg1="${javadoc.notoutofdate}" arg2="true"/>
+      <equals arg1="true" arg2="${mgb_nojavadocs}"/>
+    </or>
+    </condition>
+  </target>
+
+
+  <!-- =================================================================== -->
+  <!-- Launches the functional test TCP server -->
+  <!-- =================================================================== -->
+  <target name="start-functional-test-tcp-server" if="junit.present">
+    <echo message="Starting test tcp server."/>
+    <java classname="samples.transport.tcp.TCPListener" fork="yes" dir="${axis.home}/build">
+      <arg line="-p ${test.functional.TCPListenerPort}" /> <!-- arbitrary port -->
+      <classpath refid="server.classpath" />
+    </java>
+  </target>
+
+  <!-- Runs the AdminClient to deploy/undeploy.   Set up the admin.file.exists property such that it is set -->
+  <!-- if there is a deploy.xml file, and the admin.file property to contain the actual file reference.     -->
+  <target name="adminClient" if="admin.file.exists">
+    <java classname="org.apache.axis.client.AdminClient" fork="yes">
+      <classpath refid="server.classpath" />
+      <arg line="${admin.file}"/>
+    </java>
+  </target>
+

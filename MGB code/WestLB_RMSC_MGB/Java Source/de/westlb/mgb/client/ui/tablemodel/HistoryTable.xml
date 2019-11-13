@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE table SYSTEM "TableModel.dtd">
+
+<table property-provider-class="de.westlb.mgb.client.ui.tablemodel.HistoryPropertyProvider">
+	<column property-name="type" header-label="Type">
+	</column>
+	<column property-name="stateCode" header-label="State code">
+		<choice-list list-class="de.westlb.mgb.client.ui.selection_list.AllStateCodeList"/>
+	</column>
+	<column property-name="date" header-label="Date">
+		<date-format type="time"/>
+	</column>
+	<column property-name="createdByName" header-label="Created by">
+	</column>
+	<column property-name="attachmentName" header-label="Attachment" column-type="icon" use-property-provider="true">
+	</column>
+	<column property-name="comment" header-label="comment">
+	</column>
+</table>

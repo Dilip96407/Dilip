@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE table SYSTEM "TableModel.dtd">
+
+<table>
+	<column property-name="category" header-label="Category">
+	</column>
+	<column property-name="summitCategory" header-label="SUMMIT Category">
+	</column>
+	<column property-name="priceCheckCategory" header-label="Price Check Category">
+	</column>
+	<column property-name="tolerance" header-label="Tolerance">
+		<number-format fraction-min-length="4" fraction-max-length="10" grouping-length="3"/>
+	</column>
+	<column property-name="priceCheckCategoryChangedBy" header-label="Changed By">
+	</column>
+	<column property-name="priceCheckCategoryChangeDate" header-label="Last Change">
+		<date-format type="timelong"/>
+	</column>
+	<column property-name="numberOfTrades" header-label="Number of Trades">
+		<number-format fraction-min-length="0" fraction-max-length="0" grouping-length="3"/>
+	</column>
+	<column property-name="numberOfExceededTrades" header-label="Number of Exceeded Trades">
+		<number-format fraction-min-length="0" fraction-max-length="0" grouping-length="3"/>
+	</column>
+	<column property-name="percentageOfExceededTrades" header-label="Exceeded in %">
+		<number-format fraction-min-length="2" fraction-max-length="2" grouping-length="3"/>
+	</column>
+</table>

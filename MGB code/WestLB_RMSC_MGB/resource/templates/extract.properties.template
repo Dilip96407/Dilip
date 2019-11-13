@@ -1,0 +1,28 @@
+# temporary file names
+#extract.bond.filename=mq_bond_data.dat
+extract.repo.filename=mq_repo_data.dat
+
+# connection data of the MQ to the User Acceptance test environment
+extract.mq.server=#MQ_SERVER#
+extract.mq.port=#MQ_PORT#
+extract.mq.manager=#MQ_MANAGER#
+extract.mq.queue=#MQ_QUEUE#
+extract.mq.channel=#MQ_CHANNEL#
+extract.mq.user=#MQ_USER#
+extract.mq.password=#MQ_PASSWORD#
+
+# number of milliseconds used for polling for new data
+extract.mq.sleepmillis=50
+
+# number of milliseconds without receiving any data
+#extract.mq.timeoutmillis=10000000
+extract.mq.timeoutmillis=1000
+
+# is the data deleted from the queue after reading
+extract.mq.deleteafterread=#MQ_DELETE_AFTER_READ#
+
+# the test mode creats files with a datestamp instead of the normal mgb file naming convention
+extract.mq.testmode=#MQ_TEST_MODE#
+
+# optional: the test file is read instead of the queue
+#extract.mq.testfilename=c:/Data/bond270804.xml

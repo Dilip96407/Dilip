@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!DOCTYPE table SYSTEM "TableModel.dtd">
+
+<table>
+	<column property-name="bloombergId" header-label="Bloomberg ID">
+	</column>
+	<column property-name="reutersId" header-label="Reuters ID">
+	</column>
+	<column property-name="changePending" header-label="Change pending" column-type="boolean">
+	</column>
+	<column property-name="changeRequestedByName" header-label="Requested by">
+	</column>
+</table>

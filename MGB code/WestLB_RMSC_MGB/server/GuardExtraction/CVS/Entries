@@ -1,0 +1,6 @@
+/create_guard_view.sql/1.2/Wed Jul  6 13:02:36 2011//
+/extract_mgb_identity_for_guard.sql/1.1/Wed Jul  6 13:02:36 2011//
+/extract_mgb_privilege_for_guard.sql/1.1/Fri Jan 30 16:45:05 2015//
+/extract_mgb_profile_for_guard.sql/1.1/Wed Jul  6 13:02:35 2011//
+/extract_mgb_user_for_guard.sh/1.3/Fri Jan 30 16:51:16 2015//
+/extract_mgb_user_for_guard.sql/1.1/Wed Jul  6 09:31:23 2011//

@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE table SYSTEM "TableModel.dtd">
+
+<table property-provider-class="de.westlb.mgb.client.ui.tablemodel.EmployeePropertyProvider">
+	<column property-name="controller" header-label="" column-type="icon" use-property-provider="true">
+	</column>
+	<column property-name="lastName" header-label="Last name">
+	</column>
+	<column property-name="firstName" header-label="First name">
+	</column>
+	<column property-name="phone" header-label="Phone">
+	</column>
+	<column property-name="email" header-label="EMail">
+	</column>
+</table>

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping>
+    <class name="de.westlb.mgb.model.impl.ReportConfigurationImpl" table="T120_REPORT_CONFIGURATION" lazy="true" batch-size="20">
+		<id name="longId" type="long" column="T120_ID">
+			<generator class="sequence">
+				<param name="sequence">HIB_SEQ</param>
+			</generator>
+		</id>
+        <property name="reportId" column="T120_REPORT_ID" length="100"/>
+        <property name="clientId" column="fk_t120_t127_client_id" length="20"/>
+        <property name="configuration" column="T120_CONFIGURATION" length="4000"/>
+		<property name="changedDate" column="T120_CHANGED_DATE" />
+		<property name="changedBy" column="T120_CHANGED_BY" length="10" />
+		<property name="createdBy" column="T120_CREATED_BY" length="10" />
+		<property name="creationDate" column="T120_CREATION_DATE" />
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>WestLB_RMSC_MGB</name>
+	<comment></comment>
+	<projects>
+		<project>WestLB_Systems_XAF_Swing</project>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.jdt.core.javabuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>com.ibm.etools.beaninfo.BeaninfoNature</nature>
+		<nature>com.ibm.etools.j2ee.WebNature</nature>
+		<nature>org.eclipse.jdt.core.javanature</nature>
+		<nature>com.ibm.etools.struts.StrutsNature</nature>
+		<nature>com.ibm.etools.ctc.javaprojectnature</nature>
+		<nature>com.sysdeo.eclipse.tomcat.tomcatnature</nature>
+	</natures>
+</projectDescription>

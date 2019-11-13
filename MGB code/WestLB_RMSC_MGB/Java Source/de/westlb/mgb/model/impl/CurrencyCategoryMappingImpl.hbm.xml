@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="de.westlb.mgb.model.impl.CurrencyCategoryMappingImpl" table="T52_CURRNCY_CATEGORY_MAPPING" lazy="false">
+    	<cache usage="read-write"/>
+ 		<id name="longId" type="long" column="T52_ID">
+			<generator class="sequence">
+				<param name="sequence">HIB_SEQ</param>
+			</generator>
+		</id>
+        <property name="currency" column="T52_CURRENCY" length="3"/>
+		<many-to-one name="category" class="de.westlb.mgb.model.impl.CurrencyCategoryImpl">
+			<column name="FK_T52_T51_CATEGORY" sql-type="VARCHAR2(25)"/>
+			<column name="FK_T52_T09_MANDANT" sql-type="VARCHAR2(3)"/>
+		</many-to-one>
+        <property name="changedDate" column="T52_CHANGED_DATE"/>
+ 		<property name="changedBy" column="T52_CHANGED_BY" length="10"/>
+		<property name="createdBy" column="T52_CREATED_BY" length="10"/>
+        <property name="creationDate" column="T52_CREATION_DATE" />
+    </class>
+
+</hibernate-mapping>

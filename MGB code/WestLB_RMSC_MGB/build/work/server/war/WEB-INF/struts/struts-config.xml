@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+
+	<form-beans>
+		<!-- no form definitions... -->
+		<form-bean name="traderResponseForm" type="de.westlb.mgb.struts_client.form.TraderResponseForm"/>
+		<form-bean name="userDetailForm" type="de.westlb.mgb.struts_client.form.UserDetailForm"/>
+		<form-bean name="localReportRequestForm" type="de.westlb.mgb.struts_client.form.LocalReportRequestForm"/>
+        <form-bean name="openJobsCloseForm" type="de.westlb.mgb.struts_client.form.OpenJobsCloseForm"/>
+	</form-beans>
+	<global-exceptions>
+		<exception type="java.lang.Exception" handler="org.apache.struts.action.ExceptionHandler" path="/exception.tile" key="exception.exception" scope="request" bundle="messages"/>
+		<exception type="java.rmi.AccessException" handler="org.apache.struts.action.ExceptionHandler" path="/exception.tile" key="exception.access" scope="request" bundle="messages"/>
+		<exception type="de.westlb.mgb.server.security.AuthenticationException" handler="org.apache.struts.action.ExceptionHandler" path="/exception.tile" key="exception.authentication" scope="request" bundle="messages"/>
+		<exception type="de.westlb.mgb.struts_client.action.UnknownUserIdException" handler="org.apache.struts.action.ExceptionHandler" path="/exception.tile" key="exception.unknown_user_id" scope="request" bundle="messages" />
+	</global-exceptions>
+
+	<global-forwards>
+	</global-forwards>
+
+	<action-mappings>
+		<action path="/traderResponse"  type="de.westlb.mgb.struts_client.action.TraderResponseAction" unknown="false" validate="false">		
+			<forward name="success" path="/traderResponseForm.do" />
+			<forward name="reclamationClosed" path="/errorReclamationClosed.tile" />
+			<forward name="wrongTrader" path="/errorWrongTrader.tile" />
+		</action>
+        <action path="/docu" forward="/docu.tile">
+        </action>
+		<action path="/application" type="de.westlb.mgb.struts_client.action.NtlmAuthenticationAction">
+			<forward name="success" path="/application.tile" />
+		</action>
+		<action path="/application-ref" type="de.westlb.mgb.struts_client.action.NtlmAuthenticationAction">
+			<forward name="success" path="/application-ref.tile" />
+		</action>
+		<action path="/userMaintenance" type="de.westlb.mgb.struts_client.action.NtlmAuthenticationAction">
+			<forward name="success" path="/userMaintenance.tile" />
+		</action>
+		<action path="/traderResponseSubmit" type="de.westlb.mgb.struts_client.action.TraderResponseSubmitAction" unknown="false" scope="session" name="traderResponseForm" validate="false" input="/traderResponse">
+			<forward name="failure" path="/traderResponseForm.tile" />
+			<forward name="success" path="/traderResponseDone.tile" />
+			<forward name="tradeAccessDenied" path="/tradeAccessDenied.tile"/>
+		</action>
+		<action path="/welcome" type="de.westlb.mgb.struts_client.action.NtlmAuthenticationAction">
+			<forward name="success" path="/welcome.tile" />
+		</action>
+		<action path="/reclamationMailList" type="de.westlb.mgb.struts_client.action.ReclamationMailListAction">
+			<forward name="success" path="/reclamationMailList.tile" />
+			<forward name="empty" path="/reclamationMailListEmpty.tile" />
+		</action>
+		
+        <action path="/openJobsList" type="de.westlb.mgb.struts_client.action.OpenJobsListAction">
+            <forward name="success" path="/openJobsList.tile"/>
+            <forward name="home" path="/welcome.tile" />
+        </action>
+
+        <action path="/openJobClose" type="de.westlb.mgb.struts_client.action.OpenJobCloseAction">
+            <forward name="success" path="/openJobsList.do"/>
+            <forward name="failure" path="/openJobsList.do" />
+        </action>
+
+        <action path="/userList" type="de.westlb.mgb.struts_client.action.UserListAction">
+			<forward name="success" path="/userList.tile"/>
+			<forward name="empty" path="/userEmpty.tile"/>
+			<forward name="home" path="/welcome.tile" />
+		</action>
+		<action path="/userDetail" type="de.westlb.mgb.struts_client.action.UserDetailAction">
+			<forward name="success" path="/userDetail.tile"/>
+			<forward name="empty" path="/userEmpty.tile"/>
+		</action>
+		<action path="/userDetailSubmit" type="de.westlb.mgb.struts_client.action.UserDetailSubmitAction" unknown="false" scope="session" name="userDetailForm" validate="true" input="/userDetail.do" cancellable="true">
+			<forward name="cancel" path="/userList.do"/>
+			<forward name="success" path="/userDetailSaved.tile"/>
+			<forward name="failure" path="/userDetail.tile"/>
+		</action>
+		
+		<action path="/localReport" type="de.westlb.mgb.struts_client.action.LocalReportAction" name="localReportRequestForm" validate="false">
+			<forward name="success" path="/localReport.tile"/>
+			<forward name="failure" path="/localReport.error.tile"/>
+		</action>
+		<action path="/localReportSubmit" type="de.westlb.mgb.struts_client.action.LocalReportSubmitAction" name="localReportRequestForm" validate="true" input="/localReport.tile" cancellable="true">
+			<forward name="success" path="/localReport.tile"/>
+			<forward name="failure" path="/localReport.error.tile"/>
+			<forward name="cancel" path="/localReport.do"/>
+		</action>
+
+		<action path="/startApplet" type="de.westlb.mgb.struts_client.action.StartAppletAction">
+			<forward name="success" path="/client/startApplet.jsp" />
+		</action>
+
+		<action path="/startAppletRef" type="de.westlb.mgb.struts_client.action.StartAppletAction">
+			<forward name="success" path="/client/startAppletRef.jsp" />
+		</action>
+
+		<action path="/exception" forward="/exception.tile">
+		</action>
+
+		<action path="/traderResponseForm" type="de.westlb.mgb.struts_client.action.MgbRelayAction">
+			<forward name="default" path="/traderResponseForm.tile"/>
+		</action>
+		<action path="/clearCache" type="de.westlb.mgb.struts_client.action.ClearHibernateCacheAction">
+			<forward name="success" path="/traderResponseDone.tile"/>
+		</action>
+	</action-mappings>
+
+  <message-resources parameter="de.westlb.mgb.struts_client.resource.Labels" null="false"/>
+  <message-resources key="messages" parameter="de.westlb.mgb.struts_client.resource.Messages" null="true"/>
+  <message-resources key="/resources/messages" parameter="org.apache.jasper.resources.messages" null="true"/>
+  <message-resources key="labels" parameter="de.westlb.mgb.struts_client.resource.Labels" null="false"/>
+  <message-resources key="formats" parameter="de.westlb.mgb.struts_client.resource.Formats" null="false"/>
+
+  <plug-in className="org.apache.struts.tiles.TilesPlugin" >
+    <set-property property="definitions-config" value="/WEB-INF/struts/tiles-defs.xml"/>
+  </plug-in>
+  
+  <plug-in className="de.westlb.mgb.struts_client.action.MgbServicePlugin">
+  </plug-in>
+
+</struts-config>

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!DOCTYPE table SYSTEM "TableModel.dtd">
+
+<table property-provider-class="de.westlb.mgb.client.ui.tablemodel.ManualStatesStatisticPropertyProvider">
+	<key-column property-name="state"/>
+	<column property-name="state" header-label="State code" use-property-provider="true">
+	</column>
+	<column property-name="count" header-label="Count">
+	</column>
+	<column property-name="reclamationRequired" header-label="Reclamation required" column-type="boolean">
+	</column>
+</table>

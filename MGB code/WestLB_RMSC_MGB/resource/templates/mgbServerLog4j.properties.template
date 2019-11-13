@@ -1,0 +1,126 @@
+##############################################################################
+### Edit this file to change the logging behavior of the MGB server
+##############################################################################
+
+##############################################################################
+### ConsoleAppender - direct log messages to stdout
+##############################################################################
+log4j.appender.stdout=org.apache.log4j.ConsoleAppender
+log4j.appender.stdout.layout=org.apache.log4j.PatternLayout
+log4j.appender.stdout.layout.ConversionPattern=%d{ISO8601} %5p %-18c{1} - %m%n
+
+##############################################################################
+### RollingFileAppender - direct log messages to srvrout 
+### Writing to files mgb_server.log.* (keep 9 files, max. size 20000KB)
+##############################################################################
+log4j.appender.srvrout=org.apache.log4j.RollingFileAppender
+# change the path to something useful
+log4j.appender.srvrout.File=#MGB_LOG_DIR#mgb_server.log
+log4j.appender.srvrout.MaxFileSize=20000KB
+# Keep the last 9 files
+log4j.appender.srvrout.MaxBackupIndex=9
+log4j.appender.srvrout.layout=org.apache.log4j.PatternLayout
+log4j.appender.srvrout.layout.ConversionPattern=%d{ISO8601} %5p %-18c{1} - %m%n
+
+##############################################################################
+### RollingFileAppender - direct log messages to a cvtout
+### Writing to files mgb_converter.log.* (keep 9 files, max. size 10000KB)
+##############################################################################
+log4j.appender.cvtout=org.apache.log4j.RollingFileAppender
+log4j.appender.cvtout.File=#MGB_LOG_DIR#mgb_converter.log
+log4j.appender.cvtout.MaxFileSize=10000KB
+# Keep the last 20 files
+log4j.appender.cvtout.MaxBackupIndex=9
+log4j.appender.cvtout.layout=org.apache.log4j.PatternLayout
+log4j.appender.cvtout.layout.ConversionPattern=%d{ISO8601} %5p %-18c{1} - %m%n
+
+
+##############################################################################
+### The default logging switch
+##############################################################################
+log4j.rootLogger=warn, stdout
+
+##############################################################################
+### Apache library logging switches
+##############################################################################
+log4j.logger.org.apache=warn
+log4j.logger.org.apache.axis=warn
+
+##############################################################################
+### OSCache logging switches
+##############################################################################
+log4j.logger.com.opensymphony.oscache=warn
+
+##############################################################################
+### MGB Source Logging switches
+##############################################################################
+# The following switch changes the additivity of the output for additional logger
+log4j.additivity.de.westlb=false
+log4j.logger.de.westlb=debug, srvrout
+
+# Persistence logging switch
+log4j.additivity.de.westlb.mgb.persistence=false
+log4j.logger.de.westlb.mgb.persistence=info, srvrout
+
+### log the mgb converters
+log4j.additivity.de.westlb.mgb.converter=false
+log4j.logger.de.westlb.mgb.converter=debug, cvtout
+log4j.additivity.de.westlb.mgb.mqconnect.dusmcc=false
+log4j.logger.de.westlb.mgb.mqconnect.dusmcc=info, cvtout
+
+### log the mgb exchange interface
+log4j.additivity.de.westlb.mgb.exchange=false
+log4j.logger.de.westlb.mgb.exchange=info, cvtout
+
+##############################################################################
+### Scheduler Logging switches
+##############################################################################
+log4j.additivity.org.quartz=false
+log4j.logger.org.quartz=info, cvtout
+
+##############################################################################
+### Archiver Logging switches
+##############################################################################
+log4j.additivity.org.exolab.castor=false
+log4j.logger.org.exolab.castor=info, cvtout
+
+##############################################################################
+### Hibernate logging switches
+##############################################################################
+log4j.additivity.org.hibernate=false
+log4j.logger.org.hibernate=warn
+
+### Log all SQL DML statements as they are executed
+#log4j.additivity.org.hibernate.SQL=false
+#log4j.logger.org.hibernate.SQL=debug, srvrout
+#
+###Log all JDBC parameters  
+#log4j.additivity.org.hibernate.type=false
+#log4j.logger.org.hibernate.type=debug, srvrout
+#
+### Log all SQL DDL statements as they are executed
+#log4j.additivity.org.hibernate.hbm2ddl=false
+#log4j.logger.org.hibernate.tool.hbm2ddl=debug, srvrout
+#
+### Log the state of all entities (max 20 entities) associated with the session at flush time 
+#log4j.additivity.org.hibernate.pretty=false
+#log4j.logger.org.hibernate.pretty=debug, srvrout
+#
+### Log all second-level cache activity
+#log4j.additivity.org.hibernate.cache=false
+#log4j.logger.org.hibernate.cache=debug, srvrout
+#
+### Log transaction related activity
+#log4j.additivity.org.hibernate.transaction=false
+#log4j.logger.org.hibernate.transaction=debug, srvrout
+#
+### Log all JDBC resource acquisition
+#log4j.logger.org.hibernate.jdbc=debug, srvrout
+#
+### Log HQL and SQL ASTs during query parsing
+#log4j.additivity.org.hibernate.hql.internal.ast.AST=false
+#log4j.logger.org.hibernate.hql.internal.ast.AST=debug, srvrout 
+#
+### Log all JAAS authorization requests
+#log4j.additivity.org.hibernate.secure=false
+#log4j.logger.org.hibernate.secure=debug, srvrout

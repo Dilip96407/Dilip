@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE table SYSTEM "TableModel.dtd">
+
+<table>
+	<key-column property-name="id"/>
+	<column property-name="tradeId" header-label="Trade">
+	</column>
+	<column property-name="instrument" header-label="Instrument">
+	</column>
+	<column property-name="tradeType" header-label="Category">
+	</column>
+	<column property-name="currency" header-label="Currency">
+	</column>
+	<column property-name="bookId" header-label="Portfolio">
+	</column>
+	<column property-name="traderLocation" header-label="Location">
+	</column>
+</table>

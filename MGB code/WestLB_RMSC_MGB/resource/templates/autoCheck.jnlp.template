@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- JNLP File for MGB Automatic Check Application -->
+<jnlp
+  spec="1.0+"
+  codebase="#MGB_URL_ALTERNATIVE#/"
+  href="autoCheck.jnlp">
+  <information>
+    <title>MGB Automatic Check Application</title>
+    <vendor>Erste Financial Services GmbH</vendor>
+    <homepage href="doc/javadocs/de/westlb/mgb/client/application/JnlpApplicationClient.html"/>
+    <description>MGB Automatic Check Application</description>
+    <description kind="short">MGB Automatic Check Application.</description>
+    <!--offline-allowed/ -->
+  </information>
+  <security>
+      <all-permissions/>
+  </security>
+  <resources>
+    <j2se version="1.6+"/>
+    <jar href="client/mgb-client.jar"/>
+    <jar href="client/mgb-properties.jar"/>
+    <jar href="client/axis-1.4.jar"/>
+    <jar href="client/activation.jar"/>
+    <jar href="client/commons-beanutils-1.6.1.jar"/>
+    <jar href="client/commons-collections-3.1.jar"/>
+    <jar href="client/commons-digester-1.8.jar"/>
+    <jar href="client/commons-discovery-0.2.jar"/>
+    <jar href="client/commons-lang3-3.0.1.jar"/>
+    <jar href="client/commons-logging-1.0.3.jar"/>
+    <jar href="client/jaws.jar"/>
+    <jar href="client/jaxrpc.jar"/>
+    <jar href="client/log4j-1.2.17.jar"/>
+    <jar href="client/mailapi.jar"/>
+    <jar href="client/quartz.jar"/>
+    <jar href="client/saaj-1.2.jar"/>
+    <jar href="client/wsdl4j-1.5.1.jar"/>
+    <jar href="client/xaf_ctrl.jar"/>
+    <jar href="client/xaf_swing.jar"/>
+    <jar href="client/blpapi-3.6.1-0.jar"/>
+  </resources>
+  <application-desc main-class="de.westlb.mgb.client.application.JnlpApplicationClient">
+	  <argument>#MGB_URL_ALTERNATIVE#/services/Mgb</argument>
+	  <argument>automgb</argument>
+	  <argument>GLB</argument>
+  <application-desc/>
+</jnlp> 

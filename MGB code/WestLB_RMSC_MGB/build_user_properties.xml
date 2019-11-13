@@ -1,0 +1,12 @@
+<!-- This is an xml entity included in the MGB build files -->
+
+<property name="unix.user" value="ibm0186" />
+<property name="unix.password" value="*Mybabygirl19#" />
+<property name="ssh_id" value="${user.home}/.ssh/id_rsa"/>
+
+<!-- properties for deploy_local.xml -->
+<property name="local.catalina.home" value="p:/apache-tomcat-7.0.39"></property>
+<property name="local.catalina.mgb" value="${local.catalina.home}/webapps/mgbDev"/>
+<property name="http.url" value="http://localhost:8081/mgbDev"/>
+
+<property name="compile.exec" value="C:\Program Files\Java\jdk1.8.0_201\bin\javac.exe"/>

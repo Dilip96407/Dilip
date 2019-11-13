@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="de.westlb.mgb.model.impl.AccessControlImpl" table="T47_ACCESS_CONTROL" lazy="false">
+    	<cache usage="read-write"/>
+ 		<id name="longId" type="long" column="T47_ID">
+			<generator class="sequence">
+                <param name="sequence">HIB_SEQ</param>			
+			</generator>
+		</id>
+		<many-to-one name="role" lazy="proxy" class="de.westlb.mgb.model.impl.RoleImpl">
+			<column name="FK_T47_T29_ROLE" sql-type="VARCHAR2(20)"/>
+		</many-to-one>
+        <property name="function" column="T47_FUNCTION"/>
+    </class>
+
+</hibernate-mapping>

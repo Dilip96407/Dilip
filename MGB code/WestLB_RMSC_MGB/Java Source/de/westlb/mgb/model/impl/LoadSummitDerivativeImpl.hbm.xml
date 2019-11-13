@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="de.westlb.mgb.model.impl.LoadSummitDerivativeImpl" table="LOAD_SUMMIT_DERIVATIVE">
+	<composite-id class="de.westlb.mgb.model.impl.LoadKey" mapped ="true">
+		<key-property name="rowNum" column="record_number" length="10"/>
+        <key-property name="sourceSystem" column="source_system" length="3"/>
+	</composite-id>
+        <property name="loadStatus" column="LOAD_STATUS" length="10"/>
+        <property name="loadTime" column="LOAD_TIME"/>
+        <property name="loadMessage" column="LOAD_MESSAGE"/>
+        <property name="asOfDate" column="AS_OF_DATE"/>
+        <property name="tradeType" column="TRADE_TYPE" length="50"/>
+        <property name="tradeSubType" column="TRADE_SUB_TYPE" length="50"/>
+        <property name="tradeId" column="TRADE_ID" length="50"/>
+        <property name="dealId" column="DEAL_ID" length="50"/>
+        <property name="version" column="VERSION"/>
+        <property name="auditCurrent" column="AUDIT_CURRENT" length="1"/>
+        <property name="structureId" column="STRUCTURE_ID" length="50"/>
+        <property name="tradeStatus" column="TRADE_STATUS" length="50"/>
+        <property name="tradeCurrency" column="TRADE_CURRENCY" length="3"/>
+        <property name="assetId" column="ASSET_ID" length="50"/>
+        <property name="callPut" column="CALL_PUT" length="4"/>
+        <property name="payCurrency" column="PAY_CURRENCY" length="3"/>
+        <property name="payNotional" column="PAY_NOTIONAL"/>
+        <property name="receiveCurrency" column="RECEIVE_CURRENCY" length="3"/>
+        <property name="receiveNotional" column="RECEIVE_NOTIONAL"/>
+        <property name="startDate" column="START_DATE"/>
+        <property name="maturityDate" column="MATURITY_DATE"/>
+        <property name="payIndexBasis" column="PAY_INDEX_BASIS" length="50"/>
+        <property name="payRateSpread" column="PAY_RATE_SPREAD"/>
+        <property name="payDiscountCurve" column="PAY_DISCOUNT_CURVE" length="50"/>
+        <property name="receiveIndexBasis" column="RECEIVE_INDEX_BASIS" length="50"/>
+        <property name="receiveRateSpread" column="RECEIVE_RATE_SPREAD"/>
+        <property name="receiveDiscountCurve" column="RECEIVE_DISCOUNT_CURVE" length="50"/>
+        <property name="capFloor" column="CAP_FLOOR" length="5"/>
+        <property name="buySell" column="BUY_SELL" length="4"/>
+        <property name="quantity" column="QUANTITY"/>
+        <property name="underlying" column="UNDERLYING"/>
+        <property name="strike" column="STRIKE"/>
+        <property name="style" column="STYLE" length="50"/>
+        <property name="premiumAmount" column="PREMIUM_AMOUNT"/>
+        <property name="premiumCurrency" column="PREMIUM_CURRENCY" length="3"/>
+        <property name="expiryDate" column="EXPIRY_DATE"/>
+        <property name="fixingDate" column="FIXING_DATE"/>
+        <property name="paymentDate" column="PAYMENT_DATE"/>
+        <property name="firstCouponDate" column="FIRST_COUPON_DATE"/>
+        <property name="model" column="MODEL"/>
+        <property name="instrumentStyle" column="INSTRUMENT_STYLE"/>
+        <property name="formula" column="FORMULA" length="50"/>
+        <property name="productName" column="PRODUCT_NAME" length="60"/>
+        <property name="prodData" column="PROD_DATA" length="50"/>
+        <property name="npv" column="NPV"/>
+        <property name="marketRateIR" column="MARKET_RATE_IR"/>
+        <property name="marketRateVola" column="MARKET_RATE_VOLA"/>
+        <property name="fxRate" column="FX_RATE"/>
+        <property name="delta" column="DELTA"/>
+        <property name="deltaCurrency" column="DELTA_CURRENCY" length="3"/>
+        <property name="vega" column="VEGA"/>
+        <property name="vegaCurrency" column="VEGA_CURRENCY" length="3"/>
+        <property name="exercised" column="EXERCISED" length="50"/>
+        <property name="doneDate" column="DONE_DATE"/>
+        <property name="verifyDate" column="VERIFY_DATE"/>
+        <property name="amendDate" column="AMEND_DATE"/>
+        <property name="cancelDate" column="CANCEL_DATE"/>
+        <property name="comment" column="COMMENT1" length="100"/>
+        <property name="comment2" column="COMMENT2" length="100"/>
+        <property name="counterparty" column="COUNTERPARTY" length="50"/>
+        <property name="internalExternal" column="INTERNAL_EXTERNAL" length="10"/>
+        <property name="book" column="BOOK" length="50"/>
+        <property name="desk" column="DESK" length="50"/>
+        <property name="company" column="COMPANY" length="50"/>
+        <property name="trader" column="TRADER" length="50"/>	
+        <property name="tradeDate" column="trade_date"/>
+        <property name="amendUser" column="amend_user" length="50"/>
+        <property name="auditDate" column="audit_date"/>
+        <property name="auditUser" column="audit_user" length="50"/>
+        <property name="termAssignStatus" column="term_assign_status" length="50"/>
+        <property name="termTradeDate" column="term_trade_date"/>
+        <property name="termInputDate" column="term_input_date"/>
+        <property name="termEffDate" column="term_eff_date"/>			
+        <property name="resetRemark" column="reset_remark" length="50"/>			
+     </class>
+</hibernate-mapping>

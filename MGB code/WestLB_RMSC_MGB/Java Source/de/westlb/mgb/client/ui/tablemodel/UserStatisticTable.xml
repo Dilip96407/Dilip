@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE table SYSTEM "TableModel.dtd">
+
+<table property-provider-class="de.westlb.mgb.client.ui.tablemodel.EmployeePropertyProvider">
+	<column property-name="userId" header-label="User ID">
+	</column>
+	<column property-name="userName" header-label="User name">
+	</column>
+	<column property-name="activeSessionCount" header-label="Active sessions" column-type="number">
+	</column>
+	<column property-name="sessionCount" header-label="Sessions" column-type="number">
+	</column>
+	<column property-name="latestSessionCreateTime" header-label="Latest session created">
+		<date-format type="time"/>
+	</column>
+	<column property-name="latestSessionDestroyTime" header-label="Latest session destroyed">
+		<date-format type="time"/>
+	</column>
+</table>

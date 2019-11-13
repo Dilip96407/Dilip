@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite errors="0" failures="0" name="com.opensymphony.oscache.base.TestCompleteBase" tests="51" time="14.411">
+  <properties>
+    <property name="java.vendor" value="Sun Microsystems Inc."></property>
+    <property name="lib.dir" value="lib"></property>
+    <property name="jikes.class.path" value="D:\Java\tools"></property>
+    <property name="os.name" value="Windows XP"></property>
+    <property name="sun.boot.class.path" value="C:\j2sdk1.4.2_02\jre\lib\rt.jar;C:\j2sdk1.4.2_02\jre\lib\i18n.jar;C:\j2sdk1.4.2_02\jre\lib\sunrsasign.jar;C:\j2sdk1.4.2_02\jre\lib\jsse.jar;C:\j2sdk1.4.2_02\jre\lib\jce.jar;C:\j2sdk1.4.2_02\jre\lib\charsets.jar;C:\j2sdk1.4.2_02\jre\classes"></property>
+    <property name="TODAY" value="November 5 2003"></property>
+    <property name="sun.java2d.fontpath" value=""></property>
+    <property name="java.vm.specification.vendor" value="Sun Microsystems Inc."></property>
+    <property name="ant.home" value="D:/Java/ant"></property>
+    <property name="java.runtime.version" value="1.4.2_02-b03"></property>
+    <property name="user.name" value="Administrator"></property>
+    <property name="debug" value="true"></property>
+    <property name="build.dir" value="build"></property>
+    <property name="src.core" value="src/core"></property>
+    <property name="user.language" value="en"></property>
+    <property name="sun.boot.library.path" value="C:\j2sdk1.4.2_02\jre\bin"></property>
+    <property name="src.plugins" value="src/plugins"></property>
+    <property name="doc.dir" value="docs"></property>
+    <property name="ant.project.name" value="oscache"></property>
+    <property name="DSTAMP" value="20031105"></property>
+    <property name="java.version" value="1.4.2_02"></property>
+    <property name="version" value="2.0.1"></property>
+    <property name="user.timezone" value=""></property>
+    <property name="sun.arch.data.model" value="32"></property>
+    <property name="java.endorsed.dirs" value="C:\j2sdk1.4.2_02\jre\lib\endorsed"></property>
+    <property name="sun.cpu.isalist" value="pentium i486 i386"></property>
+    <property name="file.encoding.pkg" value="sun.io"></property>
+    <property name="file.separator" value="\"></property>
+    <property name="java.specification.name" value="Java Platform API Specification"></property>
+    <property name="clover.initstring" value="D:\Programming\libraries\java\opensymphony\latest\oscache\build.test\testcoverage.db"></property>
+    <property name="java.class.version" value="48.0"></property>
+    <property name="user.country" value="GB"></property>
+    <property name="java.home" value="C:\j2sdk1.4.2_02\jre"></property>
+    <property name="dist.dir" value="dist"></property>
+    <property name="java.vm.info" value="mixed mode"></property>
+    <property name="ant.file" value="D:\Programming\libraries\java\opensymphony\latest\oscache\build.xml"></property>
+    <property name="os.version" value="5.1"></property>
+    <property name="path.separator" value=";"></property>
+    <property name="java.vm.version" value="1.4.2_02-b03"></property>
+    <property name="release" value=""></property>
+    <property name="java.util.prefs.PreferencesFactory" value="java.util.prefs.WindowsPreferencesFactory"></property>
+    <property name="user.variant" value=""></property>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"></property>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"></property>
+    <property name="src.webapp" value="src/webapp"></property>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"></property>
+    <property name="packages" value="com.opensymphony.oscache.*"></property>
+    <property name="user.home" value="C:\Documents and Settings\Administrator"></property>
+    <property name="java.specification.vendor" value="Sun Microsystems Inc."></property>
+    <property name="tmp.dir" value="tmp"></property>
+    <property name="java.library.path" value="C:\j2sdk1.4.2_02\jre\bin;.;C:\WINDOWS\System32;C:\WINDOWS;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\j2sdk1.4.2_02\bin;D:\Java\tools;D:\Java\tools\SSH1;D:/Java/ant/bin;C:\Program Files\Microsoft SQL Server\80\Tools\BINN;C:\Program Files\SecureCRT;C:\Program Files\Director\bin;"></property>
+    <property name="name" value="oscache"></property>
+    <property name="java.vendor.url" value="http://java.sun.com/"></property>
+    <property name="java.vm.vendor" value="Sun Microsystems Inc."></property>
+    <property name="java.runtime.name" value="Java(TM) 2 Runtime Environment, Standard Edition"></property>
+    <property name="java.class.path" value="D:\Programming\libraries\java\opensymphony\latest\oscache\build.test;D:\Programming\libraries\java\opensymphony\latest\oscache\lib\build\clover-1.2.3.jar;D:\Programming\libraries\java\opensymphony\latest\oscache\lib\build\commons-net-1.0.0.jar;D:\Programming\libraries\java\opensymphony\latest\oscache\lib\build\httpunit.jar;D:\Programming\libraries\java\opensymphony\latest\oscache\lib\build\jms.jar;D:\Programming\libraries\java\opensymphony\latest\oscache\lib\build\junit-3.8.1.jar;D:\Programming\libraries\java\opensymphony\latest\oscache\lib\build\junitperf.jar;D:\Programming\libraries\java\opensymphony\latest\oscache\lib\build\optional.jar;D:\Programming\libraries\java\opensymphony\latest\oscache\lib\build\servlet.jar;D:\Programming\libraries\java\opensymphony\latest\oscache\lib\core\commons-collections.jar;D:\Programming\libraries\java\opensymphony\latest\oscache\lib\core\commons-logging.jar;D:\Programming\libraries\java\opensymphony\latest\oscache\lib\plugins\clustersupport\javagroups-all.jar;D:\Java\ant\lib\junit-3.8.1.jar;D:\Java\ant\lib\ant.jar;D:\Java\ant\lib\optional.jar"></property>
+    <property name="ant.version" value="Apache Ant version 1.5.2 compiled on February 28 2003"></property>
+    <property name="TSTAMP" value="0917"></property>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"></property>
+    <property name="java.vm.specification.version" value="1.0"></property>
+    <property name="sun.cpu.endian" value="little"></property>
+    <property name="sun.os.patch.level" value="Service Pack 1"></property>
+    <property name="java.io.tmpdir" value="C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\"></property>
+    <property name="java.vendor.url.bug" value="http://java.sun.com/cgi-bin/bugreport.cgi"></property>
+    <property name="Name" value="OSCache"></property>
+    <property name="os.arch" value="x86"></property>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"></property>
+    <property name="java.ext.dirs" value="C:\j2sdk1.4.2_02\jre\lib\ext"></property>
+    <property name="junit.available" value="true"></property>
+    <property name="user.dir" value="D:\Programming\libraries\java\opensymphony\latest\oscache"></property>
+    <property name="line.separator" value="
+"></property>
+    <property name="build.test.dir" value="build.test"></property>
+    <property name="java.vm.name" value="Java HotSpot(TM) Client VM"></property>
+    <property name="basedir" value="D:\Programming\libraries\java\opensymphony\latest\oscache"></property>
+    <property name="ant.java.version" value="1.4"></property>
+    <property name="test.cache.path" value="/tmp/cachetagscache"></property>
+    <property name="file.encoding" value="Cp1252"></property>
+    <property name="clover.available" value="true"></property>
+    <property name="java.specification.version" value="1.4"></property>
+    <property name="src.dir" value="src"></property>
+  </properties>
+  <testcase name="testEvaluations" time="0.121"></testcase>
+  <testcase name="testInvalidExpressionParsing" time="0.04"></testcase>
+  <testcase name="testPerformance" time="0.0"></testcase>
+  <testcase name="testValidExpressionParsing" time="0.0"></testcase>
+  <testcase name="testFlush" time="0.0"></testcase>
+  <testcase name="testGetCreated" time="0.0"></testcase>
+  <testcase name="testGetKey" time="0.0"></testcase>
+  <testcase name="testGetLastUpdate" time="0.0"></testcase>
+  <testcase name="testNeedsRefresh" time="0.01"></testcase>
+  <testcase name="testSetGetContent" time="0.0"></testcase>
+  <testcase name="testFlushPattern" time="0.21"></testcase>
+  <testcase name="testPutGetFromCache" time="0.0"></testcase>
+  <testcase name="testPutGetFromCacheWithPolicy" time="0.01"></testcase>
+  <testcase name="testNewEntry" time="0.511"></testcase>
+  <testcase name="testNewEntryCancel" time="1.001"></testcase>
+  <testcase name="testPut" time="11.377"></testcase>
+  <testcase name="testStaleEntry" time="0.41"></testcase>
+  <testcase name="testStaleEntryBlocking" time="0.21"></testcase>
+  <testcase name="testRemoveItem" time="0.0"></testcase>
+  <testcase name="testPut" time="0.0"></testcase>
+  <testcase name="testClear" time="0.0"></testcase>
+  <testcase name="testContainsKey" time="0.0"></testcase>
+  <testcase name="testGet" time="0.0"></testcase>
+  <testcase name="testGetSetMaxEntries" time="0.0"></testcase>
+  <testcase name="testIterator" time="0.0"></testcase>
+  <testcase name="testRemove" time="0.0"></testcase>
+  <testcase name="testGetSetMemoryCache" time="0.0"></testcase>
+  <testcase name="testSetPersistenceListener" time="0.0"></testcase>
+  <testcase name="testRemoveItem" time="0.0"></testcase>
+  <testcase name="testPut" time="0.0"></testcase>
+  <testcase name="testClear" time="0.0"></testcase>
+  <testcase name="testContainsKey" time="0.0"></testcase>
+  <testcase name="testGet" time="0.0"></testcase>
+  <testcase name="testGetSetMaxEntries" time="0.0"></testcase>
+  <testcase name="testIterator" time="0.0"></testcase>
+  <testcase name="testRemove" time="0.0"></testcase>
+  <testcase name="testGetSetMemoryCache" time="0.0"></testcase>
+  <testcase name="testSetPersistenceListener" time="0.0"></testcase>
+  <testcase name="testRemoveItem" time="0.0"></testcase>
+  <testcase name="testGetSetMaxEntries" time="0.0"></testcase>
+  <testcase name="testPut" time="0.0"></testcase>
+  <testcase name="testClear" time="0.0"></testcase>
+  <testcase name="testContainsKey" time="0.0"></testcase>
+  <testcase name="testGet" time="0.0"></testcase>
+  <testcase name="testIterator" time="0.0"></testcase>
+  <testcase name="testRemove" time="0.0"></testcase>
+  <testcase name="testGetSetMemoryCache" time="0.0"></testcase>
+  <testcase name="testSetPersistenceListener" time="0.0"></testcase>
+  <testcase name="testCacheEntryEvent" time="0.01"></testcase>
+  <testcase name="testCacheMapAccessEvent" time="0.0"></testcase>
+  <testcase name="testScopeEvent" time="0.0"></testcase>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[05-Nov-2003 09:18:43 com.opensymphony.oscache.base.Config loadProps
+INFO: Properties {cache.persistence.class=com.opensymphony.oscache.plugins.diskpersistence.DiskPersistenceListener, cache.path=/tmp/cachetagscache, cache.capacity=100, cache.memory=true}
+05-Nov-2003 09:18:43 com.opensymphony.oscache.general.GeneralCacheAdministrator <init>
+INFO: Constructed GeneralCacheAdministrator()
+05-Nov-2003 09:18:43 com.opensymphony.oscache.general.GeneralCacheAdministrator createCache
+INFO: Creating new cache
+05-Nov-2003 09:18:43 com.opensymphony.oscache.plugins.diskpersistence.DiskPersistenceListener initFileCaching
+INFO: cache.path '/tmp/cachetagscache' does not exist, creating
+05-Nov-2003 09:18:43 com.opensymphony.oscache.base.Config loadProps
+INFO: Properties {cache.persistence.class=com.opensymphony.oscache.plugins.diskpersistence.DiskPersistenceListener, cache.path=/tmp/cachetagscache, cache.capacity=100, cache.memory=true}
+05-Nov-2003 09:18:43 com.opensymphony.oscache.general.GeneralCacheAdministrator <init>
+INFO: Constructed GeneralCacheAdministrator()
+05-Nov-2003 09:18:43 com.opensymphony.oscache.general.GeneralCacheAdministrator createCache
+INFO: Creating new cache
+05-Nov-2003 09:18:56 com.opensymphony.oscache.general.GeneralCacheAdministrator <init>
+INFO: Constructed GeneralCacheAdministrator()
+05-Nov-2003 09:18:56 com.opensymphony.oscache.general.GeneralCacheAdministrator createCache
+INFO: Creating new cache
+05-Nov-2003 09:18:57 com.opensymphony.oscache.base.Config loadProps
+INFO: Properties {cache.persistence.class=com.opensymphony.oscache.plugins.diskpersistence.DiskPersistenceListener, cache.path=/tmp/cachetagscache, cache.capacity=100, cache.memory=true}
+05-Nov-2003 09:18:57 com.opensymphony.oscache.general.GeneralCacheAdministrator <init>
+INFO: Constructed GeneralCacheAdministrator()
+]]></system-err>
+</testsuite>

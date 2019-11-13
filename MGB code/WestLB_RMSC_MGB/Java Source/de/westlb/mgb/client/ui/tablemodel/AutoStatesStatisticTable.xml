@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE table SYSTEM "TableModel.dtd">
+
+<table>
+	<key-column property-name="state"/>
+	<column property-name="state" header-label="State code">
+		<choice-list list-class="de.westlb.mgb.client.ui.selection_list.AutoStateCodeList"/>
+	</column>
+	<column property-name="count" header-label="Count">
+	</column>
+	<column property-name="manualCheckRequired" header-label="Manual check required" column-type="boolean">
+	</column>
+	<column property-name="reclamationRequired" header-label="Reclamation required" column-type="boolean">
+	</column>
+</table>

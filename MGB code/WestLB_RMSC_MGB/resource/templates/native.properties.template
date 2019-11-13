@@ -1,0 +1,12 @@
+count=1
+
+date=20071031
+dstDir=<user.home>/mgb
+delete=no
+srcDir=/#WAR_NAME#/client/de/westlb/mgb/client/ui/tablemodel
+
+date0=20041014
+dstDir0=<user.home>/mgb
+delete0=no
+srcDir0=/#WAR_NAME#/client/natives
+fileName0=bridge2java.dll

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!DOCTYPE table SYSTEM "TableModel.dtd">
+
+<table>
+	<column property-name="key" header-label="Key">
+	</column>
+	<column property-name="value" header-label="Value">
+	</column>
+	<column property-name="changePending" header-label="Pending change" column-type="boolean">
+	</column>
+	<column property-name="changeRequestedByName" header-label="Changed by">
+	</column>
+</table>

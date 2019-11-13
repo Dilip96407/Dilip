@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping>
+    <class name="de.westlb.mgb.model.impl.LoadParisBookImpl" table="LOAD_PARIS_BOOK" lazy="false">
+	<composite-id class="de.westlb.mgb.model.impl.LoadKey" mapped ="true">
+		<key-property name="rowNum" column="record_number" length="10"/>
+        <key-property name="sourceSystem" column="source_system" length="3"/>
+	</composite-id>
+		<property name="loadStatus" column="LOAD_STATUS" length="10"/>
+        <property name="loadTime" column="LOAD_TIME"/>
+        <property name="loadMessage" column="LOAD_MESSAGE"/>
+        <property name="type" column="BOOK_TYPE" length="50"/>
+        <property name="bookId" column="BOOK_ID" length="50"/>
+        <property name="description" column="BOOK_DESCRIPTION" length="100"/>
+        <property name="account" column="ACCOUNT" />
+        <property name="accountingSystem" column="ACCOUNTING_SYSTEM" length="50"/>
+        <property name="accountingBranch" column="ACCOUNTING_BRANCH" />
+        <property name="businessUnit" column="BUSINESS_UNIT" length="50"/>   
+        <property name="costCenter" column="COST_CENTER" />
+        <property name="costCenterName" column="COST_CENTER_NAME" length="50"/>
+        <property name="wersUnit" column="WERS_UNIT" />
+        <property name="limitPosition" column="LIMIT_POSITION" length="60"/>
+        <property name="mpireLuName" column="MPIRE_LU_NAME" length="100"/>
+        <property name="desk" column="DESK" length="50"/>
+        <property name="pcrPlDesk" column="PCR_PL_DESK" length="75"/>
+        <property name="pcrPlGroup" column="PCR_PL_GROUP" length="75"/>
+        <property name="foSystem" column="FO_SYSTEM" length="50"/>
+        <property name="locationConsolidation" column="LOCATION_CONSOLD" length="50"/>
+        <property name="locationGl" column="LOCATION_GL" length="50"/>
+        <property name="locationPl" column="LOCATION_PL" length="50"/> 
+        <property name="locationTrader" column="LOCATION_TRADER" length="50"/> 
+        <property name="trader" column="TRADER" length="100"/>
+        <property name="tradingHead" column="TRADING_HEAD" length="100"/>
+        <property name="tradingBanking" column="TRADING_BANKING" length="50"/>
+        <property name="tradingType" column="TRADING_TYPE" length="50"/>       
+    </class>
+</hibernate-mapping>

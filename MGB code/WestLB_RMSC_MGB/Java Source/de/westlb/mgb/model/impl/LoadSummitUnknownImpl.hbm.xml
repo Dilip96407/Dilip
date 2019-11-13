@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="de.westlb.mgb.model.impl.LoadSummitUnknownImpl" table="LOAD_SUMMIT_UNKNOWN">
+	<composite-id class="de.westlb.mgb.model.impl.LoadKey" mapped ="true">
+		<key-property name="rowNum" column="record_number" length="10"/>
+        <key-property name="sourceSystem" column="source_system" length="3"/>
+	</composite-id>
+        <property name="tradeId" column="TRADE_ID" length="50"/>
+        <property name="loadTime" column="LOAD_TIME"/>
+        <property name="tradeVersion" column="TRADE_VERSION"/>					   	
+        <property name="tradeType" column="TRADE_TYPE" length="50"/>				    
+        <property name="subType" column="SUB_TYPE" length="50"/>  					    
+        <property name="book" column="BOOK" length="50"/> 					    
+        <property name="trader" column="TRADER" length="50"/>  					    
+        <property name="tradeDate" column="TRADE_DATE"/>  				    
+    </class>
+</hibernate-mapping>

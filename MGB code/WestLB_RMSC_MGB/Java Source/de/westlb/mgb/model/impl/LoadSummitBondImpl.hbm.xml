@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="de.westlb.mgb.model.impl.LoadSummitBondImpl" table="LOAD_SUMMIT_BOND">
+	<composite-id class="de.westlb.mgb.model.impl.LoadKey" mapped ="true">
+		<key-property name="rowNum" column="record_number" length="10"/>
+        <key-property name="sourceSystem" column="source_system" length="3"/>
+	</composite-id>
+        <property name="tradeId" column="TRADE_ID" length="50"/>
+        <property name="loadStatus" column="LOAD_STATUS" length="10"/>
+        <property name="loadTime" column="LOAD_TIME"/>
+        <property name="loadMessage" column="LOAD_MESSAGE"/>
+        <property name="tradeVersion" column="VERSION"/>					   	
+        <property name="tradeStatus" column="STATUS" length="50" />							
+        <property name="instrument" column="INSTRUMENT" length="50"/>						
+        <property name="isin" column="ISIN" length="50"/>							
+        <property name="currency" column="CURRENCY" length="3"/>  					    
+        <property name="fxEuroRate" column="FX_EURO_RATE"/>  				    
+        <property name="tradeType" column="TRADE_TYPE" length="50"/>				    
+        <property name="subType" column="SUB_TYPE" length="50"/>  					    
+        <property name="category" column="CATEGORY" length="50"/>  					    
+        <property name="startDay" column="START_DAY"/>  					    
+        <property name="expireDay" column="EXPIRE_DAY"/>  				    
+        <property name="instrumentName" column="INSTRUMENT_NAME"/>  					    
+        <property name="instrumentStartDay" column="INSTRUMENT_START_DAY"/>  					    
+        <property name="instrumentExpireDay" column="INSTRUMENT_EXPIRE_DAY"/>  				    
+        <property name="issuer" column="ISSUER" length="50"/>  					    
+        <property name="book" column="BOOK" length="50"/> 					    
+        <property name="nominal" column="NOMINAL"/>  					    
+        <property name="counterparty" column="COUNTERPARTY" length="50"/>  				    
+        <property name="alias" column="ALIAS" length="50"/>		  				    
+        <property name="trader" column="TRADER" length="50"/>  					    
+        <property name="tradeDate" column="TRADE_DATE"/>  				    
+        <property name="tradeTime" column="TRADE_TIME"/>  				    
+        <property name="valueDate" column="VALUE_DATE"/>  				    
+        <property name="updatedBy" column="UPDATED_BY" length="50"/> 					    
+        <property name="updateTime" column="UPDATE_TIME"/>  				    
+        <property name="tradePrice" column="TRADE_PRICE"/>  		    
+        <property name="marketPrice" column="MARKET_PRICE"/>  		    
+        <property name="theoreticalPrice" column="THEOR_PRICE"/>      
+        <property name="description" column="DESCRIPTION" length="100"/>
+        <property name="counterpartyReference" column="COUNTERPARTY_REFERENCE" length="50"/>  				    
+        <property name="structure" column="STRUCTURE" length="12"/>
+        <property name="company" column="COMPANY" length="50"/>
+        <property name="discount" column="DISCOUNT"/>
+        <property name="customerType" column="CUSTOMER_TYPE" length="50"/>
+        <property name="legalName" column="LEGAL_NAME"/>
+        <property name="extNote1" column="EXT_NOTE_1"/>
+        <property name="extNote2" column="EXT_NOTE_2"/>
+        <property name="tradedYield" column="TRADED_YIELD"/>
+        <property name="theoreticalYield" column="THEOR_YIELD"/>
+        <property name="marketer" column="MARKETER" length="50"/>
+    </class>
+</hibernate-mapping>

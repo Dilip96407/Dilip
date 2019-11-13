@@ -1,0 +1,17 @@
+/AbstractReportDef.java/1.4/Thu Sep  8 15:21:27 2011//
+/BookReportDef.java/1.6/Thu Sep  8 15:21:27 2011//
+/BusinessDayReportDef.java/1.8/Mon May  7 10:28:51 2018//
+/BusinessMonthReportDef.java/1.7/Mon May  7 10:28:51 2018//
+/BusinessUnitReportDef.java/1.5/Thu Sep  8 15:21:27 2011//
+/InstrumentReportDef.java/1.1/Fri Sep 26 19:30:38 2014//
+/JobReportDef.java/1.5/Thu Sep  8 15:21:27 2011//
+/LimitUnitReportDef.java/1.6/Thu Sep  8 15:21:27 2011//
+/LocationReportDef.java/1.4/Thu Sep  8 15:21:27 2011//
+/ReportDef.java/1.5/Thu Sep  8 15:21:27 2011//
+/TradeCategoryBondReportDef.java/1.4/Thu Sep  8 15:21:27 2011//
+/TradeCategoryDerivativeReportDef.java/1.3/Thu Sep  8 15:21:27 2011//
+/TradeCategoryEquityReportDef.java/1.6/Thu Sep  8 15:21:27 2011//
+/TradeCategoryMoneyMarketReportDef.java/1.1/Tue Dec 20 08:26:42 2011//
+/TradeCategoryRepoReportDef.java/1.4/Thu Sep  8 15:21:27 2011//
+/TradeTypeEquityReportDef.java/1.5/Wed Dec 13 20:12:39 2017//
+/TraderReportDef.java/1.7/Thu Sep  8 15:21:27 2011//

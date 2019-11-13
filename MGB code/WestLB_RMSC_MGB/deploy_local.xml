@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<!DOCTYPE project [
+        <!ENTITY builduser SYSTEM "build_user_properties.xml">
+        <!ENTITY properties SYSTEM "build_properties.xml">
+]>
+<project name="MGB deploy_local" default="makedeploy_local">
+
+<!-- This is at the moment a rather personal Ant script I use to
+     deploy the 'dev' WAR file into my local Tomcat with a clean restart
+     in one go. - RS 2013-06-17 -->
+
+<!-- The property local.catalina.home is expected to point to the
+     local Tomcat directory; set it in build_user_properties.xml. -->
+     
+  &builduser;
+  &properties;
+
+  <target name="makedeploy_local">
+    <ant antfile="build.xml" target="build.dev"/>
+  	<antcall>
+  	  <target name="deploy_tomcat_local"/>
+  	</antcall>
+  </target>
+
+  <target name="stop_tomcat_local">
+  	<exec executable="${local.catalina.home}\bin\shutdown.bat" >
+  	  <env key="CATALINA_HOME" value="${local.catalina.home}" />
+  	</exec>
+  	<!-- Wait for the TCP service to become unavailable -->
+  	<waitfor maxwait="120" maxwaitunit="second" checkevery="1000">
+      <not>
+	    <socket server="localhost" port="8443"/>
+  	  </not>
+  	</waitfor>
+  </target>
+	
+  <target name="start_tomcat_local">
+  	<exec spawn="yes" executable="${local.catalina.home}\bin\startup.bat" >
+  	  <env key="CATALINA_HOME" value="${local.catalina.home}" />
+  	</exec>
+  </target>
+	
+  <target name="start_tomcat_local_jpda">
+  	<exec spawn="yes" executable="${local.catalina.home}\bin\catalina.bat" >
+  	  <env key="CATALINA_HOME" value="${local.catalina.home}" />
+	  <arg value="jpda"/>
+	  <arg value="start"/>
+  	</exec>
+  </target>
+	
+  <target name="copy_dev_war_file">
+  	<property file="./env_dev.properties"/>
+  	<copy file="${build.server}\${war.name}.war" 
+  		  tofile="${local.catalina.home}\webapps\${war.name}.war" />
+  	<delete dir="${local.catalina.home}\webapps\${war.name}" />
+  </target>
+
+  <target name="deploy_tomcat_local"
+          description="Deploy the application to Tomcat (dev), restart Tomcat"
+  	      depends="stop_tomcat_local,copy_dev_war_file,start_tomcat_local">
+  </target>
+
+  <target name="deploy_tomcat_local_jpda"
+          description="Deploy the application to Tomcat (dev), restart Tomcat
+  	                   with JPDA enabled"
+  	      depends="stop_tomcat_local,copy_dev_war_file,start_tomcat_local_jpda">
+  </target>
+
+</project>

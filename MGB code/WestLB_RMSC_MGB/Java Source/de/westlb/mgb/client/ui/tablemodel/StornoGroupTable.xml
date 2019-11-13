@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE table SYSTEM "TableModel.dtd">
+
+<table>
+	<column property-name="tradeId" header-label="Trade">
+	</column>
+	<column property-name="referenceTradeId" header-label="Reference trade">
+	</column>
+	<column property-name="fieldName" header-label="Field name">
+	</column>
+	<column property-name="fieldValue" header-label="Field value">
+		<generic-format format-class="de.westlb.mgb.client.ui.util.GeneralFormat"/>
+	</column>
+	<column property-name="referenceValue" header-label="Reference value">
+		<generic-format format-class="de.westlb.mgb.client.ui.util.GeneralFormat"/>
+	</column>
+	<column property-name="fieldValueChange" header-label="Field value change">
+		<generic-format format-class="de.westlb.mgb.client.ui.util.GeneralFormat"/>
+	</column>
+</table>

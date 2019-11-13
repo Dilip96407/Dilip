@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="de.westlb.mgb.model.impl.LoadSummitRepoImpl" table="LOAD_SUMMIT_REPO">
+	<composite-id class="de.westlb.mgb.model.impl.LoadKey" mapped ="true">
+		<key-property name="rowNum" column="record_number" length="10"/>
+        <key-property name="sourceSystem" column="source_system" length="3"/>
+	</composite-id>
+        <property name="tradeId" column="TRADE_ID" length="50"/>
+        <property name="loadStatus" column="LOAD_STATUS" length="10"/>
+        <property name="loadTime" column="LOAD_TIME"/>
+        <property name="loadMessage" column="LOAD_MESSAGE"/>
+        <property name="tradeVersion" column="VERSION"/>
+        <property name="tradeStatus" column="STATUS" length="50" />
+        <property name="instrument" column="INSTRUMENT" length="50" />
+        <property name="book" column="BOOK_ID" length="50" />
+        <property name="tradeType" column="TRADE_TYPE" length="50" />
+        <property name="traderId" column="TRADER_ID"/>
+        <property name="isin" column="ISIN" length="50" />
+        <property name="underlyingInstrumentType" column="UNDERLYING_INSTRUMENT_TYPE" length="50" />
+        <property name="underlyingSubType" column="UNDERLYING_SUB_TYPE" length="50" />
+        <property name="underlyingCategory" column="UNDERLYING_CATEGORY" length="50" />
+        <property name="currency" column="CURRENCY" length="3" />
+        <property name="yieldCurve" column="YIELDCURVE" length="50" />
+        <property name="tradeTime" column="TRADE_TIME"/>
+        <property name="start" column="START_DATE"/>
+        <property name="end" column="END_DATE"/>
+        <property name="dayCount" column="DAY_COUNT" length="10" />
+        <property name="repoRate" column="REPO_RATE"/>
+        <property name="yieldCurveRate" column="YIELD_CURVE_RATE"/>
+        <property name="startCash" column="STARTCASH"/>
+        <property name="endCash" column="ENDCASH"/>
+        <property name="days" column="DAYS"/>
+        <property name="foreignExchangeRate" column="FOREIGN_EXCHANGE_RATE"/>
+        <property name="openEndFlag" column="OPENEND_FLAG" length="1" />
+        <property name="counterparty" column="COUNTERPARTY" length="50" />
+        <property name="notionalAmount" column="NOTIONAL_AMOUNT"/>
+       	<property name="fundingSpread" column="FUNDING_SPREAD"/>
+		<property name="customerType" column="CUSTOMER_TYPE" length="50" />
+		<property name="amendDate" column="AMEND_DATE"/>
+		<property name="doneDate" column="DONE_DATE"/>
+		<property name="verifyDate" column="VERIFY_DATE"/>
+		<property name="marketPriceUnderlying" column="MARKET_PRICE_UNDERLYING"/>
+		<property name="dealAccruedInterest" column="DEAL_ACCRUED_INTEREST"/>
+		<property name="startPrice" column="START_PRICE"/>
+		<property name="bondAccruedInterest" column="BOND_ACCRUED_INTEREST"/>
+		<property name="npv" column="NPV"/>
+		<property name="repoMarketType" column="MARKET_TYPE" length="50"/>
+     </class>
+
+</hibernate-mapping>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- This file can be merged correctly only with the XDE CompareMerge facility. If you are using a text-based merge tool, stop now. Text merge can lead to model corruption. (nimAATHHsEGZn7vDrjMALA) -->
+<RMS:MODEL xmlns:RMS="http://www.rational.com/products/xde"  xmlns:dt="http://www.rational.com/products/xde"  id="GBUCeH7z/EGAYuzq3YTh+Q"  unitPolicy="3" >
+<RMS:METAMODEL name="UML 7.0"  id="9Bz1bpZ9HU+itfrtkk+fCA"  semanticVersion="1.5k"  version="7.1.310.2700"  server="1.2.310.2700"  format="0.28" />
+<RMS:ROOT>
+<mdl id="XIYUa2O5+EC3MptmvRkPoQ" >
+<nam>WorkspaceModel</nam>
+<knd>WORKSPACE</knd>
+<wrk>
+<wrk id="sUwb6GI3U0W4ZcpCvjZmEA" >
+<dgv>
+<dgv id="wB34QA9mk0efaqEIyBzUxA" >
+<ext>(0,0)</ext>
+<pst>(0,0)</pst>
+<nam>{F97628EE-6DC7-4F41-832E-D76027DD0A68}</nam>
+<wns>Closed</wns>
+<zoo>100</zoo>
+</dgv>
+<dgv id="+EBZapWyQk6avQZQ5vze2w" >
+<ext>(0,0)</ext>
+<pst>(0,0)</pst>
+<nam>{2A3DEBC9-8326-4B57-8D14-FB3DC299C6AD}</nam>
+<wns>Closed</wns>
+<zoo>100</zoo>
+</dgv>
+</dgv>
+</wrk>
+</wrk>
+</mdl>
+</RMS:ROOT>
+</RMS:MODEL>

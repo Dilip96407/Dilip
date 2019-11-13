@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="de.westlb.mgb.model.impl.ConditionImpl" table="T28_CONDITION" lazy="false">
+    	<cache usage="read-write"/>
+		<id name="longId" type="long" column="T28_ID">
+			<generator class="sequence">
+				<param name="sequence">HIB_SEQ</param>
+			</generator>
+		</id>
+		<many-to-one name="sourceSystem" lazy="false" class="de.westlb.mgb.model.impl.SourceSystemImpl">
+			<column name="FK_T28_T07_SOURCE_SYSTEM" />
+		</many-to-one>
+        <property name="conditionName" column="T28_CONDITION_NAME" length="50" />
+        <property name="conditionEvaluator" column="T28_CONDITION_EVALUATOR" length="50" />
+        <property name="conditionType" column="T28_CONDITION_TYPE" length="100" />
+    </class>
+
+</hibernate-mapping>

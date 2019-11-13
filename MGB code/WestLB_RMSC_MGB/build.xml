@@ -1,0 +1,802 @@
+<?xml version="1.0"?>
+<!DOCTYPE project [
+        <!ENTITY builduser SYSTEM "build_user_properties.xml">
+        <!ENTITY properties SYSTEM "build_properties.xml">
+        <!ENTITY targets  SYSTEM "build_targets.xml">
+]>
+
+<project name="MGB" default="compile" basedir=".">
+<!-- =================================================================== -->
+<description>
+   Build file for MGB
+
+Notes:
+   This is a build file for use with the Jakarta Ant build tool.
+   
+Prerequisites:
+   Hibernate          from http://www.hibernate.org/
+   jakarta-axis       from http://ws.apache.org/axis/
+   jakarta-ant        from http://jakarta.apache.org/ant/
+   commons-logging    from http://jakarta.apache.org/commons/logging.html
+   log4j              from http://jakarta.apache.org/log4j
+
+   
+Build Instructions:
+   To build, run
+
+     ant "target"
+
+   on the directory where this file is located with the target you want.
+
+Most useful targets:
+
+ - build.all	: creates war files for all environments in ./build/server
+ - war			: create the web application as a WAR file
+ - clean		: clean up files and directories
+
+
+Authors:
+  Manfred Boerner	 WestLB Systems GmbH
+
+Copyright:
+  Copyright (c) 2001-2003 WestLB AG
+</description>
+  
+<!-- Include the Generic XML files -->
+  &builduser;
+  &properties;
+  &targets;
+
+  <target name="compile" depends="build.all"/>
+	
+  <target name="numbered.build" unless="build.number"
+  	      description="Draws a new build number and calls build.server. This
+	                   target is executed at most once per build as it is
+	                   guarded by the absence of the build.number property.">
+	<buildnumber file="build.number"/>
+  	<echo message="Build number: ${build.number}"/>
+  	<antcall target="build.server"/>
+  </target>
+
+  <!-- =================================================================== -->
+  <!-- Build/Test EVERYTHING from scratch!                                 -->
+  <!-- =================================================================== -->  
+  <target name="build.all" depends="clean, numbered.build">
+	<ant target="build.prd"/>
+	<ant target="build.dev"/>
+	<ant target="build.uat"/>
+  </target>
+
+   <target name="build.prd" depends="numbered.build">
+ 	 <property file="./env_prd.properties"/>
+ 	 <antcall target="build.target.war"/>
+  </target>
+  <target name="build.dev" depends="numbered.build">
+ 	 <property file="./env_dev.properties"/>
+ 	 <antcall target="build.target.war"/>
+  </target>
+  <target name="build.uat" depends="numbered.build">
+ 	 <property file="./env_uat.properties"/>
+ 	 <antcall target="build.target.war"/>
+  </target>
+  
+  <target name="build.target.war">
+	<echo message="Warname=${war.name}"/>
+  	<copy file="${build.server}/mgb.war" toFile="${build.server}/${war.name}.war" overwrite="true"/>
+
+  	<!-- Build hibernate.properties -->
+  	<copy file="${mgb.home}/resource/templates/hibernate.properties.template" toFile="${build.server}/war/WEB-INF/classes/hibernate.properties" overwrite="true"/>
+    <replace file="${build.server}/war/WEB-INF/classes/hibernate.properties" token="#DB_URL#" value="${db.url}"/>
+    <replace file="${build.server}/war/WEB-INF/classes/hibernate.properties" token="#DB_USER#" value="${db.user}"/>
+    <replace file="${build.server}/war/WEB-INF/classes/hibernate.properties" token="#DB_PASSWORD#" value="${db.password}"/>
+
+  	<!-- Build version.properties -->
+  	<copy failonerror="true" file="${mgb.home}/resource/templates/version.properties.template" toFile="${build.client}/version.properties" overwrite="true"/>
+     <tstamp>
+     <!-- MMM dd, yyyy (hh:mm:ss z)  -->
+      <format property="build.time" pattern="MMM dd, yyyy"/>
+    </tstamp>
+    <replace file="${build.client}/version.properties" token="#PRODUCT_NAME#" value="${name}"/>
+    <replace file="${build.client}/version.properties" token="#VERSION_MAJOR#" value="${version.major}"/>
+    <replace file="${build.client}/version.properties" token="#VERSION_MINOR#" value="${version.minor}"/>
+    <replace file="${build.client}/version.properties" token="#VERSION_UPDATE#" value="${version.update}"/>
+    <replace file="${build.client}/version.properties" token="#BUILD_TIME#" value="${build.time}"/>
+    <replace file="${build.client}/version.properties" token="#BUILD_NUMBER#" value="${build.number}"/>
+
+  	<!-- Build client.properties -->
+  	<copy file="${mgb.home}/resource/templates/client.properties.template" toFile="${build.client}/client.properties" overwrite="true"/>
+    <replace file="${build.client}/client.properties" token="#DB_ENV_NAME#" value="${db.env.name}"/>
+    <replace file="${build.client}/client.properties" token="#SERVICE_PROVIDER#" value="${service.provider}"/>
+    <replace file="${build.client}/client.properties" token="#MARKET_DATA_PROXY#" value="${marketdata.proxy}"/>
+
+  	<!-- Build native.properties -->
+  	<copy file="${mgb.home}/resource/templates/native.properties.template" toFile="${build.client}/native.properties" overwrite="true"/>
+    <replace file="${build.client}/native.properties" token="#WAR_NAME#" value="${war.name}"/>
+
+  	<!-- Build autoCheck.jnlp -->
+  	<copy file="${mgb.home}/resource/templates/autoCheck.jnlp.template" toFile="${build.server}/war/autoCheck.jnlp" overwrite="true"/>
+    <replace file="${build.server}/war/autoCheck.jnlp" token="#MGB_URL#" value="${mgb.url}"/>
+    <replace file="${build.server}/war/autoCheck.jnlp" token="#MGB_URL_ALTERNATIVE#" value="${mgb.url.alternative}"/>
+
+  	<!-- Build server.properties -->
+  	<copy file="${mgb.home}/resource/templates/server.properties.template" toFile="${build.server}/war/WEB-INF/classes/server.properties" overwrite="true"/>
+    <replace file="${build.server}/war/WEB-INF/classes/server.properties" token="#DB_URL#" value="${db.url}"/>
+    <replace file="${build.server}/war/WEB-INF/classes/server.properties" token="#DB_USER#" value="${db.user}"/>
+    <replace file="${build.server}/war/WEB-INF/classes/server.properties" token="#DB_PASSWORD#" value="${db.password}"/>
+
+  	<!-- Build struts_client.properties -->
+  	<copy file="${mgb.home}/resource/templates/struts_client.properties.template" toFile="${build.server}/war/WEB-INF/classes/struts_client.properties" overwrite="true"/>
+    <replace file="${build.server}/war/WEB-INF/classes/struts_client.properties" token="#DB_ENV_NAME#" value="${db.env.name}"/>
+    
+  	<!-- Build import.properties -->
+  	<copy file="${mgb.home}/resource/templates/import.properties.template" toFile="${build.server}/war/WEB-INF/classes/import.properties" overwrite="true"/>
+    <replace file="${build.server}/war/WEB-INF/classes/import.properties" token="#SQLLDR_PATH_NAME#" value="${sqlldr.pathname}"/>
+    <replace file="${build.server}/war/WEB-INF/classes/import.properties" token="#MGB_DATA_DIR#" value="${mgb.data.dir}"/>
+
+  	<!-- Build oscache.properties -->
+  	<copy file="${mgb.home}/resource/templates/oscache.properties.template" toFile="${build.server}/war/WEB-INF/classes/oscache.properties" overwrite="true"/>
+    <replace file="${build.server}/war/WEB-INF/classes/oscache.properties" token="#MGB_DATA_DIR#" value="${mgb.data.dir}"/>
+
+  	<!-- Build mail.properties -->
+  	<copy file="${mgb.home}/resource/templates/mail.properties.template" toFile="${build.server}/war/WEB-INF/classes/mail.properties" overwrite="true"/>
+    <replace file="${build.server}/war/WEB-INF/classes/mail.properties" token="#MGB_URL#" value="${mgb.url}"/>
+    <replace file="${build.server}/war/WEB-INF/classes/mail.properties" token="#MGB_URL_ALTERNATIVE#" value="${mgb.url.alternative}"/>
+
+	<!-- Build scheduler.properties -->
+  	<copy file="${mgb.home}/resource/templates/scheduler.properties.template" toFile="${build.server}/war/WEB-INF/classes/scheduler.properties" overwrite="true"/>
+    <replace file="${build.server}/war/WEB-INF/classes/scheduler.properties" token="#SCHEDULER_DAEMON_START_ARCHIVE#" value="${scheduler.daemon.start.archive}"/>
+    <replace file="${build.server}/war/WEB-INF/classes/scheduler.properties" token="#ARCHIVE_DIR#" value="${archive.dir}"/>
+
+    <!-- Build scheduler.pag.properties -->
+    <copy file="${mgb.home}/resource/templates/scheduler.pag.properties.template" toFile="${build.server}/war/WEB-INF/classes/scheduler.pag.properties" overwrite="true"/>
+  	<replace file="${build.server}/war/WEB-INF/classes/scheduler.pag.properties" token="#PAG_EXCHANGE_USERID#" value="${pag.exch.userid}"/>
+    <replace file="${build.server}/war/WEB-INF/classes/scheduler.pag.properties" token="#SCHEDULER_PAG_DAEMON_START_DAILYEXTRACT_PAG#" value="${scheduler.pag.exchange.start.daily.extract}"/>
+    <replace file="${build.server}/war/WEB-INF/classes/scheduler.pag.properties" token="#SCHEDULER_PAG_DAEMON_START_WEEKLYEXTRACT_PAG#" value="${scheduler.pag.exchange.start.weekly.extract}"/>
+    <replace file="${build.server}/war/WEB-INF/classes/scheduler.pag.properties" token="#SCHEDULER_PAG_DAEMON_START_IMPORT_COMMENTS_PAG#" value="${scheduler.pag.exchange.start.neartime.import}"/>
+    <replace file="${build.server}/war/WEB-INF/classes/scheduler.pag.properties" token="#PAG_EXCHAGE_DIR#" value="${pag.exchange.dir}"/>
+   
+  	<!-- Build mgbServerLog4j.properties -->
+  	<copy file="${mgb.home}/resource/templates/mgbServerLog4j.properties.template" toFile="${build.server}/war/mgbServerLog4j.properties" overwrite="true"/>
+    <replace file="${build.server}/war/mgbServerLog4j.properties" token="#MGB_LOG_DIR#" value="${mgb.log.dir}"/>
+
+	<fixcrlf srcdir="${build.server}" includes="**/*.properties" eol="unix" />
+  	
+	<jar destfile="${build.server}/war/client/mgb-properties.jar">
+	    <fileset dir="${build.dir}/client">
+			<include name="*.properties" />
+	    </fileset>
+	    <fileset dir="${mgb.home}/resource/client">
+			<include name="mgb_log4j_logging_off.properties" />  
+			<include name="mgb_log4j_logging_on.properties" />  
+			<include name="mgbWebStartLog4j.properties" />  
+	    </fileset>
+	    <fileset file="${src.dir}/de/westlb/mgb/MgbExceptionResource.properties" />
+	</jar>
+  	<antcall target="jar.sign+manifest"><param name="sign.lazy" value="false"/><param name="jar.file" value="${build.server}/war/client/mgb-properties.jar"/></antcall>
+  	
+	<jar update="true" destfile="${build.server}/war/bridge2java.jar">
+	    <fileset file="${build.client}/natives/bridge2java.dll" />
+	</jar>
+  	<antcall target="jar.sign+manifest"><param name="sign.lazy" value="true"/><param name="jar.file" value="${build.server}/war/bridge2java.jar"/></antcall>
+
+  	<!-- Build web.xml -->
+  	<copy file="${mgb.home}/resource/templates/web.xml.template"
+  		  filtering="true"
+  		  toFile="${build.server}/web.xml" 
+  		  overwrite="true">
+  	  <filterset begintoken="#" endtoken="#">
+  	  	<filter token="START_SCHEDULER"     value="${scheduler.start}"/>
+  	  	<filter token="START_PAG_EXCH_SCHEDULER"     value="${pag.exch.scheduler.start}"/>
+  	  	<filter token="MGB_URL_ALTERNATIVE" value="${mgb.url.alternative}"/>
+  	  	<filter token="SERVICE_PROVIDER"    value="${service.provider.struts}"/>
+  	  </filterset>
+  	</copy>
+
+  	<!-- Build startApplet.jsp -->
+  	<copy file="${mgb.home}/resource/templates/startApplet.jsp.template" toFile="${build.server}/war/client/startApplet.jsp" overwrite="true"/>
+    <replace file="${build.server}/war/client/startApplet.jsp" token="#VERSION#" value="${version.major}.${version.minor}.${version.update}.${build.number}"/>
+
+  	<!-- Build application.jsp -->
+    <copy file="${mgb.home}/resource/templates/application.jsp.template" toFile="${build.server}/war/WEB-INF/struts/tiles/application.jsp" overwrite="true"/>
+    <replace file="${build.server}/war/WEB-INF/struts/tiles/application.jsp" token="#VERSION#" value="${version.major}.${version.minor}.${version.update}"/>
+    <replace file="${build.server}/war/WEB-INF/struts/tiles/application.jsp" token="#ENV#" value="${db.user}"/>
+
+  	<!-- Build application-ref.jsp -->
+    <copy file="${mgb.home}/resource/templates/application-ref.jsp.template" toFile="${build.server}/war/WEB-INF/struts/tiles/application-ref.jsp" overwrite="true"/>
+    <replace file="${build.server}/war/WEB-INF/struts/tiles/application-ref.jsp" token="#VERSION#" value="${version.major}.${version.minor}.${version.update}"/>
+    <replace file="${build.server}/war/WEB-INF/struts/tiles/application-ref.jsp" token="#ENV#" value="${db.user}"/>
+
+    <!-- Build welcome.jsp -->
+    <copy file="${mgb.home}/resource/templates/welcome.jsp.template" toFile="${build.server}/war/WEB-INF/struts/tiles/welcome.jsp" overwrite="true"/>
+    <replace file="${build.server}/war/WEB-INF/struts/tiles/welcome.jsp" token="#VERSION#" value="${version.major}.${version.minor}.${version.update}"/>
+    <replace file="${build.server}/war/WEB-INF/struts/tiles/welcome.jsp" token="#ENV#" value="${db.user}"/>
+    
+    <!-- Build openJobList.jsp -->
+    <copy file="${mgb.home}/resource/templates/openJobsList.jsp.template" toFile="${build.server}/war/WEB-INF/struts/tiles/openJobsList.jsp" overwrite="true"/>
+    <replace file="${build.server}/war/WEB-INF/struts/tiles/openJobsList.jsp" token="#ENV#" value="${db.user}"/>
+    
+	<war destfile="${build.server}/${war.name}.war" webxml="${build.server}/web.xml" basedir="${build.server}/war" update="true">
+	</war>
+  </target>
+
+  <!-- =================================================================== -->
+  <!-- Build the MGB Server including the servlets and the client applet   -->
+  <!-- =================================================================== -->
+  <target name="build.server" depends="jar.mgb.server, build.client" description="Build MGB Server">
+	<!-- Create directory structure for web application -->
+
+    <!-- Copy all binary libs required to run the server -->
+    <copy todir="${build.work.war}/WEB-INF/lib" overwrite="yes" flatten="yes">
+		<fileset dir="${lib.dir}">	
+			<include name="activation.jar"/>
+			<include name="antlr-2.7.7.jar"/>
+			<include name="asm.jar"/>
+			<include name="asm-attrs.jar"/>
+			<include name="axis-1.4.jar"/>
+			<include name="blpapi-3.6.1-0.jar"/>
+			<include name="c3p0-0.9.2-pre1.jar"/>
+			<include name="castor-1.2.jar"/>
+			<include name="com.ibm.mq.jar"/>
+			<include name="com.ibm.mqjms.jar"/>
+			<include name="commons-beanutils-1.6.1.jar"/>
+			<include name="commons-chain-1.2.jar"/>
+			<include name="commons-codec-1.3.jar"/>
+			<include name="commons-collections-3.1.jar"/>
+			<include name="commons-compress-1.3.jar"/>
+			<include name="commons-dbcp-1.0.jar"/>
+			<include name="commons-digester-1.8.jar"/>
+			<include name="commons-discovery-0.2.jar"/>
+			<include name="commons-httpclient-3.0-rc4.jar"/>
+			<include name="commons-lang-1.0.1.jar"/>
+			<include name="commons-lang3-3.0.1.jar"/>
+			<include name="commons-logging-1.0.3.jar"/>
+			<include name="commons-pool-1.0.1.jar"/>
+			<include name="commons-validator-1.3.1.jar"/>
+			<include name="connector.jar"/>
+			<include name="dom4j-1.6.1.jar"/>
+			<include name="hibernate-jpa-2.0-api-1.0.1.Final.jar"/>
+			<include name="hibernate3.jar"/>
+			<include name="htmlparser.jar"/>
+			<include name="javassist-3.17.1-GA.jar"/>
+			<include name="jaws.jar"/>
+			<include name="javax.servlet.jsp.jstl-1.2.1.jar"/>
+			<include name="javax.servlet.jsp.jstl-api-1.2.1.jar"/>
+			<include name="jaxrpc.jar"/>
+			<include name="jboss-transaction-api_1.1_spec-1.0.0.Final.jar"/>
+			<include name="jcifs-1.3.18.jar"/>
+			<include name="jms.jar"/>
+<!-- Do not include oracle driver in the web application. The file has be copied to -->
+<!-- the commons library directory of the tomcat                                    --> 
+<!--			<include name="ojdbc14_g.1020.jar"/> -->
+<!--			<include name="ocijdbc10.dll"/> -->
+			<include name="log4j-1.2.17.jar"/>
+			<include name="mailapi.jar"/>
+			<include name="mchange-commons-0.2.jar"/>
+			<include name="oscache-2.4.1.jar"/>
+			<include name="poi-3.7-20101029.jar"/>
+			<include name="quartz.jar"/>
+			<include name="saaj-1.2.jar"/>
+			<include name="slf4j-api-1.6.1.jar"/>
+			<include name="slf4j-log4j12-1.6.1.jar"/>
+			<include name="smtp.jar"/>
+			<include name="struts-core-1.3.10.jar"/>
+			<include name="struts-el-1.3.10.jar"/>
+			<include name="struts-extras-1.3.10.jar"/>
+			<include name="struts-taglib-1.3.10.jar"/>
+			<include name="struts-tiles-1.3.10.jar"/>
+			<include name="taglibs-string.jar"/>
+			<include name="wsdl4j-1.5.1.jar"/>
+			<include name="wsySSO.jar"/>
+			<include name="xaf_ctrl.jar"/>
+			<include name="xaf_swing.jar"/>
+		</fileset>
+		<fileset dir="${build.lib}">
+			<include name="mgb-server.jar"/>		
+		</fileset>
+	</copy>
+
+    <copy todir="${build.work.war}" overwrite="yes" flatten="no">
+		<fileset dir="./resource/server/WebContent">	      	      
+			<include name="**/*.*"/>
+		</fileset>
+	</copy>
+
+    <copy todir="${build.work.war}/WEB-INF" overwrite="yes" flatten="no">
+		<fileset dir="./resource/server/WEB-INF">	      	      
+			<include name="**/*.*"/>
+		</fileset>
+	</copy>
+
+    <copy todir="${build.work.war}/META-INF" overwrite="yes" flatten="no">
+		<fileset dir="./resource/server/META-INF">	      	      
+			<include name="**/*.*"/>
+		</fileset>
+	</copy>
+
+    <copy todir="${build.work.war}/client" overwrite="yes" flatten="no">
+		<fileset dir="./resource/client">
+			<include name="**/*.jsp"/>
+		</fileset>
+		<fileset dir="${build.client}">	      	      
+			<include name="**/*.*"/>
+		</fileset>
+	</copy>
+
+	<war warfile="${build.server}/mgb.war" 
+           webxml="./resource/server/web.xml" 
+           basedir="${build.work.war}" 
+           excludes="*.war" 
+           update="true" 
+           duplicate="preserve" />
+  </target> 
+
+  <!-- =================================================================== -->
+  <!-- Build the Jasper Report files. Compiles the XML-files               -->
+  <!-- generated using the visual editor iReport to .jasper files          -->
+  <!-- =================================================================== -->
+  	<target name="build.reports"> 
+  	 	<taskdef name="jrc" classname="dori.jasper.ant.JRAntCompileTask"> 
+  			<classpath>
+  				<pathelement location="${build.work.client}/classes"/>
+  				<fileset dir="${lib.dir}">
+  					<include name="**/*.jar"/>
+  				</fileset>
+  			</classpath>
+  		</taskdef>
+		<jrc 
+				srcdir="./reports"
+				destdir="${build.dir}/reports"
+				tempdir="${build.work}"
+				keepjava="true"
+				xmlvalidation="true">
+			<classpath>
+				<pathelement location="${build.work.client}/classes"/>
+				<fileset dir="${lib.dir}">
+					<include name="**/*.jar"/>
+				</fileset>
+			</classpath>
+		</jrc> 
+	      <copy todir="./resource/client/natives" overwrite="yes" flatten="no">
+	        <fileset dir="${build.dir}/reports">
+	          <include name="**/*"/>
+	        </fileset>
+	      </copy>
+	</target> 
+	
+  <!-- =================================================================== -->
+  <!-- Build the client-server interface (wsdl, stub, service locator and -->
+  <!-- skeletons).                                                          -->
+  <!-- =================================================================== -->
+  <condition property="wsdl.uptodate">
+	<and>
+  	  <available file="${build.interface}/mgb.wsdl"/>
+	  <uptodate targetfile="${build.interface}/mgb.wsdl" >
+	    <srcfiles dir="${src.dir}">
+	      <include name="de/westlb/mgb/client/server/vo/*.java"/>
+	      <include name="de/westlb/mgb/client/server/Mgb.java"/>
+	    </srcfiles>
+	  </uptodate>
+	</and>
+  </condition>
+  <target name="build.interface" depends="printEnv" unless="wsdl.uptodate">
+    <echo message="Compiling de.westlb.mgb.client.server.Mgb"/>
+  	
+      <!-- To test Java Value Types, copy over the base and subclasses -->
+      <copy todir="${build.work}" flatten="no">
+        <fileset dir="${src.dir}">
+          <include name="de/westlb/mgb/client/server/vo"/>
+          <include name="de/westlb/mgb/client/server/vo/*.java"/>
+          <include name="de/westlb/mgb/client/server/Mgb.java"/>
+        </fileset>
+      </copy>
+	
+      <!-- Compile the Web Service -->
+      <javac	srcdir="${build.work}" 
+      			destdir="${build.interface}/classes" 
+      			fork="${compile.fork}"
+				debug="${compile.debug}" 
+				optimize="${compile.optimize}" 
+				deprecation="${compile.deprecation}"
+				executable="${compile.exec}"
+				target = "${compile.server.target}"
+				compiler="${compile.server.compiler}">
+			<classpath refid="server.classpath" />
+			<include name="de/westlb/mgb/client/server/vo/**.java" />
+			<include name="de/westlb/mgb/client/server/Mgb.java" />
+      </javac>
+	
+      <taskdef resource="axis-tasks.properties" classpathref="server.classpath"/>   
+
+      <!-- Now create the real WSDL file -->
+      <axis-java2wsdl output="${build.interface}/mgb.wsdl"
+                 className= "de.westlb.mgb.client.server.Mgb"
+                 useInheritedMethods="false"
+                 namespace="urn:mgb"
+                 typeMappingVersion="1.2"
+                 location="http://localhost:8080/mgb/services/Mgb">
+          <mapping namespace="urn:mgb" package="de.westlb.mgb.client.server"/>
+          <classpath refid="server.classpath" />
+      </axis-java2wsdl>
+
+  	<!-- Delete the intermediate files so we recreate over a clean slate -->
+      <delete dir="${build.interface}/classes/de/westlb/mgb/client/server"/>
+      
+      <!-- Recreate Java files from the new WSDL -->
+      <axis-wsdl2java url="${build.interface}/mgb.wsdl"
+                 output="${build.interface}"
+                 deployscope="session"
+                 serverSide="yes"
+                 skeletonDeploy="no"
+                 noimports="no"
+      	         typeMappingVersion="1.2"
+                 verbose="no"
+                 testcase="yes"
+      			 timeout="180000">
+           <mapping namespace="urn:mgb" package="de.westlb.mgb.client.server"/>
+      </axis-wsdl2java>
+
+  	<!-- Copy unmodified used generated class to source -->
+	  <copy todir="${src.dir}/de/westlb/mgb/client/server">
+     	<fileset dir="${build.interface}">	      	      
+	      <include name="*.wsd*"/>	
+		</fileset>
+      </copy>
+	  <copy todir="${src.dir}" overwrite="yes">
+	      <fileset dir="${build.interface}">	      	      
+	        <include name="de/westlb/mgb/client/server/vo/*.java"/>			
+	        <include name="de/westlb/mgb/client/server/*Locator.java"/>			
+	        <include name="de/westlb/mgb/client/server/*Service.java"/>			
+	        <include name="de/westlb/mgb/client/server/*Stub.java"/>			
+	        <include name="de/westlb/mgb/client/server/*TestCase.java"/>
+	      </fileset>	      
+	    </copy>
+  	<!-- update mgb.wsdl timestamp so that the up-to-date check works next time -->
+  	<touch file="${build.interface}/mgb.wsdl"></touch>
+  </target>
+  
+  <target name="deploy">
+	<echo message="Remember to disable filtering in the web.xml"/>
+     <path id="deploy.xml.files">
+        <fileset dir="${build.interface}">
+          <include name="**/deploy.*"/>
+         </fileset>
+     </path>
+     <property name="deploy.xml.property" refid="deploy.xml.files"/>
+
+	<echo message="AdminClient -l${http.url}/servlet/AxisServlet ${deploy.xml.property}"/>
+    <java classname="org.apache.axis.client.AdminClient" fork="yes">
+      <classpath refid="server.classpath" />
+      <arg line="-l${http.url}/servlet/AxisServlet"/>
+      <arg line="${deploy.xml.property}"/>
+    </java>
+    
+    <!-- Copy the server configuration file, which has been changed during deployment -->
+    <!-- to the resource diretory. -->
+	  <copy todir="${mgb.home}/resource/server/WEB-INF" overwrite="yes" flatten="yes">
+	      <fileset dir="${local.catalina.mgb}">	      	      
+	        <include name="WEB-INF/server-config.wsdd" />	
+	       </fileset>		
+		</copy>    
+  </target>
+
+  <!-- =================================================================== -->
+  <!-- Build the mgb server jar file                                       -->
+  <!-- =================================================================== -->		 
+  	<target name="jar.mgb.server" 
+  		depends="compile.mgb.server" 
+  		description="Create ${name} server jarfile">
+  		
+		<jar destfile="${build.lib}/mgb-server.jar">
+		
+		    <fileset dir="${build.work.server}/classes"/>
+		    <fileset dir="${src.dir}">
+				<include name="de/westlb/mgb/MgbExceptionResource.properties" /> 
+				<include name="de/westlb/mgb/model/**/*.hbm.xml" />        	       		    	
+		    </fileset>
+		</jar>
+
+	</target>
+
+
+  <!-- =================================================================== -->
+  <!-- Compile the mgb server source                                       -->
+  <!-- =================================================================== -->		 
+	<target name="compile.mgb.server" depends="printEnv, build.interface"
+        	description="Compile ${name} server components">      
+		<javac	srcdir="${src.dir}" 
+				destdir="${build.work.server}/classes" 
+				debug="${compile.debug}" 
+				optimize="${compile.optimize}" 
+				deprecation="${compile.deprecation}"
+				executable="${compile.exec}"
+			    includeantruntime="false"
+			source = "${compile.server.target}"
+			target = "${compile.server.target}"
+				compiler="${compile.server.compiler}">
+			<classpath refid="server.classpath" /> 
+			<include name="de/westlb/mgb/MgbException.java" />        
+			<include name="de/westlb/mgb/model/**/*.java" />        
+			<include name="de/westlb/mgb/bloomberg/model/**/*.java" />        
+			<include name="de/westlb/mgb/persistence/**/*.java" />        
+			<include name="de/westlb/mgb/converter/**/*.java" />        
+			<include name="de/westlb/mgb/exchange/**/*.java" />        
+			<include name="de/westlb/mgb/server/**/*.java" />        
+			<include name="de/westlb/mgb/servlet/**/*.java" />        
+			<include name="de/westlb/mgb/util/**/*.java" /> 
+			<include name="de/westlb/mgb/struts_client/**/*.java" /> 
+			<include name="de/westlb/mgb/struts_client/**/*.properties" /> 
+			<include name="de/westlb/mgb/client/mail/**/*.java" /> 
+			<include name="de/westlb/mgb/client/ui/util/**/*.java" /> 
+			<include name="de/westlb/mgb/client/application/MgbProperty.java"/>
+			<include name="de/westlb/mgb/client/server/Mgb.java" /> 
+			<include name="de/westlb/mgb/client/server/vo/*.java" /> 
+			<include name="de/westlb/mgb/client/server/MgbSoapBindingImpl.java" /> 
+			<include name="de/westlb/mgb/client/server/MgbSoapBindingProxyImpl.java" /> 
+			<include name="de/westlb/mgb/client/server/MgbServiceFactory.java" /> 
+			<include name="de/westlb/mgb/client/server/MgbServiceImpl.java" /> 
+			<include name="de/westlb/mgb/client/server/VoFactory.java" /> 
+			<include name="de/westlb/mgb/client/server/service/*.java" /> 
+		</javac>
+        <copy todir="${build.work.server}/classes">
+		    <fileset dir="${src.dir}">
+				<include name="de/westlb/mgb/struts_client/**/*.properties"/>
+		    </fileset>
+		</copy>		
+	</target>
+
+  <!-- =================================================================== -->
+  <!-- Build the mgb applet client                                         -->
+  <!-- =================================================================== -->
+	<target name="build.client" 
+      	depends="printEnv, jar.mgb.client"
+      	description="Construct MGB Client">
+        <copy todir="${build.client}">
+		    <fileset dir="${build.lib}">
+				<include name="mgb-client.jar"/>
+		    </fileset>
+		    <fileset dir="${lib.dir}">
+				<include name="activation.jar"/>
+				<include name="axis-1.4.jar"/>
+				<include name="blpapi-3.6.1-0.jar"/>
+				<include name="commons-beanutils-1.6.1.jar"/>
+				<include name="commons-collections-3.1.jar"/>
+				<include name="commons-codec-1.3.jar"/>
+				<include name="commons-digester-1.8.jar"/>
+				<include name="commons-discovery-0.2.jar"/>
+				<include name="commons-lang3-3.0.1.jar"/>
+				<include name="commons-logging-1.0.3.jar"/>
+				<include name="dom4j-1.6.1.jar"/>
+				<include name="itext-0.96.jar"/>
+				<include name="jacob-1.14.3.jar"/>
+				<include name="jasperreports-0.5.0.jar"/>
+				<include name="jaws.jar"/>
+				<include name="jaxrpc.jar"/>
+				<include name="jhall.jar"/>
+				<include name="log4j-1.2.17.jar"/>
+				<include name="mailapi.jar"/>
+				<include name="poi-3.7-20101029.jar"/>
+				<include name="quartz.jar"/>
+				<include name="saaj-1.2.jar"/>
+				<include name="smtp.jar"/>
+				<include name="wsdl4j-1.5.1.jar"/>
+				<include name="xaf_ctrl.jar"/>
+				<include name="xaf_swing.jar"/>
+		    </fileset>
+		    <fileset dir="${mgb.home}/resource/client">
+			    <include name="natives/*.*"/>
+ 		    </fileset>
+		</copy>
+		<antcall target="jar.sign+manifest"><param name="sign.lazy" value="true"/><param name="jar.file" value="${build.client}/mgb-client.jar"/></antcall>
+		<antcall target="jar.sign+manifest"><param name="sign.lazy" value="true"/><param name="jar.file" value="${build.client}/activation.jar"/></antcall>
+		<antcall target="jar.sign+manifest"><param name="sign.lazy" value="true"/><param name="jar.file" value="${build.client}/axis-1.4.jar"/></antcall>
+		<antcall target="jar.sign+manifest"><param name="sign.lazy" value="true"/><param name="jar.file" value="${build.client}/blpapi-3.6.1-0.jar"/></antcall>
+		<antcall target="jar.sign+manifest"><param name="sign.lazy" value="true"/><param name="jar.file" value="${build.client}/commons-beanutils-1.6.1.jar"/></antcall>
+		<antcall target="jar.sign+manifest"><param name="sign.lazy" value="true"/><param name="jar.file" value="${build.client}/commons-collections-3.1.jar/"/></antcall>
+		<antcall target="jar.sign+manifest"><param name="sign.lazy" value="true"/><param name="jar.file" value="${build.client}/commons-codec-1.3.jar"/></antcall>
+		<antcall target="jar.sign+manifest"><param name="sign.lazy" value="true"/><param name="jar.file" value="${build.client}/commons-digester-1.8.jar"/></antcall>
+		<antcall target="jar.sign+manifest"><param name="sign.lazy" value="true"/><param name="jar.file" value="${build.client}/commons-discovery-0.2.jar"/></antcall>
+		<antcall target="jar.sign+manifest"><param name="sign.lazy" value="true"/><param name="jar.file" value="${build.client}/commons-lang3-3.0.1.jar"/></antcall>
+		<antcall target="jar.sign+manifest"><param name="sign.lazy" value="true"/><param name="jar.file" value="${build.client}/commons-logging-1.0.3.jar"/></antcall>
+		<antcall target="jar.sign+manifest"><param name="sign.lazy" value="true"/><param name="jar.file" value="${build.client}/dom4j-1.6.1.jar"/></antcall>
+		<antcall target="jar.sign+manifest"><param name="sign.lazy" value="true"/><param name="jar.file" value="${build.client}/itext-0.96.jar"/></antcall>
+		<antcall target="jar.sign+manifest"><param name="sign.lazy" value="true"/><param name="jar.file" value="${build.client}/jacob-1.14.3.jar"/></antcall>
+		<antcall target="jar.sign+manifest"><param name="sign.lazy" value="true"/><param name="jar.file" value="${build.client}/jasperreports-0.5.0.jar"/></antcall>
+		<antcall target="jar.sign+manifest"><param name="sign.lazy" value="true"/><param name="jar.file" value="${build.client}/jaws.jar"/></antcall>
+		<antcall target="jar.sign+manifest"><param name="sign.lazy" value="true"/><param name="jar.file" value="${build.client}/jaxrpc.jar"/></antcall>
+		<antcall target="jar.sign+manifest"><param name="sign.lazy" value="true"/><param name="jar.file" value="${build.client}/jhall.jar"/></antcall>
+		<antcall target="jar.sign+manifest"><param name="sign.lazy" value="true"/><param name="jar.file" value="${build.client}/log4j-1.2.17.jar"/></antcall>
+		<antcall target="jar.sign+manifest"><param name="sign.lazy" value="true"/><param name="jar.file" value="${build.client}/mailapi.jar"/></antcall>
+		<antcall target="jar.sign+manifest"><param name="sign.lazy" value="true"/><param name="jar.file" value="${build.client}/poi-3.7-20101029.jar"/></antcall>
+		<antcall target="jar.sign+manifest"><param name="sign.lazy" value="true"/><param name="jar.file" value="${build.client}/quartz.jar"/></antcall>
+		<antcall target="jar.sign+manifest"><param name="sign.lazy" value="true"/><param name="jar.file" value="${build.client}/saaj-1.2.jar"/></antcall>
+		<antcall target="jar.sign+manifest"><param name="sign.lazy" value="true"/><param name="jar.file" value="${build.client}/smtp.jar"/></antcall>
+		<antcall target="jar.sign+manifest"><param name="sign.lazy" value="true"/><param name="jar.file" value="${build.client}/wsdl4j-1.5.1.jar"/></antcall>
+		<antcall target="jar.sign+manifest"><param name="sign.lazy" value="true"/><param name="jar.file" value="${build.client}/xaf_ctrl.jar"/></antcall>
+		<antcall target="jar.sign+manifest"><param name="sign.lazy" value="true"/><param name="jar.file" value="${build.client}/xaf_swing.jar"/></antcall>
+	 </target>
+	
+	<target name="jar.sign+manifest">
+	    <jar update="true" jarfile="${jar.file}">
+	        <manifest>
+	        	<attribute name="permissions" value="all-permissions"/>
+	        	<attribute name="codebase" value="*"/>
+	        </manifest>
+	    </jar>
+	  	<!-- try to build without signing
+		<signjar lazy="${sign.lazy}" jar="${jar.file}" 
+			     keystore="${keystore.location}" storetype="${keystore.storetype}" 
+			     alias="${keystore.alias}" storepass="${keystore.password}" 
+			     keypass="${keystore.keypassword}"/>
+		-->
+	</target>
+	
+  <!-- =================================================================== -->
+  <!-- Build the mgb client jar file                                       -->
+  <!-- =================================================================== -->		 
+  	<target name="jar.mgb.client" 
+  		depends="compile.mgb.client" 
+  		description="Create ${name} client jarfile">
+  		<mkdir dir="${build.work.client}/classes/javahelp" />
+  		<copy todir="${build.work.client}/classes/javahelp" flatten="no">
+			<fileset dir="${build.javahelp}">	      	      
+				<include name="**/*.*"/>
+			</fileset>
+		</copy>
+	    <jar update="true" jarfile="${build.lib}/mgb-client.jar" basedir="${build.work.client}/classes">
+	        <include name="**/*"/>
+	    </jar>
+	</target>
+
+  <!-- =================================================================== -->
+  <!-- Compile the mgb client source                                       -->
+  <!-- =================================================================== -->		 
+	<target name="compile.mgb.client" 
+        	depends="printEnv,
+        			 build.interface"
+        	description="Compile ${name} client components">
+      
+        <javac srcdir="${src.dir}"
+       			fork="${compile.fork}"
+               	destdir="${build.work.client}/classes" 
+               	debug="${compile.debug}" 
+               	optimize="${compile.optimize}" 
+               	deprecation="${compile.deprecation}"
+               	executable="${compile.exec}"
+               	target="${compile.client.target}"
+        	    includeantruntime="false"
+				memoryinitialsize="${compile.memoryinitialsize}"
+            	memorymaximumsize="${compile.memorymaximumsize}"
+               	compiler="${compile.client.compiler}">
+               	<classpath refid="client.classpath" />
+        <!-- Note: javac will include other .class files too if they
+             are dependencies within the same srcdir. However, it is usually
+             best to include them explicitly so that Ant can do timestamp
+             checking. But don't go overboard - just what the client needs. -->
+        <include name="de/westlb/mgb/util/**/*.java" />
+        <include name="de/westlb/mgb/client/**/*.java" />
+        <include name="com/ibm/bridge2java/**/*.java" />
+        <include name="de/westlb/mgb/excel/**/*.java" />
+        <include name="de/westlb/mgb/model/definition/**/*.java" />
+        <include name="de/westlb/mgb/model/impl/**/*.java" />
+        </javac>
+        <copy todir="${build.work.client}/classes">
+		    <fileset dir="${mgb.home}/resource/client">
+		    	<include name="*Resource.properties"/>
+		    	<include name="label/*.properties"/>
+		    	<include name="list/*.properties"/>
+		    	<include name="**/*.gif"/>
+		    	<include name="**/*.jpg"/>
+		    	<include name="**/*.dtd"/>
+		    	<include name="**/*.xml"/>
+		    	<include name="**/*.dll"/>
+		    </fileset>
+		</copy>
+	</target>
+ 
+	
+  <!-- =================================================================== -->
+  <!-- Cleans everything                                                   -->
+  <!-- =================================================================== -->
+  <target name="clean"
+      description="clean up">
+    <delete dir="${build.dir}"/>
+  </target>  
+  
+	<target name="build.javahelp">
+		<delete file="${docbook_src.dir}/dummy.out"/>
+		<style basedir="${docbook_src.dir}" destdir="${build.dir}" classpathref="docbook.classpath"
+		      style="${docbook_xsl.dir}/javahelp/javahelp.xsl" 
+		     in="${docbook_src.dir}/mgb.dbk" out="${docbook_src.dir}/dummy.out">
+			<xmlcatalog>
+				<dtd publicId="-//OASIS//DTD DocBook XML V4.2//EN" location="${docbook_src.dir}/docbookx.dtd"/>
+			</xmlcatalog>		     
+		</style>
+		<delete file="${docbook_src.dir}/dummy.out"/>
+		<move todir="${build.javahelp}">
+			<fileset dir="${docbook_src.dir}">
+				<include name="*.html"/>
+				<include name="*.hs"/>
+				<include name="*.jhm"/>
+				<include name="jhelp*.xml"/>
+			</fileset>
+		</move>
+	</target>
+	
+	  <!-- =================================================================== -->
+	  <!-- Transfer to server                                                   -->
+	  <!-- =================================================================== -->
+
+	<target name="ensure.plausible.transfer.password"
+		    description="Helps guard SSH tasks against unset or default passwords
+		    	         that would cause authentication failure and lock out the
+		    	         user">
+	  <fail unless="unix.password" message="no password set"/>
+	  <condition property="password.too.short">
+	    <length string="${unix.password}" when="less" length="8"/>
+	  </condition>
+	  <fail if="password.too.short" message="password doesn't look plausible (too short)"/>
+	</target>
+	
+	<target name="transfer.test" depends="ensure.plausible.transfer.password">
+		<!--<scp trust="true" file="${build.server}/mgbTst.war" remoteTofile="${unix.user}:${unix.password}@zpsx2220.gsa.westlb.net:/tmp/mgbTst.war.new"/>-->
+		<scp failonerror="true" trust="true" file="${build.server}/mgbUat.war" remoteTofile="${unix.user}:${unix.password}@zpsx2220.gsa.westlb.net:/tmp/mgbUat.war.new"/>
+		<scp trust="true" todir="${unix.user}:${unix.password}@zpsx2220.gsa.westlb.net:/tmp/">
+			<fileset dir="${mgb.home}/dataimport">
+				<include name="import*.ctl"/>
+			</fileset>
+		</scp>	
+		<sshexec trust="true" host="zpsx2220.gsa.westlb.net" username="${unix.user}" password="${unix.password}" 
+		             command="chmod -f 664 /tmp/*mgb*.war.new"/>
+		<sshexec trust="true" host="zpsx2220.gsa.westlb.net" username="${unix.user}" password="${unix.password}" 
+		             command="chmod -f 664 /tmp/import*.ctl"/>
+	</target>
+
+	<target name="transfer.prod" depends="ensure.plausible.transfer.password">
+		<fixcrlf srcdir="${mgb.home}" includes="install_mgb.ksh" eol="unix" eof="remove"/>
+		<scp failonerror="true" trust="true" file="${mgb.home}/install_mgb.ksh" todir="${unix.user}:${unix.password}@mgb.westlb.sko.de:/tmp/"/>
+		<scp trust="true" file="${build.server}/mgbPrd.war" remoteTofile="${unix.user}:${unix.password}@mgb.westlb.sko.de:/tmp/mgbPrd.war"/>
+		<scp trust="true" todir="${unix.user}:${unix.password}@mgb.westlb.sko.de:/tmp/">
+			<fileset dir="${mgb.home}/dataimport">
+				<include name="import*.ctl"/>
+			</fileset>
+		</scp>	
+		<sshexec trust="true" host="mgb.westlb.sko.de" username="${unix.user}" password="${unix.password}" 
+		             command="chmod -f 775 /tmp/install_mgb.ksh"/>
+	</target>
+
+	<target name="transfer.test.nopasswd"
+		    description="Like transfer.test, but uses SSH public key">
+		<echo message="use key ${ssh_id}"></echo>
+		<!--<scp trust="true" keyfile="${ssh_id}" passphrase="" file="${build.server}/mgbTst.war" remoteTofile="${unix.user}@zpsx2220.gsa.westlb.net:/tmp/mgbTst.war.new"/>-->
+        <echo message="copy uat war"></echo>
+		<scp failonerror="true" trust="true" keyfile="${ssh_id}" passphrase="" file="${build.server}/mgbUat.war" remoteTofile="${unix.user}@zpsx2220.gsa.westlb.net:/tmp/mgbUat.war.new"/>
+        <echo message="copy import ctl"></echo>
+		<scp trust="true" keyfile="${ssh_id}" passphrase="" todir="${unix.user}@zpsx2220.gsa.westlb.net:/tmp/">
+			<fileset dir="${mgb.home}/dataimport">
+				<include name="import*.ctl"/>
+			</fileset>
+		</scp>	
+        <echo message=" do chmod"></echo>
+	    <sshexec trust="true" keyfile="${ssh_id}" passphrase="" host="zpsx2220.gsa.westlb.net" username="${unix.user}"
+	             command="chmod 664 /tmp/mgb*.war.new /tmp/import*.ctl"/>
+    </target>
+
+	<target name="transfer.prod.nopasswd"
+		    description="Like transfer.prod, but uses SSH public key">
+		<fixcrlf srcdir="${mgb.home}" includes="install_mgb.ksh" eol="unix" eof="remove"/>
+		<scp failonerror="true" trust="true" keyfile="${ssh_id}" passphrase="" file="${mgb.home}/install_mgb.ksh" todir="${unix.user}@mgb.westlb.sko.de:/tmp/"/>
+		<scp trust="true" keyfile="${ssh_id}" passphrase="" file="${build.server}/mgbPrd.war" remoteTofile="${unix.user}@mgb.westlb.sko.de:/tmp/mgbPrd.war"/>
+		<scp trust="true" keyfile="${ssh_id}" passphrase="" todir="${unix.user}@mgb.westlb.sko.de:/tmp/">
+			<fileset dir="${mgb.home}/dataimport">
+				<include name="import*.ctl"/>
+			</fileset>
+		</scp>	
+		<sshexec trust="true" keyfile="${ssh_id}" passphrase="" host="mgb.westlb.sko.de" username="${unix.user}"
+		             command="chmod -f 775 /tmp/install_mgb.ksh"/>
+	</target>
+
+ <!-- Local Variables: -->
+ <!-- tab-width: 4 -->
+ <!-- End: -->
+
+ </project>

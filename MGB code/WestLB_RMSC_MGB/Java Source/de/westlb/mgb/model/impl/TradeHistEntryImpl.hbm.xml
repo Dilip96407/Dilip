@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="de.westlb.mgb.model.impl.TradeHistEntryImpl" table="T04_TRADE_HISTORIE">
+		<!--
+    	<cache usage="read-write"/>
+    	-->
+		<id name="longId" type="long" column="T04_ID">
+			<generator class="sequence">
+				<param name="sequence">HIB_SEQ</param>
+			</generator>
+		</id>
+		<discriminator column="T04_STATE_TYPE" type="string" length="20" />
+
+		<many-to-one name="trade" class="de.westlb.mgb.model.impl.TradeImpl" lazy="proxy">
+			<column name="FK_T04_T02_TRADE" index="I04_TRADE"/>
+		</many-to-one>
+		
+		<many-to-one name="createdByEmployee" class="de.westlb.mgb.model.impl.EmployeeImpl" lazy="proxy">
+			<column name="FK_T04_T01_CREATED_BY" />
+		</many-to-one>
+
+		<property name="stateTime" column="T04_STATE_TIME" />		
+        <property name="comment" column="T04_COMMENT" length="1000"/>
+		<property name="changedDate" column="T04_CHANGED_DATE" />
+		<property name="changedBy" column="T04_CHANGED_BY" length="10"/>
+		<property name="createdBy" column="T04_CREATED_BY" length="10"/>
+		<property name="creationDate" column="T04_CREATION_DATE" />
+
+		<subclass name="de.westlb.mgb.model.impl.AutoStateHistEntryImpl" discriminator-value="auto" >
+			<many-to-one name="automaticState" class="de.westlb.mgb.model.impl.AutomaticStateImpl">
+				<column name="FK_T04_T10_AUTO_STATE_CODE" sql-type="VARCHAR2(50)" index="I04_AUTO_STATE"/>
+				<column name="FK_T04_T10_AUTO_MANDANT_CODE" sql-type="VARCHAR2(3)" index="I04_AUTO_STATE"/>
+			</many-to-one>	
+		</subclass>
+
+		<subclass name="de.westlb.mgb.model.impl.ManualStateHistEntryImpl" discriminator-value="manual" >
+			<many-to-one name="manualState" class="de.westlb.mgb.model.impl.AbstractManualState">
+				<column name="FK_T04_T10_MAN_STATE_CODE" sql-type="VARCHAR2(50)" index="I04_MAN_STATE"/>
+				<column name="FK_T04_T10_MAN_MANDANT_CODE" sql-type="VARCHAR2(3)" index="I04_MAN_STATE"/>
+			</many-to-one>	
+			<many-to-one name="reportImage" column="FK_T04_T15_REPORT_IMAGE" cascade="save-update,delete" class="de.westlb.mgb.model.impl.ReportImageImpl" />
+		</subclass>
+
+		<subclass name="de.westlb.mgb.model.impl.ReclStateHistEntryImpl" discriminator-value="reclamation" >
+			<many-to-one name="reclamationState" class="de.westlb.mgb.model.impl.ReclamationStateImpl">
+				<column name="FK_T04_T10_RECL_STATE_CODE" sql-type="VARCHAR2(50)" index="I04_RECL_STATE"/>
+				<column name="FK_T04_T10_RECL_MANDANT_CODE" sql-type="VARCHAR2(3)" index="I04_RECL_STATE"/>
+			</many-to-one>	
+        	<property name="isClosed" type="yes_no" column="T04_IS_CLOSED"/>
+        	<property name="closedComment" column="T04_CLOSED_COMMENT"/>
+	       	<property name="level" column="T04_LEVEL"/>
+ 			<many-to-one name="reportImage" column="FK_T04_T15_REPORT_IMAGE" cascade="save-update,delete" class="de.westlb.mgb.model.impl.ReportImageImpl" />
+		</subclass>
+
+	</class>
+</hibernate-mapping>

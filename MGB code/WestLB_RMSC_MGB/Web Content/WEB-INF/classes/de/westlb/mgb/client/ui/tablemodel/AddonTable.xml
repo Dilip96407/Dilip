@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE table SYSTEM "TableModel.dtd">
+
+<table>
+	<column property-name="condition" header-label="Condition">
+	</column>
+	<column property-name="priceTolerancePercent" header-label="Price tolerance in %">
+		<number-format fraction-min-length="4" fraction-max-length="10" grouping-length="3"/>
+	</column>
+	<column property-name="timeToleranceMinutes" header-label="Time tolerance in minutes">
+		<number-format fraction-min-length="4" fraction-max-length="10" grouping-length="3"/>
+	</column>
+	<column property-name="comment" header-label="Comment">
+	</column>
+	<column property-name="changePending" header-label="Pending change" column-type="boolean">
+	</column>
+	<column property-name="changeRequestedByName" header-label="Changed by">
+	</column>
+</table>

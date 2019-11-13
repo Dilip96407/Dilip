@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="de.westlb.mgb.model.impl.AssetImpl" table="T92_ASSET" lazy="false">
+    	<cache usage="read-write"/>
+		<id name="longId" type="long" column="T92_ID">
+			<generator class="sequence">
+				<param name="sequence">HIB_SEQ</param>
+			</generator>
+		</id>
+        <many-to-one name="trade" class="de.westlb.mgb.model.impl.TradeImpl">
+        	<column name="FK_T92_T02_TRADE" index="I92_TRADE"/>
+ 		</many-to-one>
+ 		<many-to-one name="mandant" lazy="false" class="de.westlb.mgb.model.impl.MandantImpl">
+			<column name="FK_T92_T09_MANDANT" sql-type="VARCHAR2(3)" />
+		</many-to-one>
+
+        <property name="tradeSubType" column="T92_TRADE_SUB_TYPE" length="50"/>
+        <property name="assetId" column="T92_ASSET_ID" length="50"/>
+        <property name="callPut" column="T92_CALL_PUT" length="1"/>
+        <property name="payCurrency" column="T92_PAY_CURRENCY" length="3"/>
+        <property name="payNotional" column="T92_PAY_NOTIONAL"/>
+        <property name="receiveCurrency" column="T92_RECEIVE_CURRENCY" length="3"/>
+        <property name="receiveNotional" column="T92_RECEIVE_NOTIONAL"/>
+        <property name="startDate" column="T92_START_DATE"/>
+        <property name="maturityDate" column="T92_MATURITY_DATE"/>
+        <property name="payIndexBasis" column="T92_PAY_INDEX_BASIS" length="50"/>
+        <property name="payRateSpread" column="T92_PAY_RATE_SPREAD"/>
+        <property name="payDiscountCurve" column="T92_PAY_DISCOUNT_CURVE" length="50"/>
+        <property name="receiveIndexBasis" column="T92_RECEIVE_INDEX_BASIS" length="50"/>
+        <property name="receiveRateSpread" column="T92_RECEIVE_RATE_SPREAD"/>
+        <property name="receiveDiscountCurve" column="T92_RECEIVE_DISCOUNT_CURVE" length="50"/>
+        <property name="capFloor" column="T92_CAP_FLOOR" length="1"/>
+        <property name="buySell" column="T92_BUY_SELL" length="1"/>
+        <property name="quantity" column="T92_QUANTITY"/>
+        <property name="underlying" column="T92_UNDERLYING"/>
+        <property name="strike" column="T92_STRIKE"/>
+        <property name="style" column="T92_STYLE" length="50"/>
+        <property name="premiumAmount" column="T92_PREMIUM_AMOUNT"/>
+        <property name="premiumCurrency" column="T92_PREMIUM_CURRENCY" length="3"/>
+        <property name="expiryDate" column="T92_EXPIRY_DATE"/>
+        <property name="fixingDate" column="T92_FIXING_DATE"/>
+        <property name="paymentDate" column="T92_PAYMENT_DATE"/>
+        <property name="firstCouponDate" column="T92_FIRST_COUPON_DATE"/>
+        <property name="model" column="T92_MODEL"/>
+        <property name="instrumentStyle" column="T92_INSTRUMENT_STYLE"/>
+        <property name="formula" column="T92_FORMULA" length="50"/>
+        <property name="productName" column="T92_PRODUCT_NAME" length="60"/>
+        <property name="prodData" column="T92_PROD_DATA" length="50"/>
+        <property name="npv" column="T92_NPV"/>
+        <property name="marketRateIR" column="T92_MARKET_RATE_IR"/>
+        <property name="marketRateVola" column="T92_MARKET_RATE_VOLA"/>
+        <property name="fxRate" column="T92_FX_RATE"/>
+        <property name="delta" column="T92_DELTA"/>
+        <property name="deltaCurrency" column="T92_DELTA_CURRENCY" length="3"/>
+        <property name="vega" column="T92_VEGA"/>
+        <property name="vegaCurrency" column="T92_VEGA_CURRENCY" length="3"/>
+
+		<property name="changedDate" column="T92_CHANGED_DATE" />
+		<property name="changedBy" column="T92_CHANGED_BY" length="10"/>
+		<property name="createdBy" column="T92_CREATED_BY" length="10"/>
+		<property name="creationDate" column="T92_CREATION_DATE" />
+
+    </class>
+
+</hibernate-mapping>
